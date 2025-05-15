@@ -146,7 +146,7 @@ function ApplicationDesign() {
       name: "Compass",
       description: "Turning ideas into real-world impact with strategic guidance, operational support, and hands-on execution.",
       images: ["/assets/port1.png", "/assets/port4.png"],
-      logo: "/assets/compass-logo.png"
+      logo: "/assets/compass.png"
     }
   ];
 

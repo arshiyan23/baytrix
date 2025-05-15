@@ -8,11 +8,13 @@ import ScrollToTop from './components/ScrollToTop';
 import Branding from './pages/Branding';
 import SocialMediaManagement from './pages/SocialMediaManagement';
 import FloatingButton from './components/FloatingButton';
+import OfferBanner from './components/OfferBanner';
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
+      <OfferBanner />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

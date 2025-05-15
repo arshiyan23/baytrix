@@ -107,7 +107,7 @@ export default function FeatureCarousel() {
   return (
     <section className="carousel-section">
       <div className="carousel-header">
-        <ProcessHeading backgroundText="PLATFORMS" foregroundText="SOLUTIONS WE OFFER"/>
+        <ProcessHeading backgroundText="OUR APPS" foregroundText="SOLUTIONS WE OFFER"/>
         <p>Tailored digital solutions for real-world business growth.</p>
       </div>
 

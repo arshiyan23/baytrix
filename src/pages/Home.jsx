@@ -4,6 +4,7 @@ import ServiceCard from '../components/ServiceCard';
 import Portfolio from '../components/Portfolio';
 import ScheduleCall from '../components/ScheduleCall';
 import TestimonialSlider from '../components/TestimonialSlider';
+import LogoSlider from '../components/LogoSlider';
 
 const Home = () => {
   const location = useLocation();
@@ -19,8 +20,12 @@ const Home = () => {
           window.scrollTo({ top: offsetTop, behavior: 'smooth' });
         }, 100);
       }
+    } else {
+      // Scroll to top only if there's no hash
+      window.scrollTo({ top: 0, behavior: 'auto' });
     }
   }, [location]);
+
 
   const testimonialsData = [
     {
@@ -49,24 +54,30 @@ const Home = () => {
         <div className="hero-content">
           <div className="hero-text">
             <h1>Personalized Digital Business Solutions</h1>
-            <p>Empowering your business with cutting-edge technology</p>
+            <p>
+              Everything you need to digitally grow any business
+              <br />—all in one place.
+            </p>
             <button
               className="cta-button"
               onClick={() => setShowScheduleCall(true)}
             >
-              Get Started
+              Book A Free Consultation
             </button>
           </div>
 
           <div className="hero-image">
             <img src="/assets/bg3.png" alt="Digital Services Overview" />
           </div>
-        </div>
 
-        <svg className="hero-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200">
-          <path className="curve" d="M0,160 C480,240 960,80 1440,160 L1440,320 L0,320 Z" />
-        </svg>
+          <p className="hero-bottom-text">TRUSTED BY TOP BRANDS</p>
+          
+        </div>
       </section>
+
+
+      <LogoSlider />
+
 
       <section id="services" className="services">
         <h2>Our Services</h2>
@@ -108,16 +119,16 @@ const Home = () => {
         <Portfolio />
       </section>
 
-      <section className="brands">
+      {/* <section className="brands">
         <h2>Our Trusted Partners</h2>
         <div className="brands-scroll-container">
           <div className="brands-scroll-content">
             <img src="/assets/eb.png" />
             <img src="/assets/gowash.png" />
-            <img src="/assets/compass-logo.png" />
+            <img src="/assets/compass.png" />
           </div>
         </div>
-      </section>
+      </section> */}
 
       <TestimonialSlider
         testimonials={testimonialsData}

@@ -1,0 +1,28 @@
+.logo-slider-container {
+  background-color: #7349ac;
+}
+
+.logo-slider-section {
+  overflow: hidden;
+  padding: 1.2rem 0;
+}
+
+.logo-slider-track {
+  display: flex;
+  gap: 5rem;
+  will-change: transform;
+}
+
+.logo-svg-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 45px; */
+  width: auto;
+}
+
+.logo-svg-wrapper svg {
+  height: 48px;
+  width: auto;
+  fill: white;
+}

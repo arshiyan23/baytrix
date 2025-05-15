@@ -23,9 +23,9 @@ header {
     align-items: center;
     background-color: #7349ac;
     padding: 20px 40px;
-    position: sticky;
+    position: relative;
     top: 0;
-    z-index: 1000;
+    /* z-index: 1000; */
 }
 
 .logo {
@@ -54,21 +54,21 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #542e80;
+    /* background-color: #542e80; */
     border-radius: 5px;
+    color: #ac7def;
 }
 
 /* Hero Section */
 .hero {
-    padding: 0px 20px 80px;
     background-color: #7349ac;
     position: relative;
-    height: 85vh;
+    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    /* gap: 40px; */
+    border-bottom: 1px solid white;
 }
 
 .hero-content {
@@ -90,6 +90,7 @@ nav ul li a:hover {
     text-align: left;
     animation: fadeZoomIn 1.2s ease-out both;
     min-width: 300px;
+    position: relative; /* Important */
 }
 
 .hero-text h1 {
@@ -100,6 +101,7 @@ nav ul li a:hover {
 .hero-text p {
     font-size: 20px;
     margin-bottom: 30px;
+    line-height: 1.6;
 }
 
 .hero-image {
@@ -112,21 +114,34 @@ nav ul li a:hover {
     max-width: 100%;
     height: auto;
     animation: fadeZoomIn 2s ease-out both;
+    /* margin: 40px 0px; */
 }
 
+.hero-bottom-text {
+    position: absolute;
+    bottom: -80px;
+    left: 0;
+    padding-left: 40px; /* match hero-content padding */
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+
 /* SVG Curve */
-.hero-wave {
+/* .hero-wave {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: auto;
     z-index: 1;
-}
+} */
 
-.curve {
+/* .curve {
     fill: white;
-}
+} */
 
 /* CTA Button */
 .cta-button {
@@ -155,6 +170,13 @@ nav ul li a:hover {
     100% {
         opacity: 1;
         transform: scale(1);
+    }
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    .hero-image img {
+        margin: 40px 0px;
     }
 }
 
