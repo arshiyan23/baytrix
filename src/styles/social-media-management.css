@@ -1,0 +1,492 @@
+/* Hero Section */
+.smm-hero-section {
+  background: #7349ac;
+  color: white;
+  position: relative;
+}
+
+.smm-hero-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+  gap: 30px;
+  animation: fadeZoomIn 1s ease-out both;
+}
+
+.smm-hero-img {
+  width: 100%;
+  max-width: 500px;
+  /* animation: float 6s ease-in-out infinite; */
+}
+
+/* Animation */
+@keyframes fadeZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.smm-hero-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.smm-hero-text h2 {
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+}
+
+.smm-hero-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Wave Decoration */
+.smm-wave {
+  display: block;
+  margin-top: -1px;
+  /* background-color: #f0ecf9; */
+}
+
+.smm-curve {
+  fill: #7349ac;
+}
+
+/* Honeycomb-style hex layout */
+.digital-solutions-section {
+  color: #555;
+  text-align: center;
+}
+
+.honeycomb-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+  margin-bottom: 6.5rem;
+}
+
+.hex-card {
+  width: 200px;
+  aspect-ratio: 1;
+  background: #f5f0ff;
+  clip-path: polygon(50% 0%,
+      93% 25%,
+      93% 75%,
+      50% 100%,
+      7% 75%,
+      7% 25%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hex-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(106, 76, 156, 0.3);
+}
+
+.hex-content {
+  text-align: center;
+  padding: 1rem;
+  transform: scale(0.9);
+}
+
+.hex-content img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0.7rem;
+}
+
+.hex-content h3 {
+  font-size: 1.1rem;
+  color: #6a4c9c;
+  margin-bottom: 0.5rem;
+}
+
+.hex-content p {
+  font-size: 0.9rem;
+  color: #6a4c9c;
+  max-width: 200px;
+}
+
+/* Animation */
+.hex-card.smm-animate {
+  animation: fadeUp 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .digital-solutions-section {
+    margin-top: 50px;
+  }
+
+  .digital-solutions-section p {
+    margin: 10px;
+  }
+
+  .honeycomb-grid {
+    margin-bottom: 4rem;
+  }
+
+  .hex-card {
+    width: 150px;
+  }
+
+  .hex-content h3 {
+    font-size: 1rem;
+  }
+
+  .hex-content p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Feature Section */
+.smm-feature-section {
+  background: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.smm-feature-section h2 {
+  color: #6A4C9C;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Feature Cards Grid */
+.smm-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Feature Card */
+.smm-feature {
+  background: #f9f9f9;
+  border-radius: 16px;
+  padding: 30px 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+/* Trigger Animation */
+.smm-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Icon Style */
+.smm-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+/* Feature Titles */
+.smm-feature h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #6A4C9C;
+}
+
+/* Feature Description */
+.smm-feature p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Card Hover Effect */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(106, 76, 156, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .smm-hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .smm-hero-text h2 {
+    font-size: 2rem;
+  }
+
+  .smm-hero-text p {
+    font-size: 1rem;
+  }
+}
+
+/* ======== Social Media Success Section ======== */
+.social-success-section {
+  padding-top: 35px;
+  padding-bottom: 35px;
+  color: #555;
+  text-align: center;
+  background-color: #f5f0ff;
+}
+
+.social-success-section .success-wrapper {
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.social-success-section .success-desc-txt {
+  margin-bottom: 20px;
+}
+
+.social-success-section .success-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex: 2;
+  flex-wrap: wrap;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+}
+
+.social-success-section .success-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 250px;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+  border-radius: 10px;
+  padding: 30px;
+  /* background-color: #7349ac; */
+}
+
+.social-success-section .success-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.social-success-section .success-icon {
+  width: 65px;
+  height: 65px;
+  margin-bottom: 10px;
+}
+
+.social-success-section .success-number {
+  font-size: 45px;
+  font-weight: bold;
+  /* color: #fcddec; */
+  color: #7349ac;
+}
+
+.social-success-section .success-text {
+  font-size: 15px;
+  margin-top: 10px;
+  /* color: #fcddec; */
+  color: #7349ac;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .social-success-section {
+    color: #555;
+    text-align: center;
+  }
+
+  .social-success-section .success-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-success-section .success-desc-txt {
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .social-success-section .success-container {
+    justify-content: center;
+    gap: 60px;
+  }
+}
+
+/* Timeline Section */
+.smm-timeline-section {
+  background: white;
+  padding: 80px 20px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2rem;
+  color: #6A4C9C;
+}
+
+/* Timeline Container */
+.smm-timeline {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: flex-start;
+  padding: 20px 0;
+  margin-bottom: 40px;
+}
+
+.smm-timeline::before {
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #6A4C9C;
+  z-index: 0;
+}
+
+/* Timeline Step */
+.smm-timeline-step {
+  position: relative;
+  text-align: center;
+  flex: 1;
+  z-index: 1;
+}
+
+/* Icon Circle */
+.smm-timeline-circle {
+  width: 60px;
+  height: 60px;
+  background: #6A4C9C;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.smm-timeline-circle img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Step Text */
+.smm-timeline-content h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #7349ac;
+}
+
+.smm-timeline-content p {
+  font-size: 0.95rem;
+  color: #444;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+/* Vertical layout for Mobile */
+@media (max-width: 768px) {
+
+  .smm-timeline {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+
+  .smm-timeline::before {
+    width: 4px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .smm-timeline-step {
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  .smm-timeline-circle {
+    margin: 0 auto 20px;
+  }
+
+  .smm-timeline-content p {
+    max-width: 300px;
+  }
+
+  .smm-timeline-step {
+    background-color: white;
+  }
+}
+
+/* Animation Base */
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Step Number Label */
+.smm-step-number {
+  display: block;
+  font-size: 0.85rem;
+  color: #444;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}

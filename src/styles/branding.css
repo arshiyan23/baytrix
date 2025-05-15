@@ -1,0 +1,156 @@
+/* Reuse your previous styles first */
+.brand-hero-section {
+    padding: 4rem 2rem;
+    background: #7349ac;
+    overflow: hidden;
+  }
+  
+  .brand-hero-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+  }
+  
+  .brand-hero-img {
+    width: 240px;
+    max-width: 100%;
+    opacity: 0;
+    transform: translateX(50px);
+    animation: fadeInRight 1s forwards;
+    animation-delay: 0.2s;
+  }
+  
+  .brand-hero-text {
+    max-width: 500px;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: fadeInLeft 1s forwards;
+    animation-delay: 0.2s;
+  }
+  
+  .brand-hero-text h2 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  
+  .brand-hero-text p {
+    font-size: 1.1rem;
+    color: white;
+    line-height: 1.5;
+  }
+/* Floating Blobs */
+.floating-blob {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 0;
+    animation-name: float;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-20px) scale(1.05);
+    }
+  }
+  
+  .brand-wave {
+    display: block;
+    width: 100%;
+    height: 100px;
+    margin-top: -2px;
+    background: #f9f4fc;
+  }
+  
+  .brand-curve {
+    fill: #7349ac;
+  }
+  
+  
+  .brand-feature-section {
+    background: #f9f4fc;
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .brand-feature-section .section-heading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #7349ac;
+  }
+  
+  .brand-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .brand-feature {
+    background: white;
+    color: #333;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease;
+  }
+  
+  .brand-feature.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .brand-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+  }
+  
+  .brand-feature h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #6A4C9C;
+  }
+  
+  .brand-feature p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  
+  /* Animations */
+  @keyframes fadeInLeft {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeInRight {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes waveMotion {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100px);
+    }
+  }
+  
