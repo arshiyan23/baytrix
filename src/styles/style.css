@@ -56,7 +56,7 @@ nav ul li a {
 nav ul li a:hover {
     /* background-color: #542e80; */
     border-radius: 5px;
-    color: #ac7def;
+    color: rgb(195, 195, 195);
 }
 
 /* Hero Section */
@@ -119,7 +119,7 @@ nav ul li a:hover {
 
 .hero-bottom-text {
     position: absolute;
-    bottom: -80px;
+    bottom: 0px;
     left: 0;
     padding-left: 40px; /* match hero-content padding */
     color: white;
@@ -427,36 +427,6 @@ nav ul li a:hover {
     }
 }
 
-.brands-scroll-container {
-    overflow: hidden;
-    white-space: nowrap;
-    display: flex;
-    overflow-x: scroll;
-    white-space: nowrap;
-    padding: 10px;
-    max-width: 100%;
-    scrollbar-width: none;
-}
-
-.brands-scroll-container::-webkit-scrollbar {
-    display: none;
-}
-
-.brands-scroll-content {
-    display: flex;
-    animation: scroll 30s linear infinite;
-    display: flex;
-    gap: 20px;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-}
-
-.brands-scroll-content img {
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
-    border-radius: 12px;
-}
 
 /* Scrolling animation */
 @keyframes scroll {
@@ -469,42 +439,22 @@ nav ul li a:hover {
     }
 }
 
-/* Brands */
-.brands {
-    padding: 50px 20px;
-    background-color: #f4f4f4;
-    /* background-color: #7349ac; */
-    text-align: center;
-}
-
-.brands h2 {
-    color: #6A4C9C;
-    /* color: white; */
-    margin-bottom: 30px;
-}
-
-.brand-logos img {
-    margin: 0 15px;
-    max-height: 50px;
-    vertical-align: middle;
-}
 
 /* Contact */
 .contact {
     padding: 50px 20px;
     text-align: center;
-    background-color: white;
-    ;
+    background-color: #7349ac;
     /* background: linear-gradient(to right, #f8f4fc, #f3e9ff); */
 }
 
 .contact h2 {
-    color: #6A4C9C;
+    color: white;
     margin-bottom: 10px;
 }
 
 .contact p {
-    color: #555;
+    color: white;
     margin-bottom: 30px;
 }
 
@@ -520,7 +470,7 @@ nav ul li a:hover {
     padding: 12px;
     margin: 10px 0;
     border-radius: 5px;
-    border: 1px solid #7349ac;
+    border: 1px solid black;
 }
 
 .contact button {
@@ -531,7 +481,7 @@ nav ul li a:hover {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #6A4C9C;
+    background-color: #7349ac;
     color: white;
 }
 
@@ -577,12 +527,6 @@ footer {
         width: 90%;
         height: auto;
         margin: 10px auto;
-    }
-
-    .brand-logos {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
     }
 
     nav ul {

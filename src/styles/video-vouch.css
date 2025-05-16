@@ -1,0 +1,177 @@
+.vouch-container {
+  /* display: flex; */
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 1000px;
+  margin: 20px auto;
+  font-family: 'Arial', sans-serif;
+}
+
+.vouch-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.vouch-image-section {
+  position: relative;
+  margin-right: 30px;
+  flex-shrink: 0;
+}
+
+.vouch-image {
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Allow video element to take the same styling */
+.vouch-image-section video.vouch-image {
+  width: 400px;
+  height: 500px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.play-button-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.play-icon {
+  width: 30px;
+  height: 30px;
+  color: white;
+}
+
+.vouch-content-section {
+  flex-grow: 1;
+  color: #333;
+}
+
+.quote-icon {
+  font-size: 148px;
+  color: #7349ac;
+  line-height: 0.4;
+  display: block;
+}
+
+.vouch-quote {
+  font-size: 25px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.vouch-author {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.vouch-title-span {
+  color: #999;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.vouch-website {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 25px;
+}
+
+.vouch-navigation {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #7249ac36;
+  padding-top: 20px;
+}
+
+.nav-arrow {
+  background-color: #f5f0ff;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #7349ac;
+  transition: background-color 0.2s ease;
+}
+
+.nav-arrow-spacer {
+  margin: 0px 10px;
+}
+
+.nav-arrow:hover {
+  background-color: #e0e0e0;
+}
+
+.nav-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .vouch-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .quote-icon {
+    padding-top: 40px;
+    font-size: 120px;
+    line-height: 0.2;
+    display: block;
+  }
+
+  .vouch-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .vouch-image-section {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .vouch-image {
+    width: 250px;
+    height: 300px;
+  }
+
+  .vouch-content-section {
+    align-items: center;
+  }
+
+  .quote-icon {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .vouch-navigation {
+    justify-content: center;
+  }
+
+  .nav-arrow-spacer {
+    margin: 0px 20px;
+  }
+}

@@ -23,7 +23,7 @@ function App() {
         <Route path="/social-media-management" element={<SocialMediaManagement />} />
       </Routes>
       <FloatingButton />
-      <ContactUs />
+      {/* <ContactUs /> */}
       <Footer />
     </Router>
   );

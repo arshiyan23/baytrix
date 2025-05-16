@@ -3,9 +3,10 @@
   bottom: 20px;
   right: 20px;
   z-index: 1000;
-  display: flex;
+  display: inline-flex; /* Keeps it as small as needed */
   flex-direction: column;
   align-items: flex-end;
+  pointer-events: none; /* Prevents blocking clicks outside visible elements */
 }
 
 .main-floating-btn {
@@ -19,6 +20,7 @@
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
+  pointer-events: auto; /* Allows button to be clickable */
 }
 
 .pulse {
@@ -49,13 +51,13 @@
   transform: translateY(20px) rotateX(-90deg);
   transform-origin: bottom right;
   transition: opacity 0.4s ease, transform 0.4s ease;
-  pointer-events: none;
+  pointer-events: none; /* Not clickable by default */
 }
 
 .floating-options.show-options {
   opacity: 1;
   transform: translateY(0) rotateX(0);
-  pointer-events: auto;
+  pointer-events: auto; /* Clickable when shown */
 }
 
 .floating-options button {
@@ -83,4 +85,3 @@
   height: 20px;
   object-fit: contain;
 }
-

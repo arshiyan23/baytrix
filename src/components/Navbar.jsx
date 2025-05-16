@@ -23,13 +23,13 @@ const Navbar = () => {
   return (
     <header>
       {/* <img src="/assets/prismlogonobg.png" alt="Digital Services Overview" className='logo' /> */}
-      <a href="/" className="logo">Baytix</a>
+      <a href="/" className="logo">BAYTIX</a>
       <nav>
         <ul id="nav-links">
           <li><a href="/#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>
           <li><a href="/#services" onClick={(e) => handleNavClick(e, 'services')}>Services</a></li>
           <li><a href="/#portfolio" onClick={(e) => handleNavClick(e, 'portfolio')}>Portfolio</a></li>
-          <li><a href="/#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a></li>
+          {/* <li><a href="/#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a></li> */}
         </ul>
       </nav>
     </header>

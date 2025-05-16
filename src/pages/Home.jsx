@@ -5,6 +5,8 @@ import Portfolio from '../components/Portfolio';
 import ScheduleCall from '../components/ScheduleCall';
 import TestimonialSlider from '../components/TestimonialSlider';
 import LogoSlider from '../components/LogoSlider';
+import VideoVouch from '../components/VideoVouch';
+import GalleryScroller from '../components/GalleryScroller';
 
 const Home = () => {
   const location = useLocation();
@@ -70,7 +72,7 @@ const Home = () => {
             <img src="/assets/bg3.png" alt="Digital Services Overview" />
           </div>
 
-          <p className="hero-bottom-text">TRUSTED BY TOP BRANDS</p>
+          {/* <p className="hero-bottom-text">TRUSTED BY TOP BRANDS</p> */}
           
         </div>
       </section>
@@ -108,34 +110,26 @@ const Home = () => {
           />
           <ServiceCard
             imgSrc="/assets/ai_automation.png"
-            title="AI Automation"
+            title="AI Integration"
             desc="Automate tasks using AI for faster, smarter business operations."
-            link="ai-automation"
+            link="ai-integration"
           />
         </div>
       </section>
 
-      <section id="portfolio" className="portfolio">
+      {/* <section id="portfolio" className="portfolio">
         <Portfolio />
-      </section>
-
-      {/* <section className="brands">
-        <h2>Our Trusted Partners</h2>
-        <div className="brands-scroll-container">
-          <div className="brands-scroll-content">
-            <img src="/assets/eb.png" />
-            <img src="/assets/gowash.png" />
-            <img src="/assets/compass.png" />
-          </div>
-        </div>
       </section> */}
+      <GalleryScroller />
 
-      <TestimonialSlider
+      {/* <TestimonialSlider
         testimonials={testimonialsData}
         headingBackgroundText="SATISFIED"
         headingForegroundText="TESTIMONIALS"
         foregroundTextColor='white'
-      />
+      /> */}
+
+      <VideoVouch />
 
       {showScheduleCall && (
         <ScheduleCall onClose={() => setShowScheduleCall(false)} />

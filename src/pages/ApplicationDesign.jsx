@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from 'react';
 import HorizontalShowcaseSlider from '../components/HorizontalShowcaseSlider';
 import TestimonialSlider from '../components/TestimonialSlider';
 import FeatureCarousel from '../components/FeatureCarousel';
+import VideoVouch from '../components/VideoVouch';
 
 
 function ApplicationDesign() {
@@ -346,12 +347,7 @@ function ApplicationDesign() {
       </section>
 
 
-      <TestimonialSlider
-        testimonials={testimonialsData}
-        headingBackgroundText="SATISFIED"
-        headingForegroundText="TESTIMONIALS"
-        foregroundTextColor='white'
-      />
+      <VideoVouch />
 
       {showScheduleCall && (
         <ScheduleCall onClose={() => setShowScheduleCall(false)} />

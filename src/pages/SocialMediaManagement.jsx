@@ -4,6 +4,7 @@ import ProcessHeading from "../components/ProcessHeading";
 import VerticalShowcaseSlider from "../components/VerticalShowcaseSlider";
 import TestimonialSlider from "../components/TestimonialSlider";
 import ScheduleCall from "../components/ScheduleCall";
+import VideoVouch from "../components/VideoVouch";
 
 function SocialMediaManagement() {
   useEffect(() => {
@@ -306,12 +307,14 @@ function SocialMediaManagement() {
         </div>
       </section>
 
-      <TestimonialSlider
+      {/* <TestimonialSlider
         testimonials={testimonialsData}
         headingBackgroundText="SATISFIED"
         headingForegroundText="TESTIMONIALS"
         foregroundTextColor='white'
-      />
+      /> */}
+
+      <VideoVouch />
 
       {showScheduleCall && (
         <ScheduleCall onClose={() => setShowScheduleCall(false)} />
