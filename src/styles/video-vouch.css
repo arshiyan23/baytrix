@@ -158,6 +158,11 @@
     height: 300px;
   }
 
+  .vouch-image-section video.vouch-image {
+    width: 250px;
+    height: 300px;
+  }
+
   .vouch-content-section {
     align-items: center;
   }
