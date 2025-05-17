@@ -135,7 +135,7 @@ const PieStats = () => {
       <div className="pie-section">
         <ProcessHeading
           backgroundText="STATS"
-          foregroundText="SERVING"
+          foregroundText="OUR METRICS"
           description="Key performance metrics that demonstrates our 
           expertise and client success. Representing a core strength, from client retention to project delivery."
         />

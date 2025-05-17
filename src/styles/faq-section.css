@@ -40,6 +40,17 @@
   line-height: 1.6;
 }
 
+.accordion-answer a {
+  color: white;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.accordion-answer a:hover {
+  color: rgb(202, 202, 202);
+}
+
 .accordion-item.open .accordion-answer {
   max-height: 300px;
   padding: 1rem 1.5rem;
@@ -53,3 +64,21 @@
 .accordion-item.open .accordion-question span {
   transform: rotate(180deg);
 }
+
+.faq-contact-button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #542e80;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.faq-contact-button:hover {
+  background-color: #412363;
+}
+
+

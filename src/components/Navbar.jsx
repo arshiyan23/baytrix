@@ -32,7 +32,7 @@ const Navbar = () => {
           <li><a href="/#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>
           <li><a href="/#services" onClick={(e) => handleNavClick(e, 'services')}>Services</a></li>
           <li><a href="/#portfolio" onClick={(e) => handleNavClick(e, 'portfolio')}>Portfolio</a></li>
-          {/* <li><a href="/#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a></li> */}
+          <li><a href="/#support" onClick={(e) => handleNavClick(e, 'support')}>Support</a></li>
         </ul>
       </nav>
     </header>

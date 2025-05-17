@@ -5,12 +5,12 @@ import ProcessHeading from './ProcessHeading';
 const SupportSection = () => {
     return (
         <>
-            <ProcessHeading
-                foregroundText="LIVE SUPPORT"
-                backgroundText="24/7 HELP"
-                description="We're here around the clock to answer your questions and solve issues fast — no waiting, no worries."
-            />
-            <div className="support-wrapper">
+            <div className="support-wrapper" id="support">
+                <ProcessHeading
+                    foregroundText="INSTANT SUPPORT"
+                    backgroundText="24/7 HELP"
+                    description="We're here around the clock to answer your questions and solve issues fast — no waiting, no worries."
+                />
                 <div className="support-text">
                     <h2>We're Always Here for You</h2>
                     <ul>
@@ -23,7 +23,7 @@ const SupportSection = () => {
                 <div className="support-illustration">
                     <div className="chat-window">
                         <div className="chat-header">
-                            <span className="status-dot"></span> Support Agent
+                            <span className="status-dot"></span> Support Advisor
                         </div>
 
                         <div className="chat-message user">
