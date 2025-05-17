@@ -82,7 +82,7 @@ const Home = () => {
 
 
       <section id="services" className="services">
-        <h2>Our Services</h2>
+        <h2>OUR SERVICES</h2>
         <div className="service-container">
           <ServiceCard
             imgSrc="/assets/branding.png"

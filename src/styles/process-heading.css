@@ -29,10 +29,10 @@
 /* Responsive tweak */
 @media (max-width: 768px) {
   .process-background {
-    font-size: 60px;
+    font-size: 50px;
   }
 
   .process-foreground {
-    font-size: 24px;
+    font-size: 22px;
   }
 }

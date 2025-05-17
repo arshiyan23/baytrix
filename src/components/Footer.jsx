@@ -61,7 +61,10 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          <div className="footer-logo">BAYTIX</div>
+          <a href="/">
+        <img src="/assets/baytixlogo-removebg-preview.png" 
+        alt="Digital Services Overview" className='logo' />
+      </a>
           <div className="footer-legal">
             <span>© 2025 BAYTIX. All rights reserved.</span>
             <div className="footer-links">

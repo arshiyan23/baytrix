@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 
 const Navbar = () => {
   const location = useLocation();
@@ -22,8 +22,11 @@ const Navbar = () => {
 
   return (
     <header>
-      {/* <img src="/assets/prismlogonobg.png" alt="Digital Services Overview" className='logo' /> */}
-      <a href="/" className="logo">BAYTIX</a>
+      <a href="/">
+        <img src="/assets/baytixlogo-removebg-preview.png" 
+        alt="Digital Services Overview" className='logo' />
+      </a>
+      {/* <a href="/" className="logo"></a> */}
       <nav>
         <ul id="nav-links">
           <li><a href="/#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>

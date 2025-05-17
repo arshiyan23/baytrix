@@ -29,10 +29,16 @@ header {
 }
 
 .logo {
-    font-size: 2rem;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
+    /* font-size: 2rem; */
+    /* font-weight: bold; */
+    /* color: white; */
+    /* text-decoration: none; */
+    height: 20px;
+}
+
+.logo:hover{
+    height: 20px;
+    cursor: pointer;
 }
 
 
@@ -54,7 +60,6 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    /* background-color: #542e80; */
     border-radius: 5px;
     color: rgb(195, 195, 195);
 }
