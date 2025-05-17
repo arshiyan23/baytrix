@@ -175,10 +175,11 @@ function SocialMediaManagement() {
         <ProcessHeading
           backgroundText="SERVIVES"
           foregroundText="DIGITAL GROWTH"
+          description="We manage your brand across platforms like
+          Instagram, Facebook, WhatsApp, and more—crafting content,
+          scheduling posts, and keeping your audience engaged"
         />
-        <p>We manage your brand across platforms like
-          Instagram, Facebook, WhatsApp, and more—crafting content, <br />
-          scheduling posts, and keeping your audience engaged </p>
+        <p> </p>
         <div className="honeycomb-grid">
           {[
             {
@@ -283,9 +284,10 @@ function SocialMediaManagement() {
           <ProcessHeading
             backgroundText="REACH METRICS"
             foregroundText="SOCIAL MEDIA PERFORMANCE"
+            description="Our social campaigns are designed to increase visibility, boost interaction, and build strong audience connections."
           />
           <p className="success-desc-txt">
-            Our social campaigns are designed to increase visibility, boost interaction, and build strong audience connections.
+            
           </p>
           <div className="success-container">
             <div className="success-item">

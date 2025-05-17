@@ -7,6 +7,7 @@ import TestimonialSlider from '../components/TestimonialSlider';
 import LogoSlider from '../components/LogoSlider';
 import VideoVouch from '../components/VideoVouch';
 import GalleryScroller from '../components/GalleryScroller';
+import PieStats from '../components/PieStats';
 
 const Home = () => {
   const location = useLocation();
@@ -73,7 +74,7 @@ const Home = () => {
           </div>
 
           {/* <p className="hero-bottom-text">TRUSTED BY TOP BRANDS</p> */}
-          
+
         </div>
       </section>
 
@@ -120,16 +121,14 @@ const Home = () => {
       {/* <section id="portfolio" className="portfolio">
         <Portfolio />
       </section> */}
+
+      {/* gallery scroller section */}
       <GalleryScroller />
 
-      {/* <TestimonialSlider
-        testimonials={testimonialsData}
-        headingBackgroundText="SATISFIED"
-        headingForegroundText="TESTIMONIALS"
-        foregroundTextColor='white'
-      /> */}
-
+      {/* video vouch section  */}
       <VideoVouch />
+
+
 
       {showScheduleCall && (
         <ScheduleCall onClose={() => setShowScheduleCall(false)} />

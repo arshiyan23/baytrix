@@ -15,7 +15,12 @@ const GalleryScroller = () => {
 
   return (
     <div className="gallery-wrapper" id="portfolio">
-        <ProcessHeading backgroundText="SHOWCASE" foregroundText="CREATIVE HIGHLIGHTS" foregroundTextColor='white'/>
+        <ProcessHeading 
+        backgroundText="SHOWCASE"
+         foregroundText="CREATIVE HIGHLIGHTS" 
+         foregroundTextColor='white'
+         description='Discover a selection of our standout projects, showcasing creativity and impactful results. See how we turn ideas into reality.'
+         />
       <div
         className={`image-row-wrapper top ${hoveredRow === 'top' ? 'paused' : ''}`}
         onMouseLeave={() => setHoveredRow(null)}

@@ -67,48 +67,53 @@ const VideoVouch = () => {
 
     return (
         <div className="vouch-container" id='reviews'>
-            <ProcessHeading backgroundText="REVIEWS" foregroundText="PROUD CLIENTS"/>
+            <ProcessHeading
+                backgroundText="REVIEWS"
+                foregroundText="PROUD CLIENTS"
+                description='We don’t just build brands — we build relationships.
+                Hear from these business owners who trusted Baytix to bring their ideas to life.'
+            />
             <div className='vouch-wrapper'>
-            <div className="vouch-image-section">
-                {isPlaying ? (
-                    <video
-                        src={videoSrc}
-                        controls
-                        autoPlay
-                        className="vouch-image"
-                    />
-                ) : (
-                    <>
-                        <img
-                            src={thumbnailSrc}
-                            alt={author}
+                <div className="vouch-image-section">
+                    {isPlaying ? (
+                        <video
+                            src={videoSrc}
+                            controls
+                            autoPlay
                             className="vouch-image"
                         />
-                        <div
-                            className="play-button-overlay"
-                            onClick={() => setIsPlaying(true)}
-                        >
-                            <PlayIcon />
-                        </div>
-                    </>
-                )}
-            </div>
-
-            <div className="vouch-content-section">
-                <QuoteIcon />
-                <p className="vouch-quote">{quote}</p>
-                <p className="vouch-author">{author} <span className='vouch-title-span'>{title}</span></p>
-                <p className="vouch-website">{website}</p>
-                <div className="vouch-navigation">
-                    <button className="nav-arrow left-arrow" onClick={handlePrev}>
-                        <ChevronLeftIcon />
-                    </button>
-                    <div className='nav-arrow-spacer'></div>
-                    <button className="nav-arrow right-arrow" onClick={handleNext}>
-                        <ChevronRightIcon />
-                    </button>
+                    ) : (
+                        <>
+                            <img
+                                src={thumbnailSrc}
+                                alt={author}
+                                className="vouch-image"
+                            />
+                            <div
+                                className="play-button-overlay"
+                                onClick={() => setIsPlaying(true)}
+                            >
+                                <PlayIcon />
+                            </div>
+                        </>
+                    )}
                 </div>
-            </div>
+
+                <div className="vouch-content-section">
+                    <QuoteIcon />
+                    <p className="vouch-quote">{quote}</p>
+                    <p className="vouch-author">{author} <span className='vouch-title-span'>{title}</span></p>
+                    <p className="vouch-website">{website}</p>
+                    <div className="vouch-navigation">
+                        <button className="nav-arrow left-arrow" onClick={handlePrev}>
+                            <ChevronLeftIcon />
+                        </button>
+                        <div className='nav-arrow-spacer'></div>
+                        <button className="nav-arrow right-arrow" onClick={handleNext}>
+                            <ChevronRightIcon />
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     );

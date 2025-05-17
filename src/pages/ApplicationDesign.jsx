@@ -241,7 +241,12 @@ function ApplicationDesign() {
 
 
       <section className="post-launch-section">
-        <ProcessHeading backgroundText="SUPPORT" foregroundText="POST-LAUNCH" foregroundTextColor='white' />
+        <ProcessHeading 
+        backgroundText="SUPPORT" 
+        foregroundText="POST-LAUNCH" 
+        foregroundTextColor='white' 
+        description='Reliable after-sales support to keep your apps running smoothly and up to date.'
+        />
         <div className='post-launch-section-space'></div>
         <div className="post-launch-wrapper">
           <div className="post-launch-buttons">

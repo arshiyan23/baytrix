@@ -41,6 +41,7 @@ const HorizontalShowcaseSlider = ({
                 backgroundText={headingBackgroundText}
                 foregroundText={headingForegroundText}
                 foregroundTextColor={foregroundTextColor}
+                description="Explore the powerful apps we’ve engineered for various brands, designed to enhance user experience, streamline processes, and drive business growth."
             />
             {/* <p>
             We build reliable, scalable digital solutions that help your

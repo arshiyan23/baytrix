@@ -98,6 +98,11 @@
     transition: opacity 0.3s ease;
     font-weight: bold;
     z-index: 2;
+    transition: 0.3s;
+}
+
+.view-more-btn:hover{
+    background-color: #48247a;
 }
 
 .image-container:hover .view-more-btn {

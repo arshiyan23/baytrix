@@ -26,6 +26,21 @@
   z-index: 2;
 }
 
+.process-description {
+  font-size: 1rem;
+  font-weight: 400;
+  max-width: 700px;
+  margin: 1.5rem auto 0;
+  margin-top: 40px;
+  margin-bottom: 0px;
+  color: #444;
+  line-height: 1.6;
+  z-index: 2;
+  position: relative;
+  text-align: center;
+  padding: 0 1rem;
+}
+
 /* Responsive tweak */
 @media (max-width: 768px) {
   .process-background {
@@ -34,5 +49,10 @@
 
   .process-foreground {
     font-size: 22px;
+  }
+
+  .process-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
 }

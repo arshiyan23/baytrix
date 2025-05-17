@@ -64,6 +64,7 @@ const VerticalShowcaseSlider = ({
       <ProcessHeading
         backgroundText={headingBackgroundText}
         foregroundText={headingForegroundText}
+        description="Explore our curated social media content created for diverse brands, driving engagement and brand growth."
       />
       <div className="engagement-space"></div>
       <div className="engagement-showcase-wrapper">

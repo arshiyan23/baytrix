@@ -1,0 +1,125 @@
+.pie-section {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  background-color: #f9f7fc;
+}
+
+.pie-wrapper {
+  display: flex;
+  align-items: center;
+  background: #f9f7fc;
+  padding: 20px 120px;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+
+}
+
+.text-side {
+  flex: 1;
+  min-width: 300px;
+}
+
+.text-side h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #7349ac;
+}
+
+.text-side p {
+  margin-top: 16px;
+  line-height: 1.6;
+  color: white;
+  max-width: 700px;
+  background-color: #9c6bdb;
+  padding: 20px 20px;
+  border-radius: 8px;
+}
+
+.svg-container {
+  flex: 1;
+  min-width: 300px;
+}
+
+.slice {
+  cursor: pointer;
+  transition: fill 0.3s ease;
+}
+
+.center-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 12px;
+  text-align: center;
+  color: #333;
+}
+
+.center-label strong {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.recharts-tooltip-wrapper {
+  z-index: 10 !important;
+}
+
+.pie-chart-container path {
+  outline: none !important;
+}
+
+.pie-chart-container {
+  position: relative;
+  width: 400px;
+  /* same as ResponsiveContainer */
+  height: 400px;
+  /* same as ResponsiveContainer */
+}
+
+.center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+  max-width: 160px;
+  color: #333;
+  font-size: 15px;
+  user-select: none;
+  line-height: 1.3;
+}
+
+.center-text strong {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+
+@media (max-width: 480px) {
+  .pie-chart-container {
+    max-width: 320px;
+  }
+
+  .center-text {
+    font-size: 3vw;
+  }
+
+  .center-text strong {
+    font-size: 4vw;
+  }
+
+  .pie-wrapper {
+    padding: 40px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .pie-section {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+}

@@ -4,6 +4,7 @@
   padding: 40px 20px;
   font-family: 'Segoe UI', sans-serif;
   text-align: center; /* Centers all text by default */
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .footer-container {
