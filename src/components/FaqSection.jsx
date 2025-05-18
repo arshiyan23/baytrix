@@ -11,6 +11,12 @@ const FAQSection = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const handleSupport = () => {
+    if (window.Tawk_API && typeof window.Tawk_API.maximize === 'function') {
+      window.Tawk_API.maximize();
+    }
+  };
+
   const faqs = [
     {
       question: "What services does Baytix offer?",
@@ -53,14 +59,14 @@ const FAQSection = () => {
           <a href="mailto:info@baytix.net" target="_blank" rel="noopener noreferrer">
             info@baytix.net
           </a>
-          , or chat live on our{" "}
-          <a href="/support" target="_blank" rel="noopener noreferrer">
-            Support Page
-          </a>
-          . You can also{" "}
-          <a href="/consultation" target="_blank" rel="noopener noreferrer">
-            book a free consultation now
-          </a>
+          , or{" "}
+          <button className="faq-underline-button" onClick={handleSupport}>
+            Click Here
+          </button>
+          {" "}to open a live chat. You can also{" "}
+          <button className="faq-underline-button" onClick={() => setShowScheduleCall(true)}>
+            Book a FREE Consultation now!
+          </button>
           .
         </>
       ),

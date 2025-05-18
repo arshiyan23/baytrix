@@ -3,6 +3,13 @@ import "../styles/support-section.css";
 import ProcessHeading from './ProcessHeading';
 
 const SupportSection = () => {
+
+    const handleSupport = () => {
+        if (window.Tawk_API && typeof window.Tawk_API.maximize === 'function') {
+            window.Tawk_API.maximize();
+        }
+    };
+
     return (
         <>
             <div className="support-wrapper" id="support">
@@ -18,7 +25,7 @@ const SupportSection = () => {
                         <li>✔️ Multilingual support covering 15+ languages</li>
                         <li>✔️ Average response time under 90 seconds</li>
                     </ul>
-                    <button className="support-button">Get Support</button>
+                    <button className="support-button" onClick={handleSupport}>Get Support</button>
                 </div>
                 <div className="support-illustration">
                     <div className="chat-window">

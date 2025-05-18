@@ -13,11 +13,14 @@ const FloatingButton = () => {
 
   const handleCall = () => {
     window.location.href = "tel:+919999999999";
-  };  
+  };
 
   const handleSupport = () => {
-    window.location.href = "tel:+919999999999";
+    if (window.Tawk_API && typeof window.Tawk_API.maximize === 'function') {
+      window.Tawk_API.maximize();
+    }
   };
+
 
   return (
     <div className="floating-btn-wrapper">

@@ -7,10 +7,20 @@ const TawkMessenger = () => {
     script.async = true;
     script.charset = "UTF-8";
     script.setAttribute("crossorigin", "*");
+
+    script.onload = () => {
+      // Wait for Tawk_API to be ready
+      const interval = setInterval(() => {
+        if (window.Tawk_API && typeof window.Tawk_API.hideWidget === 'function') {
+          window.Tawk_API.hideWidget(); // hide default button
+          clearInterval(interval);
+        }
+      }, 200);
+    };
+
     document.body.appendChild(script);
 
     return () => {
-      // Clean up script on unmount
       document.body.removeChild(script);
     };
   }, []);

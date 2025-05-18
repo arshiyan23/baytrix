@@ -30,7 +30,7 @@ function AppContent() {
         <Route path="/social-media-management" element={<SocialMediaManagement />} />
       </Routes>
       <TawkMessenger />
-      {/* <FloatingButton /> */}
+      <FloatingButton />
       {isHomePage && <PieStats />}
       {/* Show PieStats only on Home page */}
       <SupportSection />

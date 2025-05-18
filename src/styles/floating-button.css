@@ -1,7 +1,7 @@
 .floating-btn-wrapper {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 22px;
+  right: 26px;
   z-index: 1000;
   display: inline-flex; /* Keeps it as small as needed */
   flex-direction: column;
