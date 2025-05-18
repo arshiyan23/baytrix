@@ -12,6 +12,7 @@ import OfferBanner from './components/OfferBanner';
 import FaqSection from './components/FaqSection';
 import PieStats from './components/PieStats';
 import SupportSection from './components/SupportSection';
+import TawkMessenger from './components/TawkMessenger';
 
 // Put useLocation inside a child component rendered within Router
 function AppContent() {
@@ -28,7 +29,8 @@ function AppContent() {
         <Route path="/branding" element={<Branding />} />
         <Route path="/social-media-management" element={<SocialMediaManagement />} />
       </Routes>
-      <FloatingButton />
+      <TawkMessenger />
+      {/* <FloatingButton /> */}
       {isHomePage && <PieStats />}
       {/* Show PieStats only on Home page */}
       <SupportSection />
