@@ -177,7 +177,7 @@ function ApplicationDesign() {
     <>
       <section className="app-intro-section">
         <div className="app-intro-container">
-          <img src="/assets/app-dev.png" alt="App Intro" className="intro-image" />
+          <img src="/assets/app-dev-bg-2.png" alt="App Intro" className="intro-image" />
           <div className="intro-text">
             <h2>Why Choose Our App Services?</h2>
             <p>
@@ -188,7 +188,7 @@ function ApplicationDesign() {
               className="cta-button"
               onClick={() => setShowScheduleCall(true)}
             >
-              Get Started
+              BOOK A FREE CONSULTATION
             </button>
           </div>
         </div>

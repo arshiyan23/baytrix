@@ -149,8 +149,10 @@ nav ul li a:hover {
 
 /* CTA Button */
 .cta-button {
-    background-color: #542e80;
-    color: white;
+    /* background-color: #542e80; */
+    /* color: white; */
+    background-color: white;
+    color: #7349ac;
     padding: 15px 25px;
     border: none;
     border-radius: 5px;
@@ -162,7 +164,9 @@ nav ul li a:hover {
 }
 
 .cta-button:hover {
-    background-color: #412363;
+    /* background-color: #412363; */
+    background-color: rgb(203, 203, 203);
+    color: #7349ac;
 }
 
 /* Animation */

@@ -101,10 +101,42 @@
     font-size: 1rem;
     line-height: 1.5;
 }
+/* promo-popup.css */
+.popup-cta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
 
+/* Make button & timer share the same box model */
 .popup-button,
-.lead-form button,
-.popup-back {
+.global-timer-box {
+  padding: 0.75rem 1.2rem;    /* identical padding */
+  font-size: 1rem;           /* identical font size */
+  line-height: 1.2;          /* consistent line height */
+  border-radius: 5px;        /* same rounding */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Retain your purple styling on the button */
+.popup-button {
+  background-color: #7349ac;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.popup-button:hover {
+  background-color: #542e80;
+}
+
+.lead-form button {
     background-color: #7349ac;
     color: white;
     padding: 0.75rem 1.2rem;
@@ -116,20 +148,8 @@
     transition: background-color 0.3s;
 }
 
-.popup-button:hover,
 .lead-form button:hover {
     background-color: #542e80;
-}
-
-.popup-back {
-    background: #ccc;
-    color: #333;
-    margin-top: 1rem;
-    transition: background-color 0.3s;
-}
-
-.popup-back:hover {
-    background-color: #ababab;
 }
 
 .popup-image img {
@@ -221,7 +241,6 @@
     text-align: center;
 }
 
-
 /* Responsive */
 @media (min-width: 768px) {
     .popup-panel {
@@ -252,7 +271,7 @@
     }
 
     .popup-container {
-        max-height: 450px;
+        max-height: 550px;
         padding: 1.5rem 1rem;
     }
 }

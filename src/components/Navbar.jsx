@@ -32,7 +32,7 @@ const Navbar = () => {
       <nav>
         <ul id="nav-links">
           <li>
-            <Link to="/#home" onClick={(e) => handleNavClick(e, 'home')}>Home</Link>
+            <Link to="/home" onClick={(e) => handleNavClick(e, 'home')}>Home</Link>
           </li>
           <li>
             <Link to="/#services" onClick={(e) => handleNavClick(e, 'services')}>Services</Link>

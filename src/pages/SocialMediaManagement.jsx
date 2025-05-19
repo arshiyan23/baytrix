@@ -152,7 +152,7 @@ function SocialMediaManagement() {
               className="cta-button"
               onClick={() => setShowScheduleCall(true)}
             >
-              Get Started
+              BOOK A FREE CONSULTATION
             </button>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "../styles/promo-popup.css";
 import emailjs from '@emailjs/browser';
+import GlobalTimer from "./GlobalTimer";
 
 function PromoPopUp() {
   const [showPopup, setShowPopup] = useState(false);
@@ -84,7 +85,7 @@ function PromoPopUp() {
             <div className="popup-panel">
               <div className="popup-text">
                 <h2>
-                  <span style={{ color: "limegreen" }}>LIMITED TIME OFFER!</span><br />Get Your FREE Custom Website
+                  Get Your FREE Custom Website
                 </h2>
                 <p>
                   <strong>Ready to launch your online presence?</strong><br />
@@ -92,12 +93,16 @@ function PromoPopUp() {
                   personalized website – absolutely <strong>FREE</strong>!
                   Let our digital experts build it for you.
                 </p>
-                <button
-                  className="popup-button"
-                  onClick={() => setShowForm(true)}
-                >
-                  CLAIM MY FREE WEBSITE
-                </button>
+                <div className="popup-cta">
+                  <button
+                    className="popup-button"
+                    onClick={() => setShowForm(true)}
+                  >
+                    CLAIM OFFER
+                  </button>
+                  <GlobalTimer />
+                </div>
+
               </div>
               <div className="popup-image">
                 <img
