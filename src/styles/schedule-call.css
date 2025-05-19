@@ -29,21 +29,14 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   text-align: center;
 }
 
 .modal-body {
-  flex: 1 1 auto; /* fill available space */
-  overflow-y: auto; /* scroll vertically */
-  padding-right: 0.5rem;
-  /* Add a max-height or height constraint */
-  max-height: calc(90vh - 60px); /* subtract some space for padding/header */
+  overflow-y: auto;
+  padding-right: 0.5rem; /* avoid cutoff if scrollbar appears */
 }
-
-.modal-body {
-  -webkit-overflow-scrolling: touch;
-}
-
 
 /* Fade-in overlay animation */
 @keyframes fadeInOverlay {
