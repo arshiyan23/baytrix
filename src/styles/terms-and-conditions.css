@@ -1,0 +1,70 @@
+.terms-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: white;
+  color: #333;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.terms-title {
+  color: #7349ac;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.terms-updated {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.terms-section {
+  margin-bottom: 30px;
+}
+
+.terms-section h2 {
+  color: #7349ac;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.terms-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.terms-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+  border-radius: 8px;
+}
+
+.terms-section a {
+  color: #7349ac;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.terms-section a:hover {
+  color: #542e80;
+}
+
+.terms-underline-button {
+  background-color: transparent;
+  color: #7349ac;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  text-decoration: underline;
+}
+
+.terms-underline-button:hover {
+  color: #542e80;
+}

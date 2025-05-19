@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import ServiceCard from '../components/ServiceCard';
-import Portfolio from '../components/Portfolio';
 import ScheduleCall from '../components/ScheduleCall';
-import TestimonialSlider from '../components/TestimonialSlider';
 import LogoSlider from '../components/LogoSlider';
-import VideoVouch from '../components/VideoVouch';
 import GalleryScroller from '../components/GalleryScroller';
-import PieStats from '../components/PieStats';
 
 const Home = () => {
   const location = useLocation();
@@ -125,10 +121,6 @@ const Home = () => {
 
       {/* gallery scroller section */}
       <GalleryScroller />
-
-      {/* video vouch section  */}
-      <VideoVouch />
-
 
 
       {showScheduleCall && (

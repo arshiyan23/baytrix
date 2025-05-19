@@ -21,13 +21,13 @@ const FloatingButton = () => {
     }
   };
 
-  const handleEmail = () => {
-    const email = "info@baytix.net"; 
-    const subject = "";
-    const body = "";
-    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoLink;
-  };
+  // const handleEmail = () => {
+  //   const email = "info@baytix.net"; 
+  //   const subject = "";
+  //   const body = "";
+  //   const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  //   window.location.href = mailtoLink;
+  // };
 
 
   return (
@@ -37,17 +37,21 @@ const FloatingButton = () => {
           <img src="/assets/call-ico.png" alt="Call" width={20} height={20} />
           Call
         </button> */}
-        <button onClick={handleEmail}>
-          <img src="/assets/email-ico.png" alt="WhatsApp" width={20} height={20} />
-          Email
+        <button onClick={handleSupport}>
+          <img src="/assets/support-ico.png" alt="Help" width={20} height={20} />
+          Support
         </button>
+        {/* <button onClick={handleEmail}>
+          <img src="/assets/email-ico.png" alt="Email" width={20} height={20} />
+          Email Us
+        </button> */}
         <button onClick={handleWhatsApp}>
           <img src="/assets/whatsapp-ico.png" alt="WhatsApp" width={20} height={20} />
           WhatsApp
         </button>
-        <button onClick={handleSupport}>
-          <img src="/assets/support-ico.png" alt="Help" width={20} height={20} />
-          Support
+        <button onClick={() => window.open('https://linktr.ee/Baytix', '_blank')}>
+          <img src="/assets/linktree-ico.png" alt="Socials" width={20} height={20} />
+          Socials
         </button>
       </div>
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/footer.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -10,20 +11,20 @@ const Footer = () => {
           <div>
             <h4>Services</h4>
             <ul>
-              <li><a href='/branding'>Branding</a></li>
-              <li><a href='/application-design'>Application Design</a></li>
-              <li><a href='/social-media-management'>Social Media Management</a></li>
-              <li><a href='/'>Marketing Ads</a></li>
-              <li><a href='/'>AI Integration</a></li>
+              <li><Link to="/branding">Branding</Link></li>
+              <li><Link to="/application-design">Application Design</Link></li>
+              <li><Link to="/social-media-management">Social Media Management</Link></li>
+              <li><Link to="/">Marketing Ads</Link></li>
+              <li><Link to="/">AI Integration</Link></li>
             </ul>
           </div>
           <div>
             <h4>Quick Links</h4>
             <ul>
-              <li><a href="/#home">Home</a></li>
-              <li><a href="/#services">Services</a></li>
-              <li><a href="/#portfolio">Portfolio</a></li>
-              <li><a href="/#reviews">Reviews</a></li>
+              <li><Link to="/#home">Home</Link></li>
+              <li><Link to="/#services">Services</Link></li>
+              <li><Link to="/#portfolio">Portfolio</Link></li>
+              <li><Link to="/#reviews">Reviews</Link></li>
             </ul>
           </div>
           {/* <div>
@@ -62,15 +63,15 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <a href="/">
-        <img src="/assets/baytixlogo-removebg-preview.png" 
-        alt="Digital Services Overview" className='logo' />
-      </a>
+            <img src="/assets/baytixlogo-removebg-preview.png"
+              alt="Digital Services Overview" className='logo' />
+          </a>
           <div className="footer-legal">
             <span>© 2025 BAYTIX. All rights reserved.</span>
             <div className="footer-links">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Refund Policy</a>
-              <a href="#">Terms of Service</a>
+              <Link to="/privacy-policy">Privacy Policy</Link>
+              <Link to="/refund-policy">Refund Policy</Link>
+              <Link to="/terms">Terms of Service</Link>
             </div>
           </div>
           <div className="footer-social">
@@ -83,9 +84,12 @@ const Footer = () => {
             <a href="https://www.instagram.com/baytix_social" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-instagram"></i>
             </a>
-            <a href="https://twitter.com/Baytix_social" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-twitter"></i>
+            <a href="https://twitter.com/Baytix_social" aria-label="X (formerly Twitter)" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 1200 1227">
+                <path d="M682.7 556.8 1141.6 0h-104L639.8 445.4 279.3 0H0l491.4 665.8L58.4 1227h104l429.1-495.4L933 1227h279.3z" />
+              </svg>
             </a>
+
             <a href="https://www.youtube.com/@Baytix_Social" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-youtube"></i>
             </a>

@@ -10,6 +10,9 @@ function ScrollToTop() {
       "/branding",
       "/web-development",
       "/social-media-management",
+      "/terms",
+      "/refund-policy",
+      "/privacy-policy",
     ];
   
     if (targetPaths.includes(pathname)) {

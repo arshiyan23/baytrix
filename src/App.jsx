@@ -15,6 +15,10 @@ import SupportSection from './components/SupportSection';
 import TawkMessenger from './components/TawkMessenger';
 import NumStats from './components/NumStats';
 import PromoPopUp from './components/PromoPopUp';
+import TermsAndConditions from './pages/TermsAndConditions';
+import VideoVouch from './components/VideoVouch';
+import RefundPolicy from './pages/RefundPolicy';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 // Put useLocation inside a child component rendered within Router
 function AppContent() {
@@ -62,7 +66,7 @@ function AppContent() {
 
   return (
     <>
-    <PromoPopUp />
+      <PromoPopUp />
       <OfferBanner />
       <Navbar />
       <Routes>
@@ -70,9 +74,13 @@ function AppContent() {
         <Route path="/application-design" element={<ApplicationDesign />} />
         <Route path="/branding" element={<Branding />} />
         <Route path="/social-media-management" element={<SocialMediaManagement />} />
+        <Route path="/terms" element={<TermsAndConditions />} />
+        <Route path="/refund-policy" element={<RefundPolicy />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
       <TawkMessenger />
       <FloatingButton />
+      <VideoVouch />
       {isHomePage &&
         <NumStats
           backgroundText="NON-STOP"
