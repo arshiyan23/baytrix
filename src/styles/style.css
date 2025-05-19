@@ -25,19 +25,17 @@ header {
     padding: 20px 40px;
     position: relative;
     top: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     /* z-index: 1000; */
 }
 
 .logo {
-    /* font-size: 2rem; */
-    /* font-weight: bold; */
-    /* color: white; */
-    /* text-decoration: none; */
-    height: 20px;
+    height: 18px;
+    /* transition: all 0.3s ease; */
 }
 
-.logo:hover{
-    height: 20px;
+.logo:hover {
+    height: 18px;
     cursor: pointer;
 }
 
@@ -61,7 +59,8 @@ nav ul li a {
 
 nav ul li a:hover {
     border-radius: 5px;
-    color: rgb(195, 195, 195);
+    /* color: rgb(195, 195, 195); */
+    background-color: #542e80;
 }
 
 /* Hero Section */

@@ -30,6 +30,10 @@ const FloatingButton = () => {
           Call
         </button> */}
         <button onClick={handleWhatsApp}>
+          <img src="/assets/email-ico.png" alt="WhatsApp" width={20} height={20} />
+          Email
+        </button>
+        <button onClick={handleWhatsApp}>
           <img src="/assets/whatsapp-ico.png" alt="WhatsApp" width={20} height={20} />
           WhatsApp
         </button>
