@@ -25,7 +25,7 @@ const SupportSection = () => {
                         <li>✔️ Multilingual support covering 15+ languages</li>
                         <li>✔️ Average response time under 90 seconds</li>
                     </ul>
-                    <button className="support-button" onClick={handleSupport}>Get Support</button>
+                    <button className="support-button" onClick={handleSupport}>GET SUPPORT</button>
                 </div>
                 <div className="support-illustration">
                     <div className="chat-window">

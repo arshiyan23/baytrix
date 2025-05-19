@@ -33,9 +33,9 @@
 
 /* Shrink height & padding when showing thank-you message */
 .popup-container.compact-mode {
-    max-height: 360px;
-    max-width: 400px;
-    padding: 1.5rem;
+    max-height: 300px;
+    max-width: 300px;
+    padding: 0;
 }
 
 
@@ -174,12 +174,14 @@
 }
 
 .popup-panel.thank-you-mode {
-    padding: 2rem 1rem;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
-    transition: height 0.4s ease, padding 0.4s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  padding: 1rem;
+  transition: height 0.4s ease, padding 0.4s ease;
 }
+
 
 .thank-you-wrapper {
     display: flex;
@@ -227,19 +229,30 @@
         align-items: center;
         justify-content: space-between;
     }
+
     .popup-text {
         flex: 1;
         padding-right: 1rem;
     }
+
     .popup-image {
         flex: 1;
         text-align: center;
+    }
+
+    .popup-container:not(.first-panel-mode) {
+        width: 35%;
     }
 }
 
 @media (max-width: 768px) {
     .popup-container.first-panel-mode {
         max-height: 700px;
+        padding: 1.5rem 1rem;
+    }
+
+    .popup-container {
+        max-height: 450px;
         padding: 1.5rem 1rem;
     }
 }

@@ -86,7 +86,7 @@ const Footer = () => {
             <a href="https://twitter.com/Baytix_social" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-twitter"></i>
             </a>
-            <a href="https://www.youtube.com/channel/Baytix_social" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.youtube.com/@Baytix_Social" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-youtube"></i>
             </a>
           </div>

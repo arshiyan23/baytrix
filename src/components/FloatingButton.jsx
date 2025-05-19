@@ -21,6 +21,14 @@ const FloatingButton = () => {
     }
   };
 
+  const handleEmail = () => {
+    const email = "info@baytix.net"; 
+    const subject = "";
+    const body = "";
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
+  };
+
 
   return (
     <div className="floating-btn-wrapper">
@@ -29,7 +37,7 @@ const FloatingButton = () => {
           <img src="/assets/call-ico.png" alt="Call" width={20} height={20} />
           Call
         </button> */}
-        <button onClick={handleWhatsApp}>
+        <button onClick={handleEmail}>
           <img src="/assets/email-ico.png" alt="WhatsApp" width={20} height={20} />
           Email
         </button>

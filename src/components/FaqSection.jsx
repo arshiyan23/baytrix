@@ -26,7 +26,7 @@ const FAQSection = () => {
           <br />
           <span> Get in touch with our experts to learn more about our offerings.</span>{" "}
           <button className="faq-contact-button" onClick={() => setShowScheduleCall(true)}>
-            Book Now
+            BOOK NOW
           </button>
         </>
       ),
