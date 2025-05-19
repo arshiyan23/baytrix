@@ -13,14 +13,56 @@ import FaqSection from './components/FaqSection';
 import PieStats from './components/PieStats';
 import SupportSection from './components/SupportSection';
 import TawkMessenger from './components/TawkMessenger';
+import NumStats from './components/NumStats';
+import PromoPopUp from './components/PromoPopUp';
 
 // Put useLocation inside a child component rendered within Router
 function AppContent() {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
+  const statsData = [
+    {
+      id: "clients",
+      icon: "/assets/icon-users.png",
+      value: "0",
+      targetValue: "32+",
+      label: "Clients Served",
+    },
+    {
+      id: "projects",
+      icon: "/assets/icon-projects.png",
+      value: "0",
+      targetValue: "140+",
+      label: "Projects completed",
+    },
+    {
+      id: "exp",
+      icon: "/assets/icon-years.png",
+      value: "0",
+      targetValue: "10+",
+      label: "Years of Experience",
+    },
+    {
+      id: "retention",
+      icon: "/assets/icon-retention.png",
+      value: "0%",
+      targetValue: "100%",
+      label: "Retention Rate",
+    },
+    {
+      id: "reviewsCount",
+      icon: "/assets/icon-reviews.png",
+      value: "0%",
+      targetValue: "10K+",
+      label: "Reviews Received",
+    },
+  ];
+
+
   return (
     <>
+    <PromoPopUp />
       <OfferBanner />
       <Navbar />
       <Routes>
@@ -31,8 +73,14 @@ function AppContent() {
       </Routes>
       <TawkMessenger />
       <FloatingButton />
-      {isHomePage && <PieStats />}
-      {/* Show PieStats only on Home page */}
+      {isHomePage &&
+        <NumStats
+          backgroundText="NON-STOP"
+          foregroundText="POWERING YOUR GROWTH"
+          description="We build reliable, scalable digital solutions that help your business move faster, reach further, and grow stronger."
+          statsData={statsData}
+        />}
+      {/* Show NumStats only on Home page */}
       <SupportSection />
       <FaqSection />
       <Footer />
