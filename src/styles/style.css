@@ -159,6 +159,7 @@ nav ul li a:hover {
     text-decoration: none;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-weight: 600;
 }
 
 .cta-button:hover {

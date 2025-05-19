@@ -56,7 +56,8 @@ const Home = () => {
       <section id="home" className="hero">
         <div className="hero-content">
           <div className="hero-text">
-            <h1>Personalized Digital Business Solutions</h1>
+            {/* <h1>Personalized Digital Business Solutions</h1> */}
+            <h1>PERSONALIZED DIGITAL BUSINESS SOLUTIONS</h1>
             <p>
               Everything you need to digitally grow any business
               <br />—all in one place.
@@ -65,7 +66,7 @@ const Home = () => {
               className="cta-button"
               onClick={() => setShowScheduleCall(true)}
             >
-              Book A Free Consultation
+              BOOK A FREE CONSULTATION
             </button>
           </div>
 

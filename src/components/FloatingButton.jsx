@@ -11,9 +11,9 @@ const FloatingButton = () => {
     window.open(url, "_blank");
   };
 
-  const handleCall = () => {
-    window.location.href = "tel:+919999999999";
-  };
+  // const handleCall = () => {
+  //   window.location.href = "tel:+919999999999";
+  // };
 
   const handleSupport = () => {
     if (window.Tawk_API && typeof window.Tawk_API.maximize === 'function') {
@@ -25,10 +25,10 @@ const FloatingButton = () => {
   return (
     <div className="floating-btn-wrapper">
       <div className={`floating-options ${open ? "show-options" : ""}`}>
-        <button onClick={handleCall}>
+        {/* <button onClick={handleCall}>
           <img src="/assets/call-ico.png" alt="Call" width={20} height={20} />
           Call
-        </button>
+        </button> */}
         <button onClick={handleWhatsApp}>
           <img src="/assets/whatsapp-ico.png" alt="WhatsApp" width={20} height={20} />
           WhatsApp

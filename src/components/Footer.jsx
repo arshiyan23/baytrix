@@ -74,19 +74,19 @@ const Footer = () => {
             </div>
           </div>
           <div className="footer-social">
-            <a href="https://www.linkedin.com/company/baytix" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/company/baytixsocial/about/?viewAsMember=true" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-linkedin-in"></i>
             </a>
-            <a href="https://www.facebook.com/baytix" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/baytix_social" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-facebook-f"></i>
             </a>
-            <a href="https://www.instagram.com/bay.tix" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/baytix_social" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-instagram"></i>
             </a>
-            <a href="https://twitter.com/baytix" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+            <a href="https://twitter.com/Baytix_social" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-twitter"></i>
             </a>
-            <a href="https://www.youtube.com/channel/baytix" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.youtube.com/channel/Baytix_social" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-youtube"></i>
             </a>
           </div>

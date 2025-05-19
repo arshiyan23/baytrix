@@ -25,7 +25,8 @@ const OfferBanner = () => {
         <>
             <div className="offer-banner">
                 <div className="offer-content">
-                    Claim your exclusive offer to book a FREE 30 mins consultation
+                    Book your FREE 30 mins consultation now!
+                    {/* FREE 30 MINUTE CONSULTATION! */}
                     <button
                         onClick={() => setShowScheduleCall(true)}
                         className="offer-btn">

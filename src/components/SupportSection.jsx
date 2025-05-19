@@ -14,7 +14,7 @@ const SupportSection = () => {
         <>
             <div className="support-wrapper" id="support">
                 <ProcessHeading
-                    foregroundText="INSTANT SUPPORT"
+                    foregroundText="LIVE SUPPORT"
                     backgroundText="24/7 HELP"
                     description="We're here around the clock to answer your questions and solve issues fast — no waiting, no worries."
                 />
