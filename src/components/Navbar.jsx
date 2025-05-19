@@ -22,17 +22,27 @@ const Navbar = () => {
 
   return (
     <header>
-      <a href="/">
-        <img src="/assets/baytixlogo-removebg-preview.png" 
-        alt="Digital Services Overview" className='logo' />
-      </a>
-      {/* <a href="/" className="logo"></a> */}
+      <Link to="/">
+        <img
+          src="/assets/baytixlogo-removebg-preview.png"
+          alt="Digital Services Overview"
+          className="logo"
+        />
+      </Link>
       <nav>
         <ul id="nav-links">
-          <li><a href="/#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>
-          <li><a href="/#services" onClick={(e) => handleNavClick(e, 'services')}>Services</a></li>
-          <li><a href="/#portfolio" onClick={(e) => handleNavClick(e, 'portfolio')}>Portfolio</a></li>
-          <li><a href="/#support" onClick={(e) => handleNavClick(e, 'support')}>Support</a></li>
+          <li>
+            <Link to="/#home" onClick={(e) => handleNavClick(e, 'home')}>Home</Link>
+          </li>
+          <li>
+            <Link to="/#services" onClick={(e) => handleNavClick(e, 'services')}>Services</Link>
+          </li>
+          <li>
+            <Link to="/#portfolio" onClick={(e) => handleNavClick(e, 'portfolio')}>Portfolio</Link>
+          </li>
+          <li>
+            <Link to="/#support" onClick={(e) => handleNavClick(e, 'support')}>Support</Link>
+          </li>
         </ul>
       </nav>
     </header>
