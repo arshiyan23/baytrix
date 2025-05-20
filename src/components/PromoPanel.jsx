@@ -1,20 +1,8 @@
 // File: components/PromoPanel.jsx
-import React, { useState, useEffect } from 'react';
 import "../styles/promo-panel.css";
 import GlobalTimer from "./GlobalTimer";
 
 const PromoPanel = ({ onClaim }) => {
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    // Initial check
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-
-    // Update on resize
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-  
   return (
     <div className="popup-panel">
       <div className="popup-text">
@@ -31,13 +19,16 @@ const PromoPanel = ({ onClaim }) => {
           <GlobalTimer />
         </div>
       </div>
-      <div className="popup-image">
-        <img
-          src={isMobile ? "/assets/website-promo2.png" : "/assets/website-promo.png"}
-          alt="Get Started Illustration"
-          loading="lazy"
-        />
-      </div>
+     <div className="popup-image">
+  <picture>
+    <source media="(max-width: 767px)" srcSet="/assets/website-promo2.png" />
+    <img
+      src="/assets/website-promo.png"
+      alt="Get Started Illustration"
+      loading="lazy"
+    />
+  </picture>
+</div>
     </div>
   )
 }
