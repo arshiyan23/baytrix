@@ -57,8 +57,10 @@ const FloatingButton = () => {
           onClick={() => setOpen(!open)}
           aria-label="Toggle Floating Button"
         >
+          {!open && <span className="floating-offer-badge main-badge">+1</span>}
           {open ? "×" : <img src="/assets/hamburger-ico.png" alt="Open Help" width={22} height={22} />}
         </button>
+
       </div>
       {showPromo && (
         <PromoPopUp

@@ -22,8 +22,12 @@
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
-  pointer-events: auto;
-  /* Allows button to be clickable */
+  pointer-events: auto; /* Allows button to be clickable */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
 
 .pulse {
@@ -95,7 +99,6 @@
 }
 
 /* floating-offer button  */
-/* Updated bounce animation that keeps X offset */
 @keyframes bounceWithIndent {
 
   0%,
@@ -108,23 +111,22 @@
   }
 }
 
-.floating-offer-btn {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background-color: white;
-  color: #333;
-  border: 1px solid #ddd;
-  border-radius: 20px;
-  padding: 8px 12px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
-  animation: bounceWithIndent 1.8s infinite ease-in-out;
-  min-width: max-content;
+@keyframes bounceBadge {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
 }
 
+.floating-offer-btn {
+  font-weight: bold;
+  animation: bounceWithIndent 1s infinite ease-in-out;
+}
 
 .floating-offer-btn:hover {
   background-color: #f0f0f0;
