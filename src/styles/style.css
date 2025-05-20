@@ -75,6 +75,30 @@ nav ul li a:hover {
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
+.hero-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.06;
+    /* Optional: adjust for subtle background */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(115, 73, 172, 0.6);
+    /* same purple with transparency */
+    z-index: 1;
+}
+
 .hero-content {
     display: flex;
     flex-direction: row;
@@ -86,6 +110,8 @@ nav ul li a:hover {
     position: relative;
     z-index: 2;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-text {
@@ -94,7 +120,8 @@ nav ul li a:hover {
     text-align: left;
     animation: fadeZoomIn 1.2s ease-out both;
     min-width: 300px;
-    position: relative; /* Important */
+    position: relative;
+    /* Important */
 }
 
 .hero-text h1 {
@@ -125,7 +152,8 @@ nav ul li a:hover {
     position: absolute;
     bottom: 0px;
     left: 0;
-    padding-left: 40px; /* match hero-content padding */
+    padding-left: 40px;
+    /* match hero-content padding */
     color: white;
     font-size: 0.8rem;
     font-weight: 600;
