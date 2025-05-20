@@ -1,0 +1,42 @@
+/* File: styles/thanks.css */
+.popup-panel.thank-you-mode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  padding: 1rem;
+  transition: height 0.4s ease, padding 0.4s ease;
+}
+.thank-you-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+.thank-you-image {
+  width: 100px;
+  height: auto;
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeInScale 0.4s ease forwards;
+}
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.thank-you-message {
+  color: #7349ac;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}

@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect, useState } from "react";
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -24,6 +25,20 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 function AppContent() {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const [showPopup, setShowPopup] = useState(false);
+
+  //logic for promo pop up 
+  useEffect(() => {
+    const alreadyShown = localStorage.getItem("promoPopupShown");
+    if (!alreadyShown) {
+      const timer = setTimeout(() => {
+        setShowPopup(true);
+        localStorage.setItem("promoPopupShown", "true");
+      }, 2500);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
 
   const statsData = [
     {
@@ -66,7 +81,7 @@ function AppContent() {
 
   return (
     <>
-      <PromoPopUp />
+      <PromoPopUp visible={showPopup} onClose={() => setShowPopup(false)} />
       <OfferBanner />
       <Navbar />
       <Routes>
