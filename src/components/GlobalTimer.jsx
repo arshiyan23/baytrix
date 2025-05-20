@@ -3,7 +3,7 @@ import '../styles/global-timer.css';
 
 const GlobalTimer = () => {
     const [timeLeft, setTimeLeft] = useState(null);
-    const intervalRef = useRef(null); // 👈 important
+    const intervalRef = useRef(null);
     let offerStartUTC = new Date("2025-05-19T00:00:00Z").getTime();
     let offerEndUTC = offerStartUTC + 7 * 24 * 60 * 60 * 1000;
 
@@ -24,9 +24,9 @@ const GlobalTimer = () => {
 
         const fetchUTCTime = async () => {
             try {
-                const res = await fetch("https://timeapi.io/api/Time/current/zone?timeZone=UTC");
+                const res = await fetch("https://time-fetch-api-throbbing-water-f428.baytix-net.workers.dev/");
                 const data = await res.json();
-                const serverTimeUTC = new Date(data.dateTime + "Z").getTime();
+                const serverTimeUTC = new Date(data.utc).getTime(); // 👈 using your API's "utc" field
                 const localTime = Date.now();
                 const utcOffset = serverTimeUTC - localTime;
                 startTicking(utcOffset);
@@ -38,7 +38,7 @@ const GlobalTimer = () => {
 
         fetchUTCTime();
 
-        return () => clearInterval(intervalRef.current); // 👈 ensure cleanup
+        return () => clearInterval(intervalRef.current);
     }, []);
 
     const formatTime = (ms) => {
