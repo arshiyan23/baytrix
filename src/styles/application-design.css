@@ -273,13 +273,12 @@
 
   .success-desc-txt {
     align-items: center;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0px 30px;
   }
 
   .success-container {
     justify-content: center;
-    gap: 60px;
+    gap: 20px;
     padding-top: 0px;
   }
 }
@@ -376,6 +375,8 @@
   .app-intro-container {
     flex-direction: column;
     text-align: center;
+    padding: 40px;
+    flex-wrap: nowrap;
   }
 
   .intro-text {

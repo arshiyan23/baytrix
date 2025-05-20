@@ -36,29 +36,6 @@ function ApplicationDesign() {
     },
   ];
 
-  //features section 
-  const featureList = [
-    {
-      title: "Mobile Apps",
-      desc: "We design and develop high-performance iOS and Android mobile applications tailored to your business needs. From delivery and booking platforms to internal CRMs, our apps are intuitive, secure, and scalable to support your growth across devices.",
-      image: "/assets/port1.png",
-    },
-    {
-      title: "Webapps",
-      desc: "Our team builds robust, scalable browser-based applications including dashboards, SaaS platforms, and enterprise tools. We prioritize performance, user experience, and integration with third-party services to ensure a seamless digital workflow.",
-      image: "/assets/port4.png",
-    },
-    {
-      title: "Websites",
-      desc: "We craft responsive, SEO-optimized websites that elevate your online presence. Whether it’s a landing page or a full brand site, we blend design and functionality to engage users and drive conversions on every screen size.",
-      image: "/assets/port1.png",
-    },
-    {
-      title: "App Integration",
-      desc: "Maximize productivity with seamless integrations for tools like Zoho, Office 365, Slack, and more. We handle everything from setup and configuration to automation and support, helping your apps work together smarter.",
-      image: "/assets/port4.png",
-    },
-  ];
 
   //schedule a meeting section
   const [showScheduleCall, setShowScheduleCall] = useState(false);
@@ -151,28 +128,6 @@ function ApplicationDesign() {
   ];
 
 
-  const testimonialsData = [
-    {
-      image: "/assets/emiway-bantai-records.png",
-      name: "Emiway Bantai",
-      role: "(Founder, Bantai Records)",
-      description: "The service was excellent and truly exceeded expectations.",
-    },
-    {
-      image: "/assets/sehaj-gowash.png",
-      name: "Sehajpal Singh",
-      role: "(Founder & CEO, GoWash)",
-      description: "Amazing experience from start to finish!",
-    },
-    {
-      image: "/assets/tamer-compass.png",
-      name: "Tamer Huwaidi",
-      role: "(Co-Founder, Compass)",
-      description: "Highly recommend them to anyone seeking quality.",
-    },
-  ];
-
-
   return (
     <>
       <section className="app-intro-section">
@@ -194,7 +149,7 @@ function ApplicationDesign() {
         </div>
       </section>
 
-      <svg
+      {/* <svg
         className="intro-wave"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 100"
@@ -204,7 +159,7 @@ function ApplicationDesign() {
           d="M0,0 C480,100 960,0 1440,100 L1440,0 L0,0 Z"
           className="app-curve"
         />
-      </svg>
+      </svg> */}
 
 
       {/* feature section */}
@@ -220,7 +175,12 @@ function ApplicationDesign() {
 
 
       <section className="app-service-section">
-        <ProcessHeading backgroundText="STAGES" foregroundText="DEVELOPMENT PROCESS" foregroundTextColor='#7349ac' textStrokeOpacity='0.05' />
+        <ProcessHeading
+          backgroundText="PROCESS"
+          foregroundText="DEVELOPMENT STAGES"
+          foregroundTextColor='#7349ac'
+          textStrokeOpacity='0.05'
+        />
         <h2 className="section-heading"></h2>
         <div className="timeline-container">
           {stages.map((stage, i) => (
@@ -240,11 +200,12 @@ function ApplicationDesign() {
 
 
       <section className="post-launch-section">
-        <ProcessHeading 
-        backgroundText="SUPPORT" 
-        foregroundText="POST-LAUNCH" 
-        foregroundTextColor='white' 
-        description='Reliable after-sales support to keep your apps running smoothly and up to date.'
+        <ProcessHeading
+          backgroundText="SUPPORT"
+          foregroundText="POST-LAUNCH"
+          foregroundTextColor='white'
+          backgroundTextFill='#7349ac'
+          description='Reliable after-sales support to keep your apps running smoothly and up to date.'
         />
         <div className='post-launch-section-space'></div>
         <div className="post-launch-wrapper">
@@ -320,11 +281,13 @@ function ApplicationDesign() {
 
       <section className="success-section">
         <div className="success-wrapper">
-          <ProcessHeading backgroundText="NON-STOP" foregroundText="POWERING YOUR GROWTH" />
-          <p className='success-desc-txt'>
-            We build reliable, scalable digital solutions that help your
-            business move faster, reach further, and grow stronger.
-          </p>
+          <ProcessHeading 
+          backgroundText="NON-STOP" 
+          foregroundText="POWERING YOUR GROWTH" 
+          backgroundTextFill='#f5f0ff'
+          description='We build reliable, scalable digital solutions that help your
+            business move faster, reach further, and grow stronger.'
+          />
           <div className="success-container">
             <div className="success-item">
               <img src="/assets/icon-apps.png" alt="Apps" className="success-icon" />

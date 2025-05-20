@@ -19,6 +19,7 @@ const GalleryScroller = () => {
         backgroundText="SHOWCASE"
          foregroundText="CREATIVE HIGHLIGHTS" 
          foregroundTextColor='white'
+         backgroundTextFill='#7349ac'
          description='Discover a selection of our standout projects, showcasing creativity and impactful results. See how we turn ideas into reality.'
          />
       <div

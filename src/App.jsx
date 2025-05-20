@@ -100,7 +100,6 @@ function AppContent() {
         <NumStats
           backgroundText="NON-STOP"
           foregroundText="POWERING YOUR GROWTH"
-          description="We build reliable, scalable digital solutions that help your business move faster, reach further, and grow stronger."
           statsData={statsData}
         />}
       {/* Show NumStats only on Home page */}

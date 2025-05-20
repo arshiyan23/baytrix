@@ -2,7 +2,7 @@
   background: #f5f0ff;
   text-align: center;
   box-sizing: border-box;
-  padding-bottom: 50px;
+  padding: 50px 0px;
 }
 
 .carousel-content-wrapper {
@@ -26,13 +26,6 @@
   min-width: 280px;
   display: none;
   justify-content: center;
-}
-
-.carousel-header p {
-  color: #555;
-  max-width: 700px;
-  margin: 0 auto 40px;
-  font-size: 16px;
 }
 
 .carousel-wrapper {
@@ -203,7 +196,7 @@
 
 
 /* Responsive */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .carousel-section {
     padding: 40px 15px;
   }
@@ -231,4 +224,4 @@
   .feature-card p {
     font-size: 14px;
   }
-}
+} */

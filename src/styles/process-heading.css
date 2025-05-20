@@ -3,26 +3,34 @@
   text-align: center;
   margin-bottom: 4rem;
   padding: 0 1rem;
-  overflow-wrap: break-word;
   max-width: 100%;
 }
 
+/* grid overlay so h2 & h3 sit exactly on top of each other */
+.process-heading-stack {
+  display: grid;
+  place-items: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+
 .process-background {
+  grid-area: 1 / 1;
   font-size: 8vw;
   font-weight: 800;
-  opacity: 0.05;
   margin: 0;
-  position: relative;
-  z-index: 1;
   letter-spacing: 2px;
-  color: transparent;
+  opacity: 0.8;
+  /* adjust overall opacity if desired */
+  z-index: 1;
 }
 
 .process-foreground {
+  grid-area: 1 / 1;
   font-size: 2rem;
   font-weight: 800;
-  margin-top: -6.5vw;
-  position: relative;
+  margin: 0;
+  white-space: nowrap;
   z-index: 2;
 }
 
@@ -31,24 +39,25 @@
   font-weight: 400;
   max-width: 700px;
   margin: 1.5rem auto 0;
-  margin-top: 40px;
-  margin-bottom: 0px;
-  color: #444;
   line-height: 1.6;
-  z-index: 2;
   position: relative;
   text-align: center;
   padding: 0 1rem;
+  z-index: 2;
 }
 
-/* Responsive tweak */
+/* Responsive tweaks */
 @media (max-width: 768px) {
+  .process-heading-container {
+    margin-bottom: 2rem;
+  }
+
   .process-background {
     font-size: 50px;
   }
 
   .process-foreground {
-    font-size: 22px;
+    font-size: 16px;
   }
 
   .process-description {

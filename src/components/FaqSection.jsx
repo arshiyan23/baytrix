@@ -80,6 +80,7 @@ const FAQSection = () => {
           backgroundText="KNOW MORE"
           foregroundText="FREQUENTLY ASKED QUESTIONS"
           foregroundTextColor="white"
+          backgroundTextFill="#7349ac"
           description="Find answers to the most common questions about our services, processes, and support. If you need more details, our team is always ready to help!"
         />
         <div className="accordion">

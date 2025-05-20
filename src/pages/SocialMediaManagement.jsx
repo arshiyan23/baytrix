@@ -158,7 +158,7 @@ function SocialMediaManagement() {
         </div>
       </section>
 
-      <svg
+      {/* <svg
         className="smm-wave"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 100"
@@ -168,7 +168,7 @@ function SocialMediaManagement() {
           d="M0,0 C480,100 960,0 1440,100 L1440,0 L0,0 Z"
           className="smm-curve"
         />
-      </svg>
+      </svg> */}
 
       <section className="digital-solutions-section">
         <ProcessHeading
@@ -283,10 +283,11 @@ function SocialMediaManagement() {
           <ProcessHeading
             backgroundText="REACH METRICS"
             foregroundText="SOCIAL MEDIA PERFORMANCE"
+            backgroundTextFill="#f5f0ff"
             description="Our social campaigns are designed to increase visibility, boost interaction, and build strong audience connections."
           />
           <p className="success-desc-txt">
-            
+
           </p>
           <div className="success-container">
             <div className="success-item">

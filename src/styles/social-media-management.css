@@ -3,7 +3,7 @@
   background: #7349ac;
   color: white;
   position: relative;
-  /* padding: 40px; */
+  padding: 40px;
 }
 
 .smm-hero-content {
@@ -251,10 +251,6 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .smm-hero-section {
-    padding: 40px;
-  }
-
   .smm-hero-content {
     flex-direction: column-reverse;
     text-align: center;
