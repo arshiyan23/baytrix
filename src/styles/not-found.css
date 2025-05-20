@@ -1,0 +1,79 @@
+/* Wrapper to isolate styles */
+.notfound-wrapper {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notfound-container {
+  text-align: center;
+  color: #7349ac;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  max-width: 480px;
+}
+
+.notfound-image {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.notfound-container h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.notfound-container p {
+  max-width: 100%;
+  width: 90vw;
+  box-sizing: border-box;
+  margin: 1rem 0;
+  color: #666;
+}
+
+.notfound-container a {
+  text-decoration: none;
+  color: #7349ac;
+  padding: 0.75rem 1.5rem;
+  display: inline-block;
+  transition: background-color 0.2s ease;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid #7349ac;
+  border-radius: 8px;
+}
+
+.notfound-container a:hover {
+  color: #5b368f;
+  border: 2px solid #5b368f;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .notfound-image {
+    max-width: 200px;
+  }
+
+  .notfound-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .notfound-container p {
+    width: 90vw;
+    font-size: 0.9rem;
+  }
+
+  .notfound-container a {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+}
