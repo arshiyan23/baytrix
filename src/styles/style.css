@@ -66,12 +66,9 @@ nav ul li a:hover {
 /* Hero Section */
 .hero {
     background-color: #7349ac;
+    color: white;
     position: relative;
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    padding: 100px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
@@ -79,22 +76,15 @@ nav ul li a:hover {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
     max-width: 1200px;
-    width: 100%;
-    padding: 0 40px;
-    position: relative;
-    z-index: 2;
+    margin: auto;
     flex-wrap: wrap;
+    animation: fadeZoomIn 1s ease-out both;
 }
 
 .hero-text {
     flex: 1;
-    color: white;
-    text-align: left;
-    animation: fadeZoomIn 1.2s ease-out both;
-    min-width: 300px;
-    position: relative; /* Important */
+    min-width: 280px;
 }
 
 .hero-text h1 {
@@ -115,23 +105,48 @@ nav ul li a:hover {
 }
 
 .hero-image img {
-    max-width: 100%;
-    height: auto;
-    animation: fadeZoomIn 2s ease-out both;
+    width: 100%;
+    max-width: 500px;
     /* margin: 40px 0px; */
 }
 
 .hero-bottom-text {
     position: absolute;
-    bottom: 0px;
+    bottom: 10px;
     left: 0;
-    padding-left: 40px; /* match hero-content padding */
     color: white;
     font-size: 0.8rem;
     font-weight: 600;
-    z-index: 2;
 }
 
+
+/* CTA Button */
+.cta-button {
+    background-color: white;
+    color: #7349ac;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 600;
+}
+
+.cta-button:hover {
+    background-color: rgb(203, 203, 203);
+    color: #7349ac;
+}
+
+@media (max-width: 768px) {
+    .hero{
+        padding: 40px;
+    }
+    .hero-content{
+        gap: 70px;
+    }
+}
 
 /* SVG Curve */
 /* .hero-wave {
@@ -147,28 +162,6 @@ nav ul li a:hover {
     fill: white;
 } */
 
-/* CTA Button */
-.cta-button {
-    /* background-color: #542e80; */
-    /* color: white; */
-    background-color: white;
-    color: #7349ac;
-    padding: 15px 25px;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-weight: 600;
-}
-
-.cta-button:hover {
-    /* background-color: #412363; */
-    background-color: rgb(203, 203, 203);
-    color: #7349ac;
-}
-
 /* Animation */
 @keyframes fadeZoomIn {
     0% {
@@ -183,11 +176,7 @@ nav ul li a:hover {
 }
 
 /* Responsive behavior */
-@media (max-width: 768px) {
-    .hero-image img {
-        margin: 40px 0px;
-    }
-}
+@media (max-width: 768px) {}
 
 /* Services */
 .services {
