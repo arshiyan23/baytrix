@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/video-vouch.css';
 import ProcessHeading from './ProcessHeading';
 
@@ -52,18 +52,28 @@ const testimonials = [
 const VideoVouch = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
+    const [fadeClass, setFadeClass] = useState('active');
 
     const { thumbnailSrc, videoSrc, quote, author, title, website } = testimonials[currentIndex];
 
-    const handlePrev = () => {
-        setIsPlaying(false);
-        setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+    const handleChangeIndex = (direction) => {
+        setFadeClass(''); // Trigger fade out
+        setTimeout(() => {
+            setIsPlaying(false);
+            setCurrentIndex((prev) => {
+                if (direction === 'prev') {
+                    return prev === 0 ? testimonials.length - 1 : prev - 1;
+                } else {
+                    return prev === testimonials.length - 1 ? 0 : prev + 1;
+                }
+            });
+            setFadeClass('active'); // Trigger fade in
+        }, 300); // Half of transition duration
     };
 
-    const handleNext = () => {
-        setIsPlaying(false);
-        setCurrentIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
-    };
+    useEffect(() => {
+        setFadeClass('active');
+    }, [currentIndex]);
 
     return (
         <div className="vouch-container" id='reviews'>
@@ -74,42 +84,46 @@ const VideoVouch = () => {
                 Hear from these business owners who trusted Baytix to bring their ideas to life.'
             />
             <div className='vouch-wrapper'>
-                <div className="vouch-image-section">
-                    {isPlaying ? (
-                        <video
-                            src={videoSrc}
-                            controls
-                            autoPlay
-                            className="vouch-image"
-                        />
-                    ) : (
-                        <>
-                            <img
-                                src={thumbnailSrc}
-                                alt={author}
+                <div className="vouch-image-section vouch-fade-slide-wrapper">
+                    <div className={`vouch-fade-slide ${fadeClass}`}>
+                        {isPlaying ? (
+                            <video
+                                src={videoSrc}
+                                controls
+                                autoPlay
                                 className="vouch-image"
                             />
-                            <div
-                                className="play-button-overlay"
-                                onClick={() => setIsPlaying(true)}
-                            >
-                                <PlayIcon />
-                            </div>
-                        </>
-                    )}
+                        ) : (
+                            <>
+                                <img
+                                    src={thumbnailSrc}
+                                    alt={author}
+                                    className="vouch-image"
+                                />
+                                <div
+                                    className="play-button-overlay"
+                                    onClick={() => setIsPlaying(true)}
+                                >
+                                    <PlayIcon />
+                                </div>
+                            </>
+                        )}
+                    </div>
                 </div>
 
                 <div className="vouch-content-section">
-                    <QuoteIcon />
-                    <p className="vouch-quote">{quote}</p>
-                    <p className="vouch-author">{author} <span className='vouch-title-span'>{title}</span></p>
-                    <p className="vouch-website">{website}</p>
+                    <div className={`vouch-fade-slide ${fadeClass}`}>
+                        <QuoteIcon />
+                        <p className="vouch-quote">{quote}</p>
+                        <p className="vouch-author">{author} <span className='vouch-title-span'>{title}</span></p>
+                        <p className="vouch-website">{website}</p>
+                    </div>
                     <div className="vouch-navigation">
-                        <button className="nav-arrow left-arrow" onClick={handlePrev}>
+                        <button className="nav-arrow left-arrow" onClick={() => handleChangeIndex('prev')}>
                             <ChevronLeftIcon />
                         </button>
                         <div className='nav-arrow-spacer'></div>
-                        <button className="nav-arrow right-arrow" onClick={handleNext}>
+                        <button className="nav-arrow right-arrow" onClick={() => handleChangeIndex('next')}>
                             <ChevronRightIcon />
                         </button>
                     </div>
