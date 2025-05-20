@@ -50,15 +50,9 @@ const Home = () => {
   return (
     <>
       <section id="home" className="hero">
-        {/* Background image behind everything */}
-        <img
-          src="/assets/bg-bg3.png"
-          alt="Background Illustration"
-          className="hero-bg-img"
-        />
-
         <div className="hero-content">
           <div className="hero-text">
+            {/* <h1>Personalized Digital Business Solutions</h1> */}
             <h1>PERSONALIZED DIGITAL BUSINESS SOLUTIONS</h1>
             <p>
               Everything you need to digitally grow any business
@@ -75,6 +69,9 @@ const Home = () => {
           <div className="hero-image">
             <img src="/assets/bg3.png" alt="Digital Services Overview" />
           </div>
+
+          {/* <p className="hero-bottom-text">TRUSTED BY TOP BRANDS</p> */}
+
         </div>
       </section>
 
