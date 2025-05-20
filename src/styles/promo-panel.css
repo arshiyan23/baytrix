@@ -1,6 +1,4 @@
-/* File: styles/promo-panel.css */
 .popup-panel {
-  /* remove width:50%; and let slider control slide sizing */
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -21,16 +19,28 @@
   margin-top: 1rem;
 }
 
+.popup-button,
+.global-timer-box {
+  padding: 0.75rem 1.2rem;
+  font-size: 1rem;
+  line-height: 1.2;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .popup-button {
   background-color: #7349ac;
   color: white;
   border: none;
   cursor: pointer;
-  padding: 0.75rem 1.2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 5px;
+  transition: background-color 0.3s;
 }
+
 .popup-button:hover {
   background-color: #542e80;
 }
@@ -46,15 +56,35 @@
     align-items: center;
     justify-content: space-between;
   }
+
   .popup-text {
     flex: 1;
     padding-right: 1rem;
   }
+
   .popup-image {
     flex: 1;
     text-align: right;
   }
+
   .popup-image img {
     max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .popup-button,
+  .global-timer-box {
+    padding: 0.75rem 1.2rem;
+    font-size: 0.8rem;
+    line-height: 1.2;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 }

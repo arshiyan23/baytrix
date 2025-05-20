@@ -12,3 +12,20 @@
   height: 100%;
   white-space: nowrap;
 }
+
+@media (max-width:768px) {
+  .global-timer-box {
+    background-color: #eae4ff;
+    color: #2d006c;
+    font-weight: 600;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    padding: 0.75rem 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+    white-space: nowrap;
+  }
+}
