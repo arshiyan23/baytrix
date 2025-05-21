@@ -18,18 +18,18 @@
   .brand-hero-img {
     width: 240px;
     max-width: 100%;
-    opacity: 0;
-    transform: translateX(50px);
-    animation: fadeInRight 1s forwards;
+    opacity: 1;
+    /* transform: translateX(50px); */
+    /* animation: fadeInRight 1s forwards; */
     animation-delay: 0.2s;
   }
   
   .brand-hero-text {
     max-width: 500px;
-    opacity: 0;
-    transform: translateX(-50px);
-    animation: fadeInLeft 1s forwards;
-    animation-delay: 0.2s;
+    opacity: 1;
+    /* transform: translateX(-50px); */
+    /* animation: fadeInLeft 1s forwards; */
+    /* animation-delay: 0.2s; */
   }
   
   .brand-hero-text h2 {

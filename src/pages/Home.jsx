@@ -4,6 +4,7 @@ import ServiceCard from '../components/ServiceCard';
 import ScheduleCall from '../components/ScheduleCall';
 import LogoSlider from '../components/LogoSlider';
 import GalleryScroller from '../components/GalleryScroller';
+import ProcessHeading from '../components/ProcessHeading';
 
 const Home = () => {
   const location = useLocation();
@@ -80,7 +81,12 @@ const Home = () => {
 
 
       <section id="services" className="services">
-        <h2>OUR SERVICES</h2>
+        <ProcessHeading
+        foregroundText='OUR SERVICES'
+        backgroundText='EXPERTISE' 
+        description='We empower businesses with innovative digital strategies that build strong identities, boost engagement, and drive measurable growth across platforms.
+'
+        />
         <div className="service-container">
           <ServiceCard
             imgSrc="/assets/branding.png"

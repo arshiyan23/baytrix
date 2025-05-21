@@ -22,7 +22,7 @@
   max-width: 500px;
   border-radius: 16px;
   margin-right: 80px;
-  animation: fadeZoomIn 1s ease-out both;
+  /* animation: fadeZoomIn 1s ease-out both; */
 }
 
 .intro-text {
@@ -30,7 +30,7 @@
   min-width: 300px;
   padding-left: 40px;
   color: white;
-  animation: fadeZoomIn 1s ease-out both;
+  /* animation: fadeZoomIn 1s ease-out both; */
 }
 
 .intro-text h2 {

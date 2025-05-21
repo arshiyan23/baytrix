@@ -1,12 +1,15 @@
 .vouch-container {
-  /* display: flex; */
   align-items: center;
   background-color: #ffffff;
   border-radius: 12px;
+  margin: 40px auto;
+  font-family: 'Arial', sans-serif;
+}
+
+.vouch-inner-content {
   padding: 30px;
   max-width: 1000px;
-  margin: 20px auto;
-  font-family: 'Arial', sans-serif;
+  margin: 0 auto;
 }
 
 .vouch-wrapper {

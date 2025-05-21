@@ -79,7 +79,7 @@ nav ul li a:hover {
     max-width: 1200px;
     margin: auto;
     flex-wrap: wrap;
-    animation: fadeZoomIn 1s ease-out both;
+    /* animation: fadeZoomIn 1s ease-out both; */
 }
 
 .hero-text {
@@ -183,12 +183,6 @@ nav ul li a:hover {
     padding: 60px 20px;
     background-color: #ffffff;
     text-align: center;
-}
-
-.services h2 {
-    font-size: 28px;
-    color: #6A4C9C;
-    margin-bottom: 40px;
 }
 
 .service-container {

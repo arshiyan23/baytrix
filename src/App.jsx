@@ -99,8 +99,8 @@ function AppContent() {
       <VideoVouch />
       {isHomePage &&
         <NumStats
-          backgroundText="NON-STOP"
-          foregroundText="POWERING YOUR GROWTH"
+          backgroundText="CREDIBILITY"
+          foregroundText="WHY CLIENTS TRUST US"
           statsData={statsData}
         />}
       {/* Show NumStats only on Home page */}

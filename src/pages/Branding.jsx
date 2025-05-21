@@ -87,7 +87,7 @@ function Branding() {
                     </div>
                 </div>
             </section>
-
+{/* 
             <svg
                 className="brand-wave"
                 xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +98,7 @@ function Branding() {
                     d="M0,0 C480,100 960,0 1440,100 L1440,0 L0,0 Z"
                     className="brand-curve"
                 />
-            </svg>
+            </svg> */}
 
             <section className="brand-feature-section">
                 <h2 className="section-heading">What We Shape For Your Brand</h2>
