@@ -4,6 +4,8 @@ import { useEffect, useState, useRef } from 'react';
 import HorizontalShowcaseSlider from '../components/HorizontalShowcaseSlider';
 import TestimonialSlider from '../components/TestimonialSlider';
 import FeatureCarousel from '../components/FeatureCarousel';
+import '../styles/application-design.css';
+
 
 
 function ApplicationDesign() {
@@ -134,9 +136,9 @@ function ApplicationDesign() {
         <div className="app-intro-container">
           <img src="/assets/app-dev-bg-2.png" alt="App Intro" className="intro-image" />
           <div className="intro-text">
-            <h2>Why Choose Our App Services?</h2>
+            <h2>APPLICATION DESIGN</h2>
             <p>
-              We combine strategy, design, and cutting-edge tech to deliver apps that
+              Why Choose Our App Services? <br/>We combine strategy, design, and cutting-edge tech to deliver apps that
               scale and delight users.
             </p>
             <button

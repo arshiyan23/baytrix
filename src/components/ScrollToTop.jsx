@@ -6,17 +6,18 @@ function ScrollToTop() {
   
   useEffect(() => {
     const targetPaths = [
-      "/branding",
-      "/application-design",
-      "/social-media-management",
-      "/marketing-ads",
-      "/ai-integration",
-      "/terms",
-      "/refund-policy",
-      "/privacy-policy",
+      // "/branding",
+      // "/application-design",
+      // "/social-media-management",
+      // "/marketing-ads",
+      // "/ai-integration",
+      // "/terms",
+      // "/refund-policy",
+      // "/privacy-policy",
+      // "/portfolio",
     ];
   
-    if (targetPaths.includes(pathname)) {
+    if (!(targetPaths.includes(pathname))) {
       const html = document.documentElement;
       const prevScroll = html.style.scrollBehavior;
       html.style.scrollBehavior = "auto";

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import "../styles/social-media-management.css";
 import ProcessHeading from "../components/ProcessHeading";
 import VerticalShowcaseSlider from "../components/VerticalShowcaseSlider";
-import TestimonialSlider from "../components/TestimonialSlider";
 import ScheduleCall from "../components/ScheduleCall";
 
 function SocialMediaManagement() {
@@ -144,7 +143,7 @@ function SocialMediaManagement() {
         <div className="smm-hero-content">
           <img src="/assets/smm-hero2.png" alt="Social Media" className="smm-hero-img" />
           <div className="smm-hero-text">
-            <h2>Master Social Media, Amplify Your Brand</h2>
+            <h2>SOCIAL MEDIA MANAGEMENT</h2>
             <p>
               From strategy to content to growth — we manage your presence across platforms so you can focus on your business.
             </p>

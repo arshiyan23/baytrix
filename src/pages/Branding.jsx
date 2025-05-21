@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import '../styles/branding.css';
 
 function getRandomBlobStyle() {
     const size = Math.floor(Math.random() * 60) + 40; // 40–100px
@@ -79,10 +80,10 @@ function Branding() {
                 <div className="brand-hero-container">
                     <img src="/assets/branding-intro2.png" alt="Branding Intro" className="brand-hero-img" />
                     <div className="brand-hero-text">
-                        <h2>Build a Brand, Not Just a Business</h2>
+                        <h2>BRANDING</h2>
                         <p>
-                            We help shape how the world sees your business — with stunning visuals,
-                            consistent messaging, and a distinct identity.
+                            We help you build a brand, not just a business — with stunning visuals,
+                            consistent messaging, and a unique identity.
                         </p>
                     </div>
                 </div>

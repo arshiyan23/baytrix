@@ -109,7 +109,7 @@ export default function FeatureCarousel() {
       <div className="carousel-header">
         <ProcessHeading 
         backgroundText="OUR APPS" 
-        foregroundText="SOLUTIONS WE OFFER"
+        foregroundText="WHAT WE OFFER"
         description="Tailored digital solutions for real-world business growth."
         backgroundTextFill="#f5f0ff"
         />

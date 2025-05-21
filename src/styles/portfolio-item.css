@@ -1,0 +1,193 @@
+.portfolio-item-detail-page {
+    font-family: 'Poppins', sans-serif;
+    color: #7349ac;
+    padding: 2rem 8%;
+    background: #fff;
+}
+
+/* Hero Section */
+.portfolio-item-detail-hero {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.portfolio-item-detail-image {
+    flex: 1 1 400px;
+}
+
+.portfolio-item-detail-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.portfolio-item-detail-info {
+    flex: 1 1 400px;
+}
+
+.portfolio-item-back-btn {
+    background: none;
+    border: none;
+    color: #555;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-item-back-btn:hover {
+    color: #000;
+}
+
+.portfolio-item-detail-info h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.portfolio-item-underline {
+    width: 60px;
+    height: 4px;
+    background: #7349ac;
+    margin: 0.5rem 0 1.5rem;
+}
+
+.portfolio-item-meta>div {
+    margin-bottom: 1.25rem;
+}
+
+.portfolio-item-meta h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.portfolio-item-meta p {
+    margin: 0.25rem 0 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #555;
+}
+
+/* Section Title */
+.portfolio-item-section-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.portfolio-item-section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #7349ac;
+    margin: 0.5rem auto 0;
+}
+
+/* Carousel Wrapper */
+.portfolio-item-related-carousel-wrapper {
+    position: relative;
+    overflow: visible;
+    /* Show arrows outside */
+    margin: 0 -60px;
+    /* Extend wrapper to accommodate arrows */
+    padding: 0 60px;
+    /* Align content within extended wrapper */
+}
+
+/* Carousel Track */
+.portfolio-item-related-carousel {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 1rem 0;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+}
+
+.portfolio-item-related-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Carousel Item */
+.portfolio-item-carousel-item {
+    flex: 0 0 calc((100% - 2rem) / 3);
+    scroll-snap-align: start;
+}
+
+.portfolio-item-carousel-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Navigation Arrows */
+.portfolio-item-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #7349ac;
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-item-arrow.left {
+    left: 0;
+    /* Positioned at the left edge of the extended wrapper */
+}
+
+.portfolio-item-arrow.right {
+    right: 0;
+    /* Positioned at the right edge of the extended wrapper */
+}
+
+.portfolio-item-arrow:hover {
+    background: #5d3c9c;
+}
+
+/* Responsive: show 1 item on mobile */
+@media (max-width: 768px) {
+    .portfolio-item-carousel-item {
+        flex: 0 0 100%;
+    }
+
+    /* Reset wrapper so arrows aren’t pushed off-screen */
+    .portfolio-item-related-carousel-wrapper {
+        margin: 0;
+        /* undo desktop’s -60px margin */
+        padding: 0;
+        /* undo desktop’s 60px padding */
+        overflow: visible;
+    }
+
+    /* Shrink arrows and pull them in from the edges */
+    .portfolio-item-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+    }
+
+    .portfolio-item-arrow.left {
+        left: 8px;
+        /* 8px from screen’s left edge */
+    }
+
+    .portfolio-item-arrow.right {
+        right: 8px;
+        /* 8px from screen’s right edge */
+    }
+}

@@ -1,0 +1,130 @@
+.portfolio-page {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+.portfolio-page-hero-portfolio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 8%;
+  background-color: #7349ac;
+  flex-wrap: wrap;
+}
+
+.hero-portfolio-content {
+  flex: 1;
+  min-width: 320px;
+  padding-right: 2rem;
+}
+
+.hero-portfolio-content h1 {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.hero-portfolio-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: white;
+
+  max-width: 600px;
+}
+
+.hero-portfolio-image {
+  flex: 1;
+  text-align: center;
+  min-width: 320px;
+}
+
+.hero-portfolio-image img {
+  max-width: 80%;
+  height: auto;
+}
+
+
+.stat-portfolio-pages {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.stat-portfolio-page-box {
+  flex: 1 1 200px;
+  padding: 2rem 1rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.stat-portfolio-page-box:hover {
+  transform: translateY(-5px);
+}
+
+.stat-portfolio-page-box img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1rem;
+}
+
+.stat-portfolio-page-box h2 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-portfolio-page-box p {
+  margin: 0;
+  font-size: 1rem;
+  color: white;
+}
+
+/* Parent card remains the same */
+.stat-portfolio-page-box.industries-box {
+  padding: 2rem 1rem; /* adjust if needed */
+}
+
+/* Flex container for the three stats */
+.industries-box .inner-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Each mini-stat */
+.inner-stat-item {
+  flex: 1;
+  text-align: center;
+}
+
+.inner-stat-item img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.5rem;
+}
+
+.inner-stat-item h3 {
+  font-size: 1.75rem;
+  color: white;
+  margin: 0.25rem 0;
+}
+
+.inner-stat-item p {
+  font-size: 0.9rem;
+  color: white;
+  margin: 0;
+}
+
+/* On very small screens, stack them */
+@media (max-width: 500px) {
+  .industries-box .inner-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+

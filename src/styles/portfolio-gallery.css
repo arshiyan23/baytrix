@@ -1,0 +1,143 @@
+.gallery-section {
+  padding: 3rem 8%;
+  background: #fff;
+}
+
+.gallery-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.gallery-nav-item {
+  background: none;
+  border: none;
+  font: 500 0.95rem 'Poppins', sans-serif;
+  color: #555;
+  padding: 0.25rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.gallery-nav-item:hover {
+  color: #7349ac;
+}
+
+.gallery-nav-item.active {
+  color: #7349ac;
+  border-bottom: 2px solid #7349ac;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Fade-slide animation */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* GALLERY ITEM */
+.gallery-item {
+  position: relative;
+  text-align: left;
+  opacity: 0;
+  animation: fadeSlideIn 0.6s ease forwards;
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+/* IMAGE + ZOOM */
+.gallery-item img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* TEXT BELOW IMAGE */
+.gallery-item h4 {
+  margin: 0.75rem 0 0.25rem;
+  font-size: 1.1rem;
+  color: #7349ac;
+}
+
+.gallery-item p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.gallery-item .image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.gallery-item .image-wrapper img {
+  margin-bottom: 0;
+}
+
+/* OVERLAY TINT ON HOVER */
+.gallery-item .overlay {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: bottom 0.4s ease;
+}
+
+.gallery-item:hover .overlay {
+  bottom: 0;
+}
+
+.gallery-item .overlay span {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* Stagger animation for nicer load effect */
+.gallery-item:nth-child(1) { animation-delay: 0ms; }
+.gallery-item:nth-child(2) { animation-delay: 100ms; }
+.gallery-item:nth-child(3) { animation-delay: 200ms; }
+.gallery-item:nth-child(4) { animation-delay: 300ms; }
+.gallery-item:nth-child(5) { animation-delay: 400ms; }
+.gallery-item:nth-child(6) { animation-delay: 500ms; }
+.gallery-item:nth-child(7) { animation-delay: 600ms; }
+.gallery-item:nth-child(8) { animation-delay: 700ms; }
+.gallery-item:nth-child(9) { animation-delay: 800ms; }
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .gallery-nav {
+    gap: 1rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}

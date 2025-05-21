@@ -169,7 +169,18 @@
   margin-bottom: 1rem;
   border: 1px solid #ddd;
   border-radius: 0.5rem;
-  overflow: hidden;
+  overflow: auto;
+  max-width: 100%;
+  /* max-height: 400px;  */
+}
+
+/* Target the iframe itself */
+.calendar-embed-container iframe {
+  min-width: 600px;  
+  /* height: 100%; */
+  width: 100%;
+  border: none;
+  display: block;
 }
 
 .illustration-wrapper {

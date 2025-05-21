@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/gallery-scroller.css';
 import ProcessHeading from './ProcessHeading';
+import { useNavigate } from 'react-router-dom';
 
 const topImages = [
   '/assets/port9.png', '/assets/port10.png', '/assets/port11.png', '/assets/port12.png',
@@ -13,15 +14,17 @@ const bottomImages = [
 const GalleryScroller = () => {
   const [hoveredRow, setHoveredRow] = useState(null);
 
+  const navigate = useNavigate();
+
   return (
-    <div className="gallery-wrapper" id="portfolio">
-        <ProcessHeading 
+    <div className="gallery-wrapper">
+      <ProcessHeading
         backgroundText="SHOWCASE"
-         foregroundText="CREATIVE HIGHLIGHTS" 
-         foregroundTextColor='white'
-         backgroundTextFill='#7349ac'
-         description='Discover a selection of our standout projects, showcasing creativity and impactful results. See how we turn ideas into reality.'
-         />
+        foregroundText="CREATIVE HIGHLIGHTS"
+        foregroundTextColor='white'
+        backgroundTextFill='#7349ac'
+        description='Discover a selection of our standout projects, showcasing creativity and impactful results. See how we turn ideas into reality.'
+      />
       <div
         className={`image-row-wrapper top ${hoveredRow === 'top' ? 'paused' : ''}`}
         onMouseLeave={() => setHoveredRow(null)}
@@ -35,7 +38,9 @@ const GalleryScroller = () => {
             >
               <img src={src} alt={`top-${idx}`} />
               {hoveredRow === 'top' && (
-                <button className="view-more-btn">View More</button>
+                <button className="view-more-btn" onClick={() => navigate('/portfolio')}>
+                  View More
+                </button>
               )}
             </div>
           ))}
@@ -55,7 +60,9 @@ const GalleryScroller = () => {
             >
               <img src={src} alt={`bottom-${idx}`} />
               {hoveredRow === 'bottom' && (
-                <button className="view-more-btn">View More</button>
+                <button className="view-more-btn" onClick={() => navigate('/portfolio')}>
+                  View More
+                </button>
               )}
             </div>
           ))}

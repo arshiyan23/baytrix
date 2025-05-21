@@ -22,6 +22,8 @@ import TermsAndConditions from './pages/TermsAndConditions';
 import VideoVouch from './components/VideoVouch';
 import RefundPolicy from './pages/RefundPolicy';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import Portfolio from './pages/Portfolio';
+import PortfolioItem from './components/PortfolioItem';
 
 // Put useLocation inside a child component rendered within Router
 function AppContent() {
@@ -97,13 +99,15 @@ function AppContent() {
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="/refund-policy" element={<RefundPolicy />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/portfolio/:id" element={<PortfolioItem />} />
       </Routes>
       <TawkMessenger />
       <FloatingButton />
       <VideoVouch />
       {isHomePage &&
         <NumStats
-          backgroundText="CREDIBILITY"
+          backgroundText="RELIABLE"
           foregroundText="WHY CLIENTS TRUST US"
           statsData={statsData}
         />}
