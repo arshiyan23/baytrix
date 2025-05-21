@@ -110,7 +110,7 @@ const Home = () => {
             imgSrc="/assets/marketing.png"
             title="Marketing Ads"
             desc="SEO to boost brand visibility, along with content, and PPC strategies."
-            link="marketing-campaigns"
+            link="marketing-ads"
           />
           <ServiceCard
             imgSrc="/assets/ai_automation.png"

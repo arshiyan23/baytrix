@@ -4,6 +4,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import ApplicationDesign from './pages/ApplicationDesign';
+import MarketingAds from './pages/MarketingAds';
+import AiIntegration from './pages/AiIntegration';
 import ContactUs from './components/ContactUs';
 import ScrollToTop from './components/ScrollToTop';
 import Branding from './pages/Branding';
@@ -87,9 +89,11 @@ function AppContent() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Navigate to="/" />} />
-        <Route path="/application-design" element={<ApplicationDesign />} />
         <Route path="/branding" element={<Branding />} />
+        <Route path="/application-design" element={<ApplicationDesign />} />
         <Route path="/social-media-management" element={<SocialMediaManagement />} />
+        <Route path="/marketing-ads" element={<MarketingAds />} />
+        <Route path="/ai-integration" element={<AiIntegration />} />
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="/refund-policy" element={<RefundPolicy />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />

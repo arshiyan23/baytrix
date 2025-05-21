@@ -6,10 +6,11 @@ function ScrollToTop() {
   
   useEffect(() => {
     const targetPaths = [
-      "/application-design",
       "/branding",
-      "/web-development",
+      "/application-design",
       "/social-media-management",
+      "/marketing-ads",
+      "/ai-integration",
       "/terms",
       "/refund-policy",
       "/privacy-policy",
