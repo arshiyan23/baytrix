@@ -6,7 +6,7 @@ const PromoPanel = ({ onClaim }) => {
   return (
     <div className="popup-panel">
       <div className="popup-text">
-        <h2>Get Your FREE Custom Website</h2>
+        <h2>Get Your FREE Custom Website Now !!</h2>
         <p>
           <strong>Ready to launch your online presence?</strong><br />
           For a limited time, claim your personalized website – absolutely <strong>FREE</strong>! Let our
