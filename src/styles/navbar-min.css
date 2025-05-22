@@ -1,0 +1,174 @@
+/* src/styles/navbar-min.css */
+
+/* === UTILITIES === */
+.hidden { display: none !important; }
+
+/* === HEADER & LOGO === */
+.min-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #7349ac;
+  padding: 35px 20px 14px;
+  position: relative;
+}
+.min-logo {
+  height: 22px;
+  cursor: pointer;
+}
+
+/* === HAMBURGER ICON (open) === */
+.min-hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2999;
+}
+.min-hamburger span {
+  background: white;
+  height: 3px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+/* Roll on click */
+.min-hamburger.rolling {
+  animation: roll 0.6s ease-in-out;
+}
+
+/* === SLIDE-IN NAV PANEL === */
+.min-nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 300px;
+  height: 100vh;
+  background-color: white;
+  color: #7349ac;
+  transition: right 0.4s ease-in-out, transform 0.4s ease-in-out;
+  transform: translateX(100%);
+  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+  padding-top: 60px;
+  z-index: 4000;
+}
+.min-nav.slide-in {
+  right: 0;
+  transform: translateX(0);
+}
+
+/* === CLOSE BUTTON (inside nav) === */
+.min-close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  color: #7349ac;
+  cursor: pointer;
+  z-index: 4001;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.min-close-button:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+/* Roll on click */
+.min-close-button.rolling {
+  animation: roll 0.6s ease-in-out;
+}
+
+/* === MENU LIST (VERTICAL) === */
+.min-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.min-menu-list li {
+  margin-bottom: 16px;
+}
+.min-menu-list a,
+.min-dropdown-toggle {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: #7349ac;
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 20px 30px;
+}
+.min-menu-list a.active,
+.min-dropdown-toggle.active {
+  background-color: #f5f0ff;
+}
+
+/* === DROPDOWN TOGGLE & ARROW === */
+.min-dropdown {
+  width: 100%;
+}
+.min-dropdown-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.min-arrow {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #7349ac;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+.min-dropdown.open .min-arrow {
+  transform: rotate(180deg);
+}
+
+/* === DROPDOWN CONTENT === */
+.min-dropdown-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.min-dropdown-content.show {
+  max-height: 500px;
+  padding-top: 6px;
+}
+.min-dropdown-content a {
+  padding: 20px 40px;
+  text-decoration: none;
+  font-weight: normal;
+  color: #7349ac;
+  display: block;
+}
+.min-dropdown-content a.active {
+  background-color: #f5f0ff;
+}
+.min-dropdown-content a:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* === HOVER STATES === */
+.min-menu-list a:hover,
+.min-dropdown-toggle:hover,
+.min-dropdown-content a:hover {
+  background-color: #f5f0ff;
+}
+
+/* === ROLL KEYFRAMES === */
+@keyframes roll {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}

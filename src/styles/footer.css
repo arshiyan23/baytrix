@@ -3,7 +3,8 @@
   color: white;
   padding: 40px 20px;
   font-family: 'Segoe UI', sans-serif;
-  text-align: center; /* Centers all text by default */
+  text-align: center;
+  /* Centers all text by default */
   border-top: 1px solid rgba(255, 255, 255, 0.4);
 }
 
@@ -22,7 +23,7 @@
   text-align: left;
 }
 
-.footer-grid > div {
+.footer-grid>div {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -65,8 +66,10 @@
   font-size: 13px;
   text-align: center;
   gap: 20px;
-  max-width: 1300px; /* add this */
-  margin: 0 auto;    /* add this */
+  max-width: 1300px;
+  /* add this */
+  margin: 0 auto;
+  /* add this */
   padding: 20px;
 }
 
@@ -74,7 +77,10 @@
   font-weight: bold;
   font-size: 18px;
   margin-bottom: 10px;
+  height: 22px;
+  cursor: pointer;
 }
+
 
 .footer-legal {
   margin-bottom: 10px;

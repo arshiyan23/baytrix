@@ -1,37 +1,54 @@
+// src/App.jsx
 import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
-import { useEffect, useState } from "react";
-import Navbar from './components/Navbar';
+import { useEffect, useState } from 'react';
+import ScrollToTop from './components/ScrollToTop';
 import Footer from './components/Footer';
+import PromoPopUp from './components/PromoPopUp';
+import OfferBanner from './components/OfferBanner';
+import FloatingButton from './components/FloatingButton';
+import TawkMessenger from './components/TawkMessenger';
+import VideoVouch from './components/VideoVouch';
+import NumStats from './components/NumStats';
+import SupportSection from './components/SupportSection';
+import FaqSection from './components/FaqSection';
+
+// Import your two navbars
+import NavbarMax from './components/NavbarMax';
+import NavbarMin from './components/NavbarMin';
+
 import Home from './pages/Home';
+import Branding from './pages/Branding';
 import ApplicationDesign from './pages/ApplicationDesign';
+import SocialMediaManagement from './pages/SocialMediaManagement';
 import MarketingAds from './pages/MarketingAds';
 import AiIntegration from './pages/AiIntegration';
-import ContactUs from './components/ContactUs';
-import ScrollToTop from './components/ScrollToTop';
-import Branding from './pages/Branding';
-import SocialMediaManagement from './pages/SocialMediaManagement';
-import FloatingButton from './components/FloatingButton';
-import OfferBanner from './components/OfferBanner';
-import FaqSection from './components/FaqSection';
-import PieStats from './components/PieStats';
-import SupportSection from './components/SupportSection';
-import TawkMessenger from './components/TawkMessenger';
-import NumStats from './components/NumStats';
-import PromoPopUp from './components/PromoPopUp';
 import TermsAndConditions from './pages/TermsAndConditions';
-import VideoVouch from './components/VideoVouch';
 import RefundPolicy from './pages/RefundPolicy';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Portfolio from './pages/Portfolio';
 import PortfolioItem from './components/PortfolioItem';
 
-// Put useLocation inside a child component rendered within Router
+
+// Hook to track window size
+function useWindowSize() {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return width;
+}
+
+
 function AppContent() {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   const [showPopup, setShowPopup] = useState(false);
 
-  //logic for promo pop up 
+  // Promo pop-up logic
   useEffect(() => {
     const alreadyShown = localStorage.getItem("promoPopupShown");
     if (!alreadyShown) {
@@ -43,51 +60,27 @@ function AppContent() {
     }
   }, []);
 
-
+  // Stats data (for Home page)
   const statsData = [
-    {
-      id: "clients",
-      icon: "/assets/icon-users.png",
-      value: "0",
-      targetValue: "32+",
-      label: "Clients Served",
-    },
-    {
-      id: "projects",
-      icon: "/assets/icon-projects.png",
-      value: "0",
-      targetValue: "140+",
-      label: "Projects completed",
-    },
-    {
-      id: "exp",
-      icon: "/assets/icon-years.png",
-      value: "0",
-      targetValue: "10+",
-      label: "Years of Experience",
-    },
-    {
-      id: "retention",
-      icon: "/assets/icon-retention.png",
-      value: "0%",
-      targetValue: "100%",
-      label: "Retention Rate",
-    },
-    {
-      id: "reviewsCount",
-      icon: "/assets/icon-reviews.png",
-      value: "0%",
-      targetValue: "10K+",
-      label: "Reviews Received",
-    },
+    { id: "clients", icon: "/assets/icon-users.png", value: "0", targetValue: "32+", label: "Clients Served" },
+    { id: "projects", icon: "/assets/icon-projects.png", value: "0", targetValue: "140+", label: "Projects completed" },
+    { id: "exp", icon: "/assets/icon-years.png", value: "0", targetValue: "10+", label: "Years of Experience" },
+    { id: "retention", icon: "/assets/icon-retention.png", value: "0%", targetValue: "100%", label: "Retention Rate" },
+    { id: "reviewsCount", icon: "/assets/icon-reviews.png", value: "0%", targetValue: "10K+", label: "Reviews Received" },
   ];
 
+  // Decide which navbar to render based on width
+  const width = useWindowSize();
+  const isMobile = width < 768;
 
   return (
     <>
       <PromoPopUp visible={showPopup} onClose={() => setShowPopup(false)} />
       <OfferBanner />
-      <Navbar />
+
+      {/* Switch between Desktop / Mobile Navbar */}
+      {isMobile ? <NavbarMin /> : <NavbarMax />}
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Navigate to="/" />} />
@@ -102,22 +95,26 @@ function AppContent() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/portfolio/:id" element={<PortfolioItem />} />
       </Routes>
+
       <TawkMessenger />
       <FloatingButton />
       <VideoVouch />
-      {isHomePage &&
+
+      {isHomePage && (
         <NumStats
           backgroundText="RELIABLE"
           foregroundText="WHY CLIENTS TRUST US"
           statsData={statsData}
-        />}
-      {/* Show NumStats only on Home page */}
+        />
+      )}
+
       <SupportSection />
       <FaqSection />
       <Footer />
     </>
   );
 }
+
 
 function App() {
   return (
