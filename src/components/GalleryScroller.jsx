@@ -4,11 +4,11 @@ import ProcessHeading from './ProcessHeading';
 import { useNavigate } from 'react-router-dom';
 
 const topImages = [
-  '/assets/port9.png', '/assets/port10.png', '/assets/port11.png', '/assets/port12.png',
+  '/assets/portfolio/1.jpg', '/assets/portfolio/chat-app.png', '/assets/portfolio/3dwork.jpeg', '/assets/portfolio/ogc.jpeg',
 ];
 
 const bottomImages = [
-  '/assets/port13.png', '/assets/port14.png', '/assets/port1.png', '/assets/port4.png',
+  '/assets/portfolio/ogc.png', '/assets/portfolio/poster.jpeg', '/assets/portfolio/puc.png', '/assets/portfolio/graphs.png',
 ];
 
 const GalleryScroller = () => {
