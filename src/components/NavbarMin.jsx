@@ -61,9 +61,7 @@ const NavbarMin = () => {
         onAnimationEnd={onHamburgerAnimEnd}
         aria-label="Open menu"
       >
-        <span />
-        <span />
-        <span />
+        <img src="/assets/hamburger-ico.png" alt="Open menu" className="min-hamburger-img" />
       </button>
 
       <nav
