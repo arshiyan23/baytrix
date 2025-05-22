@@ -70,7 +70,7 @@ nav ul li a:hover,
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #7349ac;
+    background-color: white;
     flex-direction: column;
     border-radius: 5px;
     min-width: 250px;
@@ -93,14 +93,18 @@ nav ul li a:hover,
 
 /* Dropdown links */
 .dropdown-content a {
-    color: white;
+    color: #7349ac;
     padding: 10px 20px;
     text-decoration: none;
     display: block;
     font-weight: normal;
     transition: background-color 0.3s;
+    border-radius: 0;
+}
+.dropdown-content a:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .dropdown-content a:hover {
-    background-color: #542e80;
+    background-color: #f5f0ff;
 }
