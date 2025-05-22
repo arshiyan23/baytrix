@@ -27,6 +27,7 @@ import RefundPolicy from './pages/RefundPolicy';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Portfolio from './pages/Portfolio';
 import PortfolioItem from './components/PortfolioItem';
+import ScrollToTopBtn from './components/ScrollToTopBtn';
 
 
 // Hook to track window size
@@ -97,6 +98,7 @@ function AppContent() {
       </Routes>
 
       <TawkMessenger />
+      <ScrollToTopBtn />
       <FloatingButton />
       <VideoVouch />
 
