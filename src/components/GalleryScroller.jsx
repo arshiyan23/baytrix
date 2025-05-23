@@ -6,12 +6,15 @@ import { useNavigate } from 'react-router-dom';
 const topImages = [
   '/assets/portfolio/fitlife-homepage.png',
   '/assets/portfolio/poster.jpeg',
+  '/assets/portfolio/tradewise/tradewise-chat.png',
   '/assets/portfolio/kartspace/kartspace-electronicspage.png',
 ];
 
 const bottomImages = [
   '/assets/portfolio/kartspace/kartspace-fruits-page.png',
   '/assets/portfolio/tradewise/tradewise-homepage.png',
+  '/assets/portfolio/bottles.png',
+  '/assets/portfolio/gowash.png',
 ];
 
 const GalleryScroller = () => {
@@ -37,11 +40,12 @@ const GalleryScroller = () => {
             <div
               key={`top-${idx}`}
               className="image-container"
+              onClick={() => navigate('/portfolio')}
               onMouseEnter={() => setHoveredRow('top')}
             >
               <img src={src} alt={`top-${idx}`} />
               {hoveredRow === 'top' && (
-                <button className="view-more-btn" onClick={() => navigate('/portfolio')}>
+                <button className="view-more-btn">
                   View More
                 </button>
               )}
@@ -59,6 +63,7 @@ const GalleryScroller = () => {
             <div
               key={`bottom-${idx}`}
               className="image-container"
+              onClick={() => navigate('/portfolio')}
               onMouseEnter={() => setHoveredRow('bottom')}
             >
               <img src={src} alt={`bottom-${idx}`} />
