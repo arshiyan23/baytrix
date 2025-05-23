@@ -49,12 +49,8 @@ export default function PortfolioItem() {
               <p>{item.category}</p>
             </div>
             <div>
-              <h4>Services:</h4>
-              <p>
-                Digital Marketing Consulting + Website Design and Development +
-                Social Media Marketing + Lead Generation + Campaign Planning and
-                Execution
-              </p>
+              <h4>Description:</h4>
+              <p>{item.description}</p>
             </div>
           </div>
         </div>

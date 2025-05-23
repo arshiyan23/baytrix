@@ -44,7 +44,17 @@ export default function PortfolioGallery() {
             <div className="image-wrapper">
               <img src={item.images[0]} alt={item.title} />
               <div className="overlay">
-                <span>View More</span>
+                <div className="overlay-content">
+                  <h3>{item.title}</h3>
+                  <p>{item.year} • {item.category}</p>
+                  <p className="ratings">
+                    <span>⭐ {item.rating}/10</span>
+                  </p>
+                  <p className="desc">{item.description}</p>
+                  <span className="view-more">
+                    View More <span className="arrow">→</span>
+                  </span>
+                </div>
               </div>
             </div>
             <h4>{item.title}</h4>

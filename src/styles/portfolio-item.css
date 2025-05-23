@@ -20,8 +20,13 @@
 
 .portfolio-item-detail-image img {
     width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: top;
     border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
+
 
 .portfolio-item-detail-info {
     flex: 1 1 400px;
@@ -122,7 +127,13 @@
 
 .portfolio-item-carousel-item img {
     width: 100%;
+    height: 250px;
+    /* Smaller fixed height */
+    object-fit: cover;
+    object-position: top;
     border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    /* <-- added shadow */
 }
 
 /* Navigation Arrows */
@@ -190,4 +201,15 @@
         right: 8px;
         /* 8px from screen’s right edge */
     }
+
+    @media (max-width: 768px) {
+        .portfolio-item-detail-image img {
+            height: 250px;
+        }
+
+        .portfolio-item-carousel-item img {
+            height: 150px;
+        }
+    }
+
 }
