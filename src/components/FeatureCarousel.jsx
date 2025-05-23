@@ -3,12 +3,11 @@ import { motion } from "framer-motion";
 import "../styles/feature-carousel.css";
 import ProcessHeading from "./ProcessHeading";
 
-// Sample feature data with stats and icons for each app type
 const featureList = [
   {
     title: "Mobile Apps",
     desc: "We design and develop high-performance iOS and Android mobile applications tailored to your business needs.",
-    image: "/assets/port1.png",
+    image: "/assets/mobile_apps.png",
     stats: {
       running: "20+",
       users: "500K+",
@@ -23,9 +22,26 @@ const featureList = [
     },
   },
   {
-    title: "Webapps",
+    title: "Desktop Applications",
+    desc: "We create cross-platform desktop software with sleek UI and powerful performance for Windows, macOS, and Linux.",
+    image: "/assets/desktop_app.png",
+    stats: {
+      running: "15+",
+      users: "300K+",
+      countries: "25+",
+      launched: "35+",
+    },
+    icons: {
+      running: "/assets/running.png",
+      users: "/assets/users.png",
+      countries: "/assets/countries.png",
+      launched: "/assets/launched.png",
+    },
+  },
+  {
+    title: "Web Applications",
     desc: "Our team builds robust, scalable browser-based applications including dashboards, SaaS platforms, and enterprise tools.",
-    image: "/assets/port4.png",
+    image: "/assets/web_apps.png",
     stats: {
       running: "30+",
       users: "1M+",
@@ -42,7 +58,7 @@ const featureList = [
   {
     title: "Websites",
     desc: "We craft responsive, SEO-optimized websites that elevate your online presence.",
-    image: "/assets/port1.png",
+    image: "/assets/website_app.png",
     stats: {
       running: "100+",
       users: "2M+",
@@ -59,7 +75,7 @@ const featureList = [
   {
     title: "App Integration",
     desc: "Maximize productivity with seamless integrations for tools like Zoho, Office 365, Slack, and more.",
-    image: "/assets/port4.png",
+    image: "/assets/app_integration.png",
     stats: {
       running: "40+",
       users: "1.5M+",
@@ -74,6 +90,7 @@ const featureList = [
     },
   },
 ];
+
 
 export default function FeatureCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -107,44 +124,53 @@ export default function FeatureCarousel() {
   return (
     <section className="carousel-section">
       <div className="carousel-header">
-        <ProcessHeading 
-        backgroundText="OUR APPS" 
-        foregroundText="WHAT WE OFFER"
-        description="Tailored digital solutions for real-world business growth."
-        backgroundTextFill="#f5f0ff"
+        <ProcessHeading
+          backgroundText="OUR APPS"
+          foregroundText="WHAT WE OFFER"
+          description="We build personalized applications that streamline operations,
+        enhance user experience, and maximize your ROI—tailored to your specific needs."
+          backgroundTextFill="#f5f0ff"
         />
       </div>
 
       {/* New wrapper for layout */}
       <div className="carousel-content-wrapper">
-        {/* Left: Carousel */}
-        <div className="carousel-left">
-          <div className="carousel-wrapper">
-            <button onClick={prevSlide} className="feature-carousel-arrow left">
-              &#8592;
-            </button>
-            <div className={`carousel-slide-container ${direction}`}>
-              <div
-                className="carousel-slide"
-                style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-              >
-                {featureList.map((item, i) => (
-                  <div
-                    className="feature-card"
-                    key={i}
-                    onClick={() => setActiveIndex(i)}
-                  >
-                    <img src={item.image} alt={item.title} />
-                    <h3>{item.title}</h3>
-                    <p>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
+        {/* Left: Title + Description */}
+        <div className="carousel-text">
+          <h3 className="carousel-title">{featureList[activeIndex].title}</h3>
+          <p className="carousel-description">{featureList[activeIndex].desc}</p>
+        </div>
+
+        {/* Right: Carousel */}
+        <div className="carousel-right">
+          <motion.div
+            className="carousel-slide-container"
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.2}
+            onDragEnd={(event, info) => {
+              if (info.offset.x < -50) nextSlide();
+              else if (info.offset.x > 50) prevSlide();
+            }}
+          >
+            <div
+              className="carousel-slide"
+              style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+            >
+              {featureList.map((item, i) => (
+                <div className="feature-card" key={i}>
+                  {/* inside your carousel slide */}
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    draggable="false"
+                    onDragStart={(e) => e.preventDefault()}
+                  />
+
+                </div>
+              ))}
             </div>
-            <button onClick={nextSlide} className="feature-carousel-arrow right">
-              &#8594;
-            </button>
-          </div>
+          </motion.div>
 
           <div className="carousel-dots">
             {featureList.map((_, i) => (
@@ -159,61 +185,8 @@ export default function FeatureCarousel() {
             ))}
           </div>
         </div>
-
-        {/* Right: Stats */}
-        <div className="carousel-right">
-          <motion.div
-            className="stats-box"
-            key={activeIndex}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2>Milestones Achieved</h2>
-            {/* <p className="stats-subtitle">For {featureList[activeIndex].title}</p> */}
-            <div className="stats">
-              <div className="stat">
-                <img
-                  src={featureList[activeIndex].icons.running}
-                  alt="Running Apps"
-                  className="stat-icon"
-                />
-                <p>Running Apps</p>
-                <strong>{activeStats.running}</strong>
-              </div>
-              <div className="stat">
-                <img
-                  src={featureList[activeIndex].icons.users}
-                  alt="Users"
-                  className="stat-icon"
-                />
-                <p>Users</p>
-                <strong>{activeStats.users}</strong>
-              </div>
-              <div className="stat">
-                <img
-                  src={featureList[activeIndex].icons.countries}
-                  alt="Countries"
-                  className="stat-icon"
-                />
-                <p>Countries</p>
-                <strong>{activeStats.countries}</strong>
-              </div>
-              <div className="stat">
-                <img
-                  src={featureList[activeIndex].icons.launched}
-                  alt="Launched"
-                  className="stat-icon"
-                />
-                <p>Launched</p>
-                <strong>{activeStats.launched}</strong>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
       </div>
+
     </section>
   );
 }
