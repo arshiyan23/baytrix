@@ -4,24 +4,24 @@ import "../styles/feature-carousel.css";
 import ProcessHeading from "./ProcessHeading";
 
 const featureList = [
-  {
-    title: "Mobile Apps",
-    desc: "We design and develop high-performance iOS and Android mobile applications tailored to your business needs.",
-    image: "/assets/mobile_apps.png",
+    {
+    title: "Websites",
+    desc: "We craft responsive, SEO-optimized websites that elevate your online presence.",
+    image: "/assets/website_app.png",
     stats: {
-      running: "20+",
-      users: "500K+",
-      countries: "30+",
-      launched: "50+",
+      running: "100+",
+      users: "2M+",
+      countries: "50+",
+      launched: "200+",
     },
     icons: {
-      running: "/assets/apps-ico.png",
+      running: "/assets/running.png",
       users: "/assets/users.png",
       countries: "/assets/countries.png",
       launched: "/assets/launched.png",
     },
   },
-  {
+    {
     title: "Desktop Applications",
     desc: "We create cross-platform desktop software with sleek UI and powerful performance for Windows, macOS, and Linux.",
     image: "/assets/desktop_app.png",
@@ -39,6 +39,23 @@ const featureList = [
     },
   },
   {
+    title: "Mobile Applications",
+    desc: "We design and develop high-performance iOS and Android mobile applications tailored to your business needs.",
+    image: "/assets/mobile_apps.png",
+    stats: {
+      running: "20+",
+      users: "500K+",
+      countries: "30+",
+      launched: "50+",
+    },
+    icons: {
+      running: "/assets/apps-ico.png",
+      users: "/assets/users.png",
+      countries: "/assets/countries.png",
+      launched: "/assets/launched.png",
+    },
+  },
+  {
     title: "Web Applications",
     desc: "Our team builds robust, scalable browser-based applications including dashboards, SaaS platforms, and enterprise tools.",
     image: "/assets/web_apps.png",
@@ -47,23 +64,6 @@ const featureList = [
       users: "1M+",
       countries: "40+",
       launched: "75+",
-    },
-    icons: {
-      running: "/assets/running.png",
-      users: "/assets/users.png",
-      countries: "/assets/countries.png",
-      launched: "/assets/launched.png",
-    },
-  },
-  {
-    title: "Websites",
-    desc: "We craft responsive, SEO-optimized websites that elevate your online presence.",
-    image: "/assets/website_app.png",
-    stats: {
-      running: "100+",
-      users: "2M+",
-      countries: "50+",
-      launched: "200+",
     },
     icons: {
       running: "/assets/running.png",
