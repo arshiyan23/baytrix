@@ -183,6 +183,8 @@ const Contact = () => (
                 <h1 className="contact-title">Contact Us</h1>
 
                 </div>
+                <InfoPanel />
+
                 <div className="grid-panel panel-form">
                     <h2>Send us a message</h2>
                     <form className="contact-form">
@@ -193,7 +195,6 @@ const Contact = () => (
                         <button type="submit">Send Message</button>
                     </form>
                 </div>
-                <InfoPanel />
             </div>
         </div>
     </>

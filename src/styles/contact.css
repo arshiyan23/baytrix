@@ -7,7 +7,7 @@
 
 .contact-title {
   color: #7349ac;
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-decoration: underline;
   /* margin: 20px 0px; */
 }
@@ -28,7 +28,7 @@
 }
 
 .grid-image img {
-    max-width: 50%;
+    max-width: 60%;
     height: auto;
     border-radius: 12px;
     /* background-color: #7349ac; */
