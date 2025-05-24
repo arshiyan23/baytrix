@@ -31,7 +31,7 @@ const InfoPanel = () => {
         navigator.clipboard.writeText(value)
             .then(() => {
                 setJustCopied(key);
-                setTimeout(() => setJustCopied(null), 2000);
+                // setTimeout(() => setJustCopied(null), 4000);
             });
     };
 
@@ -58,12 +58,11 @@ const InfoPanel = () => {
             <div className="contact-cards">
 
                 {/* Phone Card */}
-                <div className="card phone-card">
+                <div className="card phone-card" onClick={() => copyToClipboard('+919326191141', 'phone')}>
                     <i className="fas fa-phone card-icon" />
                     <span>+91 932 619 1141</span>
                     <button
                         className="copy-btn"
-                        onClick={() => copyToClipboard('+919326191141', 'phone')}
                         aria-label="Copy phone number"
                     >
                         {justCopied === 'phone'
@@ -81,12 +80,11 @@ const InfoPanel = () => {
                 </div>
 
                 {/* Email Card */}
-                <div className="card email-card">
+                <div className="card email-card" onClick={() => copyToClipboard('info@baytix.net', 'email')}>
                     <i className="fas fa-envelope card-icon" />
                     <span>info@baytix.net</span>
                     <button
                         className="copy-btn"
-                        onClick={() => copyToClipboard('info@baytix.net', 'email')}
                         aria-label="Copy email"
                     >
                         {justCopied === 'email'
