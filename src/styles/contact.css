@@ -1,0 +1,238 @@
+.contact-wrapper {
+    background-color: #f5f0ff;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-title {
+  color: #7349ac;
+  font-size: 2.5rem;
+  text-decoration: underline;
+  /* margin: 20px 0px; */
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    gap: 40px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+/* Row 1: image spans both columns */
+.grid-image {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+.grid-image img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 12px;
+    /* background-color: #7349ac; */
+}
+
+/* Row 2 panels */
+.grid-panel,
+.info-container {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.grid-panel h2,
+.info-container h2 {
+    color: #7349ac;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    background-color: #7349ac;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #5b3590;
+}
+
+/* Info list */
+.panel-info ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* 1. Icon-Enhanced Cards */
+.contact-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    padding: 12px 16px;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    color: #7349ac;
+    font-size: 1.4rem;
+}
+
+.email-card {
+    position: relative;
+}
+
+/* keyframes: fade in quickly, stay, then fade out */
+
+@keyframes fadeCheck {
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* .success-icon {
+    color: #28a745;
+    animation: fadeCheck 2s forwards;
+} */
+
+.copy-btn {
+    background: none;
+    border: none;
+    color: #7349ac;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+
+.copy-btn:hover {
+    color: #5b3590;
+}
+
+
+/* 2. Social Media Links */
+.social-links {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    justify-content: center;
+}
+
+.social-links a {
+    font-size: 1.6rem;
+    color: #7349ac;
+    transition: color 0.2s;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #5b3590;
+    transform: scale(1.1);
+    outline: none;
+    cursor: pointer;
+}
+
+/* 3. QR Code */
+.qr-code {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.qr-code img {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.chatnow-button {
+    background-color: transparent;
+    border: none;
+    color: #7349ac;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.chatnow-button:hover {
+    color: black;
+}
+
+/* 4. Office Hours Banner */
+.office-hours {
+    text-align: center;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.office-hours.open {
+    background-color: #e6f7e6;
+    color: #2a7d2a;
+}
+
+.office-hours.closed {
+    background-color: #fcebea;
+    color: #a12a2a;
+}
+
+/* Mobile: stack panels */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+
+    .grid-image {
+        margin-bottom: 20px;
+    }
+}

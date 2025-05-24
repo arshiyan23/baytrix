@@ -76,9 +76,9 @@ const VideoVouch = () => {
     }, [currentIndex]);
 
     return (
-        <div className="vouch-container" id='reviews'>
+        <div className="vouch-container" id='testimonials'>
             <ProcessHeading
-                backgroundText="REVIEWS"
+                backgroundText="VOUCHES"
                 foregroundText="TESTIMONIALS"
                 description='We don’t just build brands — we build relationships.
                 Hear from these business owners who trusted Baytix to bring their ideas to life.'

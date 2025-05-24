@@ -4,10 +4,11 @@ import ProcessHeading from './ProcessHeading';
 import { useNavigate } from 'react-router-dom';
 
 const topImages = [
-  '/assets/portfolio/fitlife-homepage.png',
+  '/assets/portfolio/kartspace/kartspace-electronicspage.png',
   '/assets/portfolio/poster.jpeg',
   '/assets/portfolio/tradewise/tradewise-chat.png',
-  '/assets/portfolio/kartspace/kartspace-electronicspage.png',
+  '/assets/portfolio/fitlife-homepage.png',
+  '/assets/portfolio/crm.png',
 ];
 
 const bottomImages = [
@@ -15,6 +16,7 @@ const bottomImages = [
   '/assets/portfolio/tradewise/tradewise-homepage.png',
   '/assets/portfolio/bottles.png',
   '/assets/portfolio/gowash.png',
+  '/assets/portfolio/feedback-central.png',
 ];
 
 const GalleryScroller = () => {

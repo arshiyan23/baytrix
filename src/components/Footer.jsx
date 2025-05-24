@@ -4,6 +4,13 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+
+  const handleSupport = () => {
+    if (window.Tawk_API && typeof window.Tawk_API.maximize === 'function') {
+      window.Tawk_API.maximize();
+    }
+  };
+  
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -24,30 +31,31 @@ const Footer = () => {
               <li><Link to="/">Home</Link></li>
               <li><Link to="/#services">Services</Link></li>
               <li><Link to="/portfolio">Portfolio</Link></li>
-              <li><Link to="/#reviews">Reviews</Link></li>
+              <li><Link to="/#testimonials">Testimonials</Link></li>
             </ul>
           </div>
-          <div>
+          {/* <div>
             <h4>Information</h4>
             <ul>
               <li><a href="/">Pricing</a></li>
               <li><a href="/">Case Studies</a></li>
             </ul>
-          </div>
+          </div> */}
           <div>
             <h4>Company</h4>
             <ul>
               <li><a href="/">About Us</a></li>
-              <li><a href="/">Our Technology</a></li>
-              <li><a href="/">Testimonials</a></li>
+              <li><a href="/">Why Are We Better Than AI?</a></li>
             </ul>
           </div>
           <div>
             <h4>Support</h4>
             <ul>
-              <li><a href="/">Knowledge Base</a></li>
-              <li><a href="/">Contact Us</a></li>
-              <li><a href="/">Report An Issue</a></li>
+              {/* <li><a href="/">Knowledge Base</a></li> */}
+              <li><Link to="/contact">Contact Us</Link></li>
+              <button className="footer-button" onClick={handleSupport}>
+                Report An Issue
+              </button>
             </ul>
           </div>
         </div>

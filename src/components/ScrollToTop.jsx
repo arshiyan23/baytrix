@@ -6,15 +6,8 @@ function ScrollToTop() {
   
   useEffect(() => {
     const targetPaths = [
-      // "/branding",
-      // "/application-design",
-      // "/social-media-management",
-      // "/marketing-ads",
-      // "/ai-integration",
-      // "/terms",
-      // "/refund-policy",
-      // "/privacy-policy",
-      // "/portfolio",
+      //include the pages that don't need to be scrolled to the top on load  
+      // for e.g, "/branding"
     ];
   
     if (!(targetPaths.includes(pathname))) {

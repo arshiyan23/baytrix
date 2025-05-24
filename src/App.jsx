@@ -25,6 +25,7 @@ import AiIntegration from './pages/AiIntegration';
 import TermsAndConditions from './pages/TermsAndConditions';
 import RefundPolicy from './pages/RefundPolicy';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import Contact from './pages/Contact';
 import Portfolio from './pages/Portfolio';
 import PortfolioItem from './components/PortfolioItem';
 import ScrollToTopBtn from './components/ScrollToTopBtn';
@@ -45,8 +46,8 @@ function useWindowSize() {
 
 
 function AppContent() {
-  const location = useLocation();
-  const isHomePage = location.pathname === '/';
+  // const location = useLocation();
+  // const isHomePage = location.pathname === '/';
   const [showPopup, setShowPopup] = useState(false);
 
   // Promo pop-up logic
@@ -62,13 +63,13 @@ function AppContent() {
   }, []);
 
   // Stats data (for Home page)
-  const statsData = [
-    { id: "clients", icon: "/assets/icon-users.png", value: "0", targetValue: "32+", label: "Clients Served" },
-    { id: "projects", icon: "/assets/icon-projects.png", value: "0", targetValue: "140+", label: "Projects completed" },
-    { id: "exp", icon: "/assets/icon-years.png", value: "0", targetValue: "10+", label: "Years of Experience" },
-    { id: "retention", icon: "/assets/icon-retention.png", value: "0%", targetValue: "100%", label: "Retention Rate" },
-    { id: "reviewsCount", icon: "/assets/icon-reviews.png", value: "0%", targetValue: "10K+", label: "Reviews Received" },
-  ];
+  // const statsData = [
+  //   { id: "clients", icon: "/assets/icon-users.png", value: "0", targetValue: "32+", label: "Clients Served" },
+  //   { id: "projects", icon: "/assets/icon-projects.png", value: "0", targetValue: "140+", label: "Projects completed" },
+  //   { id: "exp", icon: "/assets/icon-years.png", value: "0", targetValue: "10+", label: "Years of Experience" },
+  //   { id: "retention", icon: "/assets/icon-retention.png", value: "0%", targetValue: "100%", label: "Retention Rate" },
+  //   { id: "reviewsCount", icon: "/assets/icon-reviews.png", value: "0%", targetValue: "10K+", label: "Reviews Received" },
+  // ];
 
   // Decide which navbar to render based on width
   const width = useWindowSize();
@@ -90,6 +91,7 @@ function AppContent() {
         <Route path="/social-media-management" element={<SocialMediaManagement />} />
         <Route path="/marketing-ads" element={<MarketingAds />} />
         <Route path="/ai-integration" element={<AiIntegration />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="/refund-policy" element={<RefundPolicy />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
@@ -102,13 +104,13 @@ function AppContent() {
       <FloatingButton />
       <VideoVouch />
 
-      {isHomePage && (
+      {/* {isHomePage && (
         <NumStats
           backgroundText="RELIABLE"
           foregroundText="WHY CLIENTS TRUST US"
           statsData={statsData}
         />
-      )}
+      )} */}
 
       <SupportSection />
       <FaqSection />

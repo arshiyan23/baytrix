@@ -122,6 +122,17 @@
   cursor: pointer;
 }
 
+.footer-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.footer-button:hover {
+  text-decoration: underline;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .footer-grid {
