@@ -120,6 +120,15 @@
     cursor: pointer;
 }
 
+.image-container.highlight::before {
+    opacity: 1 !important;
+}
+
+.image-container.highlight .view-more-btn {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 
 /* Responsive behavior */
 @media (max-width: 768px) {

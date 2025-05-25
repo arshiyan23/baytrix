@@ -46,7 +46,8 @@
 .btai-sidebar li {
   position: relative;
   padding: 1rem 1rem;
-  padding-left: 4rem; /* Makes room for the icon */
+  padding-left: 4rem;
+  /* Makes room for the icon */
   margin-bottom: 1rem;
   color: #999;
   overflow: visible;
@@ -99,7 +100,8 @@
 /* 4. Icon styling */
 .btai-sidebar .btai-icon {
   position: absolute;
-  left: 0.70rem; /* aligned inside container space */
+  left: 0.70rem;
+  /* aligned inside container space */
   top: 50%;
   transform: translateY(-50%);
   width: 24px;
@@ -125,7 +127,8 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0; /* start from left edge of li */
+  left: 0;
+  /* start from left edge of li */
   right: 0;
   background: rgba(115, 73, 172, 0.08);
   border-radius: 10px;
@@ -189,11 +192,7 @@
   }
 
   .btai-sidebar {
-    position: static;
-    padding-left: 0;
-    margin-bottom: 2rem;
-    overflow-x: auto;
-    white-space: nowrap;
+    display: none;
   }
 
   .btai-sidebar ul {
