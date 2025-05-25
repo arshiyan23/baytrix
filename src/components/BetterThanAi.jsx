@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/better-than-ai.css';
 import ProcessHeading from './ProcessHeading';
+import { useNavigate } from 'react-router-dom';
 
 const sections = [
   {
@@ -72,9 +73,14 @@ const sections = [
 ];
 
 const BetterThanAi = () => {
-  useEffect(() => {
-    const isMobile = window.innerWidth <= 768;
+  const [expanded, setExpanded] = useState(false);
+  const visibleCount = expanded ? sections.length : 5;
+  const isMobile = window.innerWidth <= 768;
 
+  const navigate = useNavigate();
+
+
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -89,18 +95,15 @@ const BetterThanAi = () => {
             }
           }
 
-          // Mobile animation logic
-          if (isMobile) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animate');
-            }
+          if (isMobile && entry.isIntersecting) {
+            entry.target.classList.add('animate');
           }
         });
       },
-      // {
-      //   rootMargin: '-40% 0px -50% 0px',
-      //   threshold: 0.25,
-      // }
+      {
+        rootMargin: '-30% 0px -50% 0px', // first it was -40% in place of -25%
+        threshold: 0.25,
+      }
     );
 
     document.querySelectorAll('.btai-card').forEach((section) => {
@@ -108,8 +111,12 @@ const BetterThanAi = () => {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [visibleCount]);
 
+  const toggleView = () => {
+    setExpanded(!expanded);
+    if (expanded) navigate('/#support')
+  };
 
   return (
     <div className="btai-wrapper" id='better-than-ai'>
@@ -122,32 +129,35 @@ const BetterThanAi = () => {
       />
       <div className="btai-container">
         <div className="btai-sidebar">
-          <ul>
-            {sections.map((section, idx) => (
-              <li key={section.id} data-id={section.id}>
-                <img
-                  src={section.icon}
-                  alt=""
-                  className="btai-icon"
-                />
-                <strong>
-                  {idx + 1}. {section.title}
-                </strong>
-              </li>
-            ))}
-          </ul>
+          <div className={!expanded ? "btai-fade-mask" : ""}>
+            <ul>
+              {sections.slice(0, visibleCount).map((section, idx) => (
+                <li key={section.id} data-id={section.id}>
+                  <img src={section.icon} alt="" className="btai-icon" />
+                  <strong>{idx + 1}. {section.title}</strong>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
         <div className="btai-content">
-          {sections.map(({ id, title, desc, icon, example }) => (
-            <section id={id} key={id} className="btai-card">
-              <h2 className="btai-card-heading">
-                <img src={icon} alt="" className="btai-card-icon" />
-                {title}
-              </h2>
-              <p>{desc}</p> <br />
-              <p style={{ fontSize: "14px", color: "#7349ac", fontStyle: "italic" }}>Example – {example}</p>
-            </section>
-          ))}
+          <div className={!expanded ? "btai-fade-mask" : ""}>
+            {sections.slice(0, visibleCount).map(({ id, title, desc, icon, example }) => (
+              <section id={id} key={id} className="btai-card">
+                <h2 className="btai-card-heading">
+                  <img src={icon} alt="" className="btai-card-icon" />
+                  {title}
+                </h2>
+                <p>{desc}</p> <br />
+                <p style={{ fontSize: "14px", color: "#7349ac", fontStyle: "italic" }}>Example – {example}</p>
+              </section>
+            ))}
+          </div>
+          <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
+            <button className="btai-view-more-button" onClick={toggleView}>
+              {expanded ? 'View Less' : 'Read More'}
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -155,3 +165,4 @@ const BetterThanAi = () => {
 };
 
 export default BetterThanAi;
+
