@@ -1,0 +1,239 @@
+/* Wrapper and Layout */
+.btai-wrapper {
+  margin: 40px auto;
+}
+
+.btai-container {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 2rem;
+  padding: 0 10vw;
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+/* Sidebar Timeline */
+.btai-sidebar {
+  position: sticky;
+  top: 2rem;
+  align-self: start;
+  padding-left: 2rem;
+}
+
+.btai-sidebar ul {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* the vertical line */
+.btai-sidebar ul::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 34px;
+  /* shift the line right a bit */
+  width: 1px;
+  background: #eee;
+}
+
+/* each item */
+.btai-sidebar li {
+  position: relative;
+  padding: 1rem 1rem;
+  padding-left: 3.5rem;
+  margin-bottom: 1rem;
+  color: #999;
+  cursor: default;
+  transition: all 0.2s;
+}
+
+/* the circle on the timeline */
+.btai-sidebar li::before {
+  content: '';
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #ccc;
+  transition: all 0.2s;
+}
+
+/* the icon, now positioned left of the line */
+.btai-sidebar .btai-icon {
+  position: absolute;
+  left: 0;
+  /* flush against the left edge of the <li> */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  z-index: 2;
+  /* above the line */
+  flex-shrink: 0;
+}
+
+/* active state */
+.btai-sidebar li.active {
+  position: relative;
+  /* establish positioning context for ::after */
+  background: none;
+  /* ditch the built-in padding-based background */
+  color: #7349ac;
+}
+
+.btai-sidebar li.active::before {
+  border-color: #7349ac;
+}
+
+.btai-sidebar li.active::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -16px;
+  /* how far left you want the box to reach */
+  right: 0;
+  background: rgba(115, 73, 172, 0.08);
+  border-radius: 8px;
+  z-index: -1;
+  /* sit it behind your icon + text */
+}
+
+/* Section Content */
+.btai-content section {
+  margin-bottom: 4rem;
+}
+
+.btai-card {
+  color: #7349ac;
+  padding: 2rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  background: #f5f0ff;
+  scroll-snap-type: y proximity;
+  scroll-snap-align: start;
+}
+
+.btai-card-heading {
+  display: flex;
+  align-items: center;
+  /* vertical center */
+  gap: 0.5rem;
+  /* space between icon & text */
+}
+
+.btai-card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.btai-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Mobile Responsiveness */
+
+@keyframes fadeInMobile {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .btai-container {
+    display: block;
+    padding: 0 5vw;
+  }
+
+  .btai-sidebar {
+    position: static;
+    padding-left: 0;
+    margin-bottom: 2rem;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .btai-sidebar ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .btai-sidebar ul::before {
+    display: none;
+  }
+
+  .btai-sidebar li {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0;
+    padding-left: 2.5rem;
+    white-space: normal;
+    min-width: 200px;
+    background: #f9f9f9;
+    border-radius: 6px;
+    color: #666;
+  }
+
+  .btai-sidebar li.active {
+    background: rgba(115, 73, 172, 0.08);
+    color: #7349ac;
+  }
+
+  .btai-sidebar li::before {
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .btai-sidebar .btai-icon {
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .btai-sidebar li.active::after {
+    display: none;
+  }
+
+  .btai-content section {
+    scroll-snap-align: none;
+    margin-bottom: 2rem;
+  }
+
+  .btai-card {
+    padding: 1.5rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .btai-card.animate {
+    animation: fadeInMobile 0.6s ease forwards;
+  }
+
+  .btai-card h2 {
+    font-size: 1.1rem;
+  }
+
+  .btai-card p {
+    font-size: 0.95rem;
+  }
+}

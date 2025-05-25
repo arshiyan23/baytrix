@@ -45,7 +45,7 @@ const Footer = () => {
             <h4>Company</h4>
             <ul>
               <li><a href="/">About Us</a></li>
-              <li><a href="/">Why Are We Better Than AI?</a></li>
+              <li><a href="/#better-than-ai">Why Are We Better Than AI?</a></li>
             </ul>
           </div>
           <div>

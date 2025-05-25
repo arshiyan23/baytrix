@@ -29,6 +29,7 @@ import Contact from './pages/Contact';
 import Portfolio from './pages/Portfolio';
 import PortfolioItem from './components/PortfolioItem';
 import ScrollToTopBtn from './components/ScrollToTopBtn';
+import BetterThanAi from './components/BetterThanAi';
 
 
 // Hook to track window size
@@ -111,7 +112,7 @@ function AppContent() {
           statsData={statsData}
         />
       )} */}
-
+      <BetterThanAi />
       <SupportSection />
       <FaqSection />
       <Footer />

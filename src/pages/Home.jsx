@@ -5,6 +5,7 @@ import ScheduleCall from '../components/ScheduleCall';
 import LogoSlider from '../components/LogoSlider';
 import GalleryScroller from '../components/GalleryScroller';
 import ProcessHeading from '../components/ProcessHeading';
+import BetterThanAi from '../components/BetterThanAi';
 
 const Home = () => {
   const location = useLocation();
@@ -127,7 +128,6 @@ const Home = () => {
 
       {/* gallery scroller section */}
       <GalleryScroller />
-
 
       {showScheduleCall && (
         <ScheduleCall onClose={() => setShowScheduleCall(false)} />
