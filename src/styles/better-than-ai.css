@@ -5,9 +5,9 @@
 
 .btai-container {
   display: grid;
-  grid-template-columns: 360px 1fr;
+  grid-template-columns: 370px 1fr;
   gap: 2rem;
-  padding: 0 10vw;
+  padding: 0 6vw;
   max-width: 1350px;
   margin: 0 auto;
 }
