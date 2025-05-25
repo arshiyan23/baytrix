@@ -108,7 +108,7 @@
 
 /* Section Content */
 .btai-content section {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .btai-card {
@@ -116,7 +116,7 @@
   padding: 2rem;
   border: 1px solid #eee;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
   background: #f5f0ff;
   scroll-snap-type: y proximity;
   scroll-snap-align: start;
