@@ -97,10 +97,10 @@ const BetterThanAi = () => {
           }
         });
       },
-      {
-        rootMargin: '-40% 0px -50% 0px',
-        threshold: 0.25,
-      }
+      // {
+      //   rootMargin: '-40% 0px -50% 0px',
+      //   threshold: 0.25,
+      // }
     );
 
     document.querySelectorAll('.btai-card').forEach((section) => {
