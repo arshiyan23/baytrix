@@ -88,9 +88,9 @@ export default function PortfolioGallery() {
                   <div className="overlay-content">
                     <h3>{item.title}</h3>
                     <p>{item.year} • {item.category}</p>
-                    <p className="ratings">
-                      <span>⭐ {item.rating}/10</span>
-                    </p>
+                    {/* <p className="ratings"> */}
+                      {/* <span>⭐ {item.rating}/10</span> */}
+                    {/* </p> */}
                     <p className="desc">{item.description}</p>
                     <span className="view-more">
                       View More <span className="arrow">→</span>
