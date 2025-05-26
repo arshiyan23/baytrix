@@ -1,29 +1,28 @@
+/* --- Contact Outer Wrapper --- */
 .contact-wrapper {
     background-color: #f5f0ff;
-    padding: 20px 20px;
+    padding: 20px;
     display: flex;
     justify-content: center;
 }
 
 .contact-title {
-  color: #7349ac;
-  font-size: 2rem;
-  text-decoration: underline;
-  /* margin: 20px 0px; */
+    color: #7349ac;
+    font-size: 2rem;
+    text-decoration: underline;
 }
 
+/* --- Top Image + Full Grid Layout --- */
 .contact-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto auto;
-    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     max-width: 1000px;
     width: 100%;
 }
 
-/* Row 1: image spans both columns */
+/* --- Top Image Styling --- */
 .grid-image {
-    grid-column: 1 / -1;
     text-align: center;
 }
 
@@ -31,18 +30,40 @@
     max-width: 60%;
     height: auto;
     border-radius: 12px;
-    /* background-color: #7349ac; */
 }
 
-/* Row 2 panels */
-.grid-panel,
-.info-container {
+/* --- Full Width White Section --- */
+.contact-full-section {
     background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    width: 100vw;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
 }
 
+.contact-inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* --- Info + Form Row --- */
+.info-form-row {
+    display: flex;
+    gap: 40px;
+    padding: 30px 0;
+    flex-wrap: wrap;
+}
+
+/* Individual Panels */
+.info-container,
+.grid-panel {
+    flex: 1;
+    padding: 0;
+}
+
+/* Headings */
 .grid-panel h2,
 .info-container h2 {
     color: #7349ac;
@@ -50,7 +71,7 @@
     text-align: center;
 }
 
-/* Form styling */
+/* Form Styling */
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -80,15 +101,22 @@
     background-color: #5b3590;
 }
 
-/* Info list */
-.panel-info ul {
-    list-style: none;
-    padding: 0;
-    font-size: 1rem;
-    line-height: 1.6;
+/* Divider Below Row */
+.contact-divider {
+    width: 50%;
+    height: 1px;
+    background: #ccc;
+    margin: 40px auto;
 }
 
-/* 1. Icon-Enhanced Cards */
+/* Vertical Divider (optional if re-added) */
+.vertical-divider {
+    width: 1px;
+    background-color: #ddd;
+    margin: 0 20px;
+}
+
+/* --- Info Cards --- */
 .contact-cards {
     display: flex;
     flex-direction: column;
@@ -97,7 +125,6 @@
 }
 
 .card {
-    position: relative;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -106,6 +133,7 @@
     border-radius: 6px;
     cursor: pointer;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .card-icon {
@@ -113,30 +141,7 @@
     font-size: 1.4rem;
 }
 
-
-/* keyframes: fade in quickly, stay, then fade out */
-@keyframes fadeCheck {
-    0% {
-        opacity: 0;
-        transform: scale(0.6);
-    }
-
-    50% {
-        opacity: 1;
-        transform: scale(1.2);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* .success-icon {
-    color: #28a745;
-    animation: fadeCheck 2s forwards;
-} */
-
+/* Copy Button */
 .copy-btn {
     background: none;
     border: none;
@@ -149,13 +154,19 @@
     font-size: 1rem;
 }
 
-
 .copy-btn:hover {
     color: #5b3590;
 }
 
+/* Panel Info Text */
+.panel-info ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
 
-/* 2. Social Media Links */
+/* Social Links */
 .social-links {
     display: flex;
     gap: 16px;
@@ -166,18 +177,15 @@
 .social-links a {
     font-size: 1.6rem;
     color: #7349ac;
-    transition: color 0.2s;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-links a:hover {
     color: #5b3590;
     transform: scale(1.1);
-    outline: none;
-    cursor: pointer;
 }
 
-/* 3. QR Code */
+/* QR Code */
 .qr-code {
     text-align: center;
     margin-bottom: 24px;
@@ -190,6 +198,7 @@
     margin-bottom: 8px;
 }
 
+/* Chat Now Button */
 .chatnow-button {
     background-color: transparent;
     border: none;
@@ -204,7 +213,7 @@
     color: black;
 }
 
-/* 4. Office Hours Banner */
+/* Office Hours Banner */
 .office-hours {
     text-align: center;
     font-weight: 600;
@@ -222,14 +231,37 @@
     color: #a12a2a;
 }
 
-/* Mobile: stack panels */
+/* --- Animations --- */
+@keyframes fadeCheck {
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* --- Mobile Responsive --- */
 @media (max-width: 768px) {
     .contact-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
+        flex-direction: column;
     }
 
     .grid-image {
         margin-bottom: 20px;
+    }
+
+    .info-form-row {
+        flex-direction: column;
+    }
+
+    .vertical-divider {
+        display: none;
     }
 }
