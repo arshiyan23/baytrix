@@ -95,12 +95,12 @@ const Home = () => {
             desc="SEO to boost brand visibility, along with content, and PPC strategies."
             link="marketing-ads"
           />
-          <ServiceCard
+          {/* <ServiceCard
             imgSrc="/assets/ai_automation.png"
             title="AI Integration"
             desc="Automate tasks using AI for faster, smarter business operations."
             link="ai-integration"
-          />
+          /> */}
         </div>
       </section>
 

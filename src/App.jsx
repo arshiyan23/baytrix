@@ -94,7 +94,7 @@ function AppContent() {
         <Route path="/application-design" element={<ApplicationDesign />} />
         <Route path="/social-media-management" element={<SocialMediaManagement />} />
         <Route path="/marketing-ads" element={<MarketingAds />} />
-        <Route path="/ai-integration" element={<AiIntegration />} />
+        {/* <Route path="/ai-integration" element={<AiIntegration />} /> */}
         <Route path="/contact" element={<Contact />} />
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="/refund-policy" element={<RefundPolicy />} />

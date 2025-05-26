@@ -22,7 +22,7 @@ const Footer = () => {
               <li><Link to="/application-design">Application Design</Link></li>
               <li><Link to="/social-media-management">Social Media Management</Link></li>
               <li><Link to="/marketing-ads">Marketing Ads</Link></li>
-              <li><Link to="/ai-integration">AI Integration</Link></li>
+              {/* <li><Link to="/ai-integration">AI Integration</Link></li> */}
             </ul>
           </div>
           <div>

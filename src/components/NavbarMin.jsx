@@ -8,7 +8,7 @@ const servicesPaths = [
   '/application-design',
   '/social-media-management',
   '/marketing-ads',
-  '/ai-integration'
+  // '/ai-integration'
 ];
 
 const NavbarMin = () => {

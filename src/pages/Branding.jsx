@@ -42,48 +42,60 @@ const brandingSteps = [
   {
     number: 1,
     title: "Initial Discovery & Brand Understanding",
-    description:
-      "We start by understanding your business, goals, audience, and market landscape. Through collaborative sessions and brand audits, we identify what makes your brand unique and where it stands today.",
-    icon: "/assets/branding-identity.png",
+    description: "We dive deep into your business, goals, and audience through collaborative sessions and audits to define what makes your brand unique.",
   },
   {
     number: 2,
     title: "Brand Core & Voice Definition",
-    description:
-      "Next, we define your brand’s personality, tone, and messaging pillars. This step establishes your brand’s core values, voice, and the emotional connection you want to build with your audience.",
-    icon: "/assets/branding-slogan.png",
+    description: "We establish your brand’s personality, tone, and messaging pillars to build an emotional connection with your audience.",
   },
   {
     number: 3,
     title: "Visual Identity Strategy",
-    description:
-      "We begin translating your brand’s core into visual direction — from mood boards to creative direction — outlining the style, imagery, and overall aesthetic the brand will follow.",
-    icon: "/assets/branding-imagery.png",
+    description: "We translate your brand’s core into visual direction—creating mood boards and creative guidelines for a cohesive aesthetic.",
   },
   {
     number: 4,
     title: "Logo Concept & Design",
-    description:
-      "Our design team creates a distinct, scalable logo that captures the brand essence. We explore multiple concepts and refine them in collaboration until we reach a mark that feels just right.",
-    icon: "/assets/branding-logo.png",
+    description: "Our team develops scalable logo concepts, refining them with you until they perfectly capture your brand essence.",
   },
   {
     number: 5,
     title: "Typography & Color System",
-    description:
-      "We craft a complete typographic and color system that reflects your brand’s identity. These elements are selected to support recognition, accessibility, and emotional impact across all mediums.",
-    icon: "/assets/branding-color.png",
+    description: "We select fonts and colors that reflect your identity, ensuring recognition, accessibility, and impact across all platforms.",
   },
   {
     number: 6,
     title: "Final Identity & Brand Guidelines",
-    description:
-      "All visual and verbal elements are brought together into a detailed brand guidelines document. This ensures consistency in how your brand appears across digital and physical platforms going forward.",
-    icon: "/assets/branding-typography.png",
+    description: "We compile all visual and verbal elements into a comprehensive brand guidelines document for consistent application.",
   },
 ];
 
+
 function Branding() {
+  // state tracking for timeline section
+  const [isTrackInView, setIsTrackInView] = useState(false);
+  const trackWrapperRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsTrackInView(entry.isIntersecting);
+      },
+      { threshold: 0.3 }
+    );
+
+    if (trackWrapperRef.current) {
+      observer.observe(trackWrapperRef.current);
+    }
+
+    return () => {
+      if (trackWrapperRef.current) {
+        observer.unobserve(trackWrapperRef.current);
+      }
+    };
+  }, []);
+
   //schedule a meeting section
   const [showScheduleCall, setShowScheduleCall] = useState(false);
   useEffect(() => {
@@ -120,9 +132,9 @@ function Branding() {
       const delta = timestamp - lastTimestamp;
       lastTimestamp = timestamp;
 
-      if (!isPaused) {
+      if (!isPaused && isTrackInView) {
         const speed = 30;
-        const movement = (speed * delta) / 400;
+        const movement = (speed * delta) / 800;
         const trackWidth = trackRef.current.scrollWidth / 2;
 
         let newX = x.get() - movement;
@@ -136,7 +148,8 @@ function Branding() {
 
     animationFrameId = requestAnimationFrame(loop);
     return () => cancelAnimationFrame(animationFrameId);
-  }, [isPaused, x]);
+  }, [isPaused, isTrackInView, x]);
+
 
 
   return (
@@ -206,6 +219,7 @@ function Branding() {
           className="branding-process-track-wrapper"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
+          ref={trackWrapperRef}
         >
 
           <motion.div className="branding-process-track" style={{ x }} ref={trackRef}>
