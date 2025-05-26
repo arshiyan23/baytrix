@@ -33,7 +33,7 @@ const Home = () => {
     <>
       <section id="home" className="hero">
         {/* <FloatingBlobs /> */}
-        <FloatingIcons category="appDevelopment" />
+        <FloatingIcons category="homeScreen" />
         <div className="hero-content">
           <div className="hero-text">
             {/* <h1>Personalized Digital Business Solutions</h1> */}

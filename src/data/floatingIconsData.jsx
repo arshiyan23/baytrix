@@ -11,11 +11,11 @@ export const floatingIconsData = {
     'fas fa-cloud',
     'fas fa-network-wired',
     'fas fa-terminal',
-    'fas fa-shield-alt',
-    'fas fa-microchip',
-    'fas fa-project-diagram',
-    'fas fa-robot',
-    'fas fa-keyboard'
+    // 'fas fa-shield-alt',
+    // 'fas fa-microchip',
+    // 'fas fa-project-diagram',
+    // 'fas fa-robot',
+    // 'fas fa-keyboard'
   ],
   branding: [
     'fas fa-palette',
@@ -27,12 +27,12 @@ export const floatingIconsData = {
     'fas fa-star',
     'fas fa-gem',
     'fas fa-magic',
-    'fas fa-pen-nib',
-    'fas fa-eye',
-    'fas fa-flag',
-    'fas fa-object-ungroup',
-    'fas fa-shapes',
-    'fas fa-brain'
+    // 'fas fa-pen-nib',
+    // 'fas fa-eye',
+    // 'fas fa-flag',
+    // 'fas fa-object-ungroup',
+    // 'fas fa-shapes',
+    // 'fas fa-brain'
   ],
 
   socialMediaManagement: [
@@ -46,11 +46,49 @@ export const floatingIconsData = {
     'fab fa-snapchat-ghost',
     'fab fa-reddit-alien',
     'fab fa-whatsapp',
-    'fab fa-discord',
-    'fas fa-thumbs-up',
-    'fas fa-comment-dots',
-    'fas fa-bell',
-    'fas fa-user-plus'
-  ]
+    // 'fab fa-discord',
+    // 'fas fa-thumbs-up',
+    // 'fas fa-comment-dots',
+    // 'fas fa-bell',
+    // 'fas fa-user-plus'
+  ],
+    aiIntegration: [
+    'fas fa-robot',
+    'fas fa-brain',
+    'fas fa-project-diagram',
+    'fas fa-microchip',
+    'fas fa-cloud',
+    'fas fa-network-wired',
+    'fas fa-lightbulb',
+    'fas fa-cogs',
+    'fas fa-chart-line',
+    'fas fa-code-branch',
+  ],
 
+  marketingAds: [
+    'fas fa-bullhorn',
+    'fas fa-chart-pie',
+    'fas fa-ad',
+    'fas fa-mail-bulk',
+    'fas fa-magnet',
+    'fas fa-rss',
+    'fas fa-envelope-open-text',
+    'fas fa-tags',
+    'fas fa-video',
+    'fas fa-globe',
+  ],
+
+  // 🔥 Home screen combined preview icons (short and stylish)
+  homeScreen: [
+    'fas fa-code',              // App Dev
+    'fas fa-palette',           // Branding
+    'fab fa-instagram',         // SMM
+    'fas fa-robot',             // AI Integration
+    'fas fa-bullhorn',          // Marketing
+    'fas fa-lightbulb',         // Common across ideas
+    'fas fa-chart-line',        // Growth
+    'fas fa-mobile-alt',        // Mobile focus
+    'fas fa-star',              // Quality
+    'fas fa-globe',             // Global reach
+  ]
 };

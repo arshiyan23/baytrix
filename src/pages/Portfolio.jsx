@@ -34,7 +34,7 @@ const Portfolio = () => {
             let frame = 0;
             const duration = 2000;
             const fps = 60;
-            const totalFrames = (duration / 1000) * fps;
+            const totalFrames = (duration / 500) * fps;
 
             const interval = setInterval(() => {
                 frame++;
@@ -67,24 +67,16 @@ const Portfolio = () => {
 
                     {/* Updated Stats Section */}
                     <div className="stat-portfolio-pages" ref={statsRef}>
-                        <div className="stat-portfolio-page-box">
-                            <img
-                                src="https://img.icons8.com/ios-filled/50/ffffff/briefcase.png"
-                                alt="Projects icon"
-                            />
-                            <h2>{count1}+</h2>
-                            <p>Projects Completed</p>
-                        </div>
-                        <div className="stat-portfolio-page-box">
-                            <img
-                                src="https://img.icons8.com/ios-filled/50/ffffff/groups.png"
-                                alt="Clients icon"
-                            />
-                            <h2>{count2}+</h2>
-                            <p>Happy Clients</p>
-                        </div>
                         <div className="stat-portfolio-page-box industries-box">
                             <div className="inner-stats">
+                                <div className="inner-stat-item">
+                                    <img
+                                        src="https://img.icons8.com/ios-filled/50/ffffff/briefcase.png"
+                                        alt="Projects icon"
+                                    />
+                                    <h3>{count1}+</h3>
+                                    <p>Projects Completed</p>
+                                </div>
                                 <div className="inner-stat-item">
                                     <img
                                         src="https://img.icons8.com/ios-filled/48/ffffff/domain.png"
@@ -95,19 +87,11 @@ const Portfolio = () => {
                                 </div>
                                 <div className="inner-stat-item">
                                     <img
-                                        src="https://img.icons8.com/?size=100&id=wchFwQql18r1&format=png&color=ffffff"
-                                        alt="Startups icon"
+                                        src="https://img.icons8.com/ios-filled/50/ffffff/groups.png"
+                                        alt="Clients icon"
                                     />
-                                    <h3>{count4}+</h3>
-                                    <p>Startups Scaled</p>
-                                </div>
-                                <div className="inner-stat-item">
-                                    <img
-                                        src="https://img.icons8.com/ios-filled/48/ffffff/web.png"
-                                        alt="Web icon"
-                                    />
-                                    <h3>{count5}+</h3>
-                                    <p>Web Solutions</p>
+                                    <h3>{count2}+</h3>
+                                    <p>Happy Clients</p>
                                 </div>
                             </div>
                         </div>

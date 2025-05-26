@@ -80,7 +80,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
     /* Dark tint */
     opacity: 0;
     transition: opacity 0.4s ease;
@@ -97,21 +97,23 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #6a4c9c;
-    color: white;
+    background-color: white;
+    color: #7349ac;
     border: none;
-    padding: 10px 16px;
-    border-radius: 4px;
+    padding: 16px 24px;
+    border-radius: 8px;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
     font-weight: bold;
+    font-size: 16px;
     z-index: 2;
     transition: 0.3s;
 }
 
 .view-more-btn:hover {
-    background-color: #48247a;
+    background-color: #7349ac;
+    color: white;
 }
 
 .image-container:hover .view-more-btn {

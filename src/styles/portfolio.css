@@ -39,10 +39,9 @@
 }
 
 .hero-portfolio-image img {
-  max-width: 80%;
+  max-width: 70%;
   height: auto;
 }
-
 
 .stat-portfolio-pages {
   display: flex;
@@ -54,8 +53,8 @@
 .stat-portfolio-page-box {
   flex: 1 1 200px;
   padding: 2rem 1rem;
-  border-radius: 16px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  /* background-color: white; */
   text-align: center;
   transition: transform 0.3s ease;
 }
@@ -64,28 +63,6 @@
   transform: translateY(-5px);
 }
 
-.stat-portfolio-page-box img {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 1rem;
-}
-
-.stat-portfolio-page-box h2 {
-  color: white;
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.stat-portfolio-page-box p {
-  margin: 0;
-  font-size: 1rem;
-  color: white;
-}
-
-/* Parent card remains the same */
-.stat-portfolio-page-box.industries-box {
-  padding: 2rem 1rem; /* adjust if needed */
-}
 
 /* Flex container for the three stats */
 .industries-box .inner-stats {
@@ -120,11 +97,14 @@
 }
 
 /* On very small screens, stack them */
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   .industries-box .inner-stats {
     flex-direction: column;
     gap: 1.5rem;
   }
+  .hero-portfolio-image img {
+  margin-top: 60px;
+}
 }
 
 
