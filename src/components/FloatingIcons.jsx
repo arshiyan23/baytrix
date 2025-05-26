@@ -1,8 +1,13 @@
-// src/components/FloatingIcons.jsx
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import '../styles/floating-icons.css';
 import { useEffect, useState } from 'react';
 import { floatingIconsData } from '../data/floatingIconsData';
+
+const animationClasses = ['anim-float', 'anim-bounce-spin', 'anim-pulse', 'anim-wiggle'];
+
+function getRandomAnimation() {
+  return animationClasses[Math.floor(Math.random() * animationClasses.length)];
+}
 
 function getRandomStyle(isMobile) {
   const size = Math.floor(Math.random() * 30) + (isMobile ? 10 : 50);
@@ -17,48 +22,49 @@ function getRandomStyle(isMobile) {
   };
 }
 
-const animationClasses = ['anim-float', 'anim-bounce-spin', 'anim-pulse', 'anim-wiggle'];
-
-function getRandomAnimation() {
-  return animationClasses[Math.floor(Math.random() * animationClasses.length)];
-}
-
 function FloatingIcons({ category = 'appDevelopment' }) {
-  const icons = floatingIconsData[category] || [];
-
+  const allIcons = floatingIconsData[category] || [];
   const [isMobile, setIsMobile] = useState(false);
+  const [visibleIcons, setVisibleIcons] = useState([]);
+  const [fadeClass, setFadeClass] = useState('flt-ico-fade-in');
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize(); // set initial value
+    handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Initialize random icons once
   useEffect(() => {
-    const items = document.querySelectorAll(".floating-icon");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-    items.forEach((item) => observer.observe(item));
-    return () => observer.disconnect();
-  }, []);
+    const generateIcons = () =>
+      allIcons.map((iconClass) => ({
+        className: `${iconClass} ${getRandomAnimation()}`,
+        style: getRandomStyle(isMobile),
+      }));
+
+    setVisibleIcons(generateIcons());
+
+    const interval = setInterval(() => {
+      setFadeClass('flt-ico-fade-out');
+
+      // After fade out completes (1s), change icons
+      setTimeout(() => {
+        setVisibleIcons(generateIcons());
+        setFadeClass('flt-ico-fade-in');
+      }, 1000); // match flt-ico-fade-out duration
+    }, 4000); // total interval
+
+    return () => clearInterval(interval);
+  }, [allIcons, isMobile]);
 
   return (
     <>
-      {icons.map((iconClass, i) => (
+      {visibleIcons.map((icon, i) => (
         <i
           key={i}
-          className={`floating-icon ${iconClass} ${getRandomAnimation()}`}
-          style={getRandomStyle(isMobile)}
+          className={`floating-icon ${icon.className} ${fadeClass}`}
+          style={icon.style}
         />
       ))}
     </>

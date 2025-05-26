@@ -4,6 +4,7 @@
   pointer-events: none;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
+  opacity: 1;
 }
 
 /* Animations */
@@ -37,3 +38,14 @@
 .anim-bounce-spin { animation-name: bounceSpin; }
 .anim-pulse { animation-name: pulse; }
 .anim-wiggle { animation-name: wiggle; }
+
+.flt-ico-fade-in {
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
+
+.flt-ico-fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
