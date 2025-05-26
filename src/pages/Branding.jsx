@@ -122,7 +122,7 @@ function Branding() {
 
       if (!isPaused) {
         const speed = 30;
-        const movement = (speed * delta) / 1000;
+        const movement = (speed * delta) / 400;
         const trackWidth = trackRef.current.scrollWidth / 2;
 
         let newX = x.get() - movement;

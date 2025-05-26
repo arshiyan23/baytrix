@@ -3,8 +3,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.2);
   pointer-events: none;
@@ -14,7 +14,7 @@
 }
 
 .cursor-circle.expand {
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
   background: rgba(255, 255, 255, 0.3);
 }
