@@ -1,0 +1,13 @@
+
+/* floating blobs */
+.brnd-floating-blob {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  animation: brnd-float ease-in-out infinite;
+}
+
+@keyframes brnd-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%      { transform: translateY(-20px) scale(1.05); }
+}

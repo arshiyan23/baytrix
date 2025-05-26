@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
 import "../styles/branding.css";
+import "../styles/floating-blobs.css";
 import ScheduleCall from '../components/ScheduleCall';
 import ProcessHeading from "../components/ProcessHeading";
 
