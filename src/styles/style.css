@@ -8,7 +8,7 @@
 
 html {
     scroll-behavior: smooth;
-} 
+}
 
 body {
     font-family: 'Arial', sans-serif;
@@ -25,6 +25,7 @@ body {
     position: relative;
     padding: 100px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    overflow: hidden;
 }
 
 .hero-content {
@@ -95,10 +96,11 @@ body {
 }
 
 @media (max-width: 768px) {
-    .hero{
+    .hero {
         padding: 40px;
     }
-    .hero-content{
+
+    .hero-content {
         gap: 70px;
     }
 }

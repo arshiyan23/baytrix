@@ -1,156 +1,249 @@
-/* Reuse your previous styles first */
-.brand-hero-section {
-    padding: 4rem 2rem;
-    background: #7349ac;
-    overflow: hidden;
+/* ─────────────────────────────────────────────────────────────────────────
+   HERO SECTION (unchanged)
+───────────────────────────────────────────────────────────────────────── */
+.brnd-hero-section {
+  position: relative;
+  background-color: #7349ac;
+  padding: 40px 20px 0;
+  overflow: hidden;
+}
+
+.brnd-hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  padding-bottom: 20px;
+}
+
+.brnd-hero-img {
+  width: 40%;
+  max-width: 500px;
+  border-radius: 16px;
+  margin-right: 80px;
+}
+.brnd-hero-text {
+  flex: 1;
+  color: white;
+  text-align: left;
+}
+
+.brnd-hero-text h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.brnd-hero-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* floating blobs */
+.brnd-floating-blob {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  animation: brnd-float ease-in-out infinite;
+}
+
+@keyframes brnd-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%      { transform: translateY(-20px) scale(1.05); }
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   FEATURES SECTION – Animated Card Reveal on Hover
+───────────────────────────────────────────────────────────────────────── */
+.brnd-features-section {
+  background: white;
+  color: #333;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.brnd-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Feature Card with Behind-Hover Reveal
+───────────────────────────────────────────────────────────────────────── */
+.brnd-feature-card {
+  position: relative;
+  background: white;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+/* Purple skewed background effect that reveals on hover */
+.brnd-feature-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background: #7349ac;
+  transform: skewX(-20deg);
+  z-index: 1;
+  transition: right 1s ease;
+}
+
+/* Slide in from right on hover */
+.brnd-feature-card:hover::after {
+  right: 0;
+}
+
+.brnd-feature-card:hover h3,
+ .brnd-feature-card:hover p {
+  color: white;
+}
+
+/* Content sits above the reveal effect */
+.brnd-feature-icon,
+.brnd-feature-card h3,
+.brnd-feature-card p,
+.brnd-hover-border {
+  position: relative;
+  z-index: 2;
+}
+
+.brnd-feature-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1rem;
+}
+
+.brnd-feature-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #7349ac;
+  transition: color 0.5s ease;
+}
+
+.brnd-feature-card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  transition: color 0.5s ease;
+}
+
+
+/* Optional: diagonal hover border */
+.brnd-hover-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  /* border-right: 5px solid #7349ac; */
+  /* border-bottom: 5px solid #7349ac; */
+  z-index: 2;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.brnd-feature-card:hover .brnd-hover-border {
+  width: 100%;
+  height: 100%;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Responsive Grid
+───────────────────────────────────────────────────────────────────────── */
+@media (max-width: 992px) {
+  .brnd-features-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .brand-hero-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 2rem;
+}
+@media (max-width: 600px) {
+  .brnd-features-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .brand-hero-img {
+}
+
+/* branding-process.css */
+.branding-process-container {
+  background-color: #f5f0ff;
+  padding: 2rem 0;
+  overflow: hidden;
+}
+
+.branding-process-track-wrapper {
+  overflow: hidden;
+}
+
+.branding-process-track {
+  display: flex;
+  gap: 2rem;
+  will-change: transform;
+  padding: 1rem;
+}
+
+.branding-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 300px;
+  min-height: 320px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.branding-number {
+  background-color: #7349ac;
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+.branding-content h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.branding-content p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .branding-card {
     width: 240px;
-    max-width: 100%;
-    opacity: 1;
-    /* transform: translateX(50px); */
-    /* animation: fadeInRight 1s forwards; */
-    animation-delay: 0.2s;
+    min-height: 300px;
+    padding: 1rem;
   }
-  
-  .brand-hero-text {
-    max-width: 500px;
-    opacity: 1;
-    /* transform: translateX(-50px); */
-    /* animation: fadeInLeft 1s forwards; */
-    /* animation-delay: 0.2s; */
+
+  .branding-number {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
   }
-  
-  .brand-hero-text h2 {
-    font-size: 2rem;
-    color: white;
-    margin-bottom: 1rem;
-  }
-  
-  .brand-hero-text p {
-    font-size: 1.1rem;
-    color: white;
-    line-height: 1.5;
-  }
-/* Floating Blobs */
-.floating-blob {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    z-index: 0;
-    animation-name: float;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-  }
-  
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0) scale(1);
-    }
-    50% {
-      transform: translateY(-20px) scale(1.05);
-    }
-  }
-  
-  .brand-wave {
-    display: block;
-    width: 100%;
-    height: 100px;
-    margin-top: -2px;
-    background: #f9f4fc;
-  }
-  
-  .brand-curve {
-    fill: #7349ac;
-  }
-  
-  
-  .brand-feature-section {
-    background: #f9f4fc;
-    color: white;
-    padding: 4rem 2rem;
-    text-align: center;
-  }
-  
-  .brand-feature-section .section-heading {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #7349ac;
-  }
-  
-  .brand-feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .brand-feature {
-    background: white;
-    color: #333;
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.6s ease;
-  }
-  
-  .brand-feature.animate {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .brand-icon {
-    width: 64px;
-    height: 64px;
-    margin-bottom: 1rem;
-  }
-  
-  .brand-feature h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: #6A4C9C;
-  }
-  
-  .brand-feature p {
-    font-size: 0.95rem;
-    line-height: 1.4;
-  }
-  
-  /* Animations */
-  @keyframes fadeInLeft {
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
-  @keyframes fadeInRight {
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
-  @keyframes waveMotion {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100px);
-    }
-  }
-  
+}
+

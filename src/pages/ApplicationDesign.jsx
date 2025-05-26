@@ -1,8 +1,7 @@
 import ProcessHeading from '../components/ProcessHeading';
 import ScheduleCall from '../components/ScheduleCall';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import HorizontalShowcaseSlider from '../components/HorizontalShowcaseSlider';
-import TestimonialSlider from '../components/TestimonialSlider';
 import FeatureCarousel from '../components/FeatureCarousel';
 import '../styles/application-design.css';
 
