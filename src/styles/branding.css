@@ -235,12 +235,13 @@
     font-size: 1rem;
   }
 
-    .brnd-hero-section {
+  .brnd-hero-section {
     position: relative;
     /* background-color: #7349ac; */
     padding: 10px 10px 0px;
     overflow: hidden;
   }
+
   .brnd-hero-container {
     flex-direction: column;
     text-align: center;
