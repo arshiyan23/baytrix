@@ -26,6 +26,7 @@
   margin-right: 80px;
   z-index: 1;
 }
+
 .brnd-hero-text {
   flex: 1;
   color: white;
@@ -84,7 +85,7 @@
   background: #7349ac;
   transform: skewX(-20deg);
   z-index: 1;
-  transition: right 1s ease;
+  transition: right 0.4s ease;
 }
 
 /* Slide in from right on hover */
@@ -93,7 +94,7 @@
 }
 
 .brnd-feature-card:hover h3,
- .brnd-feature-card:hover p {
+.brnd-feature-card:hover p {
   color: white;
 }
 
@@ -153,6 +154,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media (max-width: 600px) {
   .brnd-features-grid {
     grid-template-columns: 1fr;
@@ -232,5 +234,23 @@
     height: 36px;
     font-size: 1rem;
   }
-}
 
+    .brnd-hero-section {
+    position: relative;
+    /* background-color: #7349ac; */
+    padding: 10px 10px 0px;
+    overflow: hidden;
+  }
+  .brnd-hero-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+    flex-wrap: nowrap;
+  }
+
+  .brnd-hero-img {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-right: 0px;
+  }
+}

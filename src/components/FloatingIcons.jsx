@@ -1,11 +1,11 @@
 // src/components/FloatingIcons.jsx
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import '../styles/floating-icons.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { floatingIconsData } from '../data/floatingIconsData';
 
-function getRandomStyle() {
-  const size = Math.floor(Math.random() * 30) + 20;
+function getRandomStyle(isMobile) {
+  const size = Math.floor(Math.random() * 30) + (isMobile ? 10 : 50);
   const top = Math.floor(Math.random() * 300);
   const left = Math.floor(Math.random() * 100);
   const duration = (Math.random() * 5 + 4).toFixed(1); // 4–9s
@@ -25,6 +25,15 @@ function getRandomAnimation() {
 
 function FloatingIcons({ category = 'appDevelopment' }) {
   const icons = floatingIconsData[category] || [];
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize(); // set initial value
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const items = document.querySelectorAll(".floating-icon");
@@ -49,7 +58,7 @@ function FloatingIcons({ category = 'appDevelopment' }) {
         <i
           key={i}
           className={`floating-icon ${iconClass} ${getRandomAnimation()}`}
-          style={getRandomStyle()}
+          style={getRandomStyle(isMobile)}
         />
       ))}
     </>

@@ -32,7 +32,7 @@ const Portfolio = () => {
 
         const animateCount = (target, setter) => {
             let frame = 0;
-            const duration = 2000;
+            const duration = 3000;
             const fps = 60;
             const totalFrames = (duration / 500) * fps;
 
@@ -60,9 +60,9 @@ const Portfolio = () => {
                 <div className="hero-portfolio-content">
                     <h1>OUR PORTFOLIO</h1>
                     <p>
-                        Dive into our collection of digital masterpieces — from stunning
-                        logos to full-stack applications. We bring innovation, creativity,
-                        and results.
+                        Dive into our digital masterpieces — from 
+                        Branding and App Design to Social Media Management, Marketing Ads and AI Integration.
+                        We bring innovation, creativity, and results.
                     </p>
 
                     {/* Updated Stats Section */}

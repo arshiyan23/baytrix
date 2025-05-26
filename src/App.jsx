@@ -81,7 +81,8 @@ function AppContent() {
     <>
       <PromoPopUp visible={showPopup} onClose={() => setShowPopup(false)} />
       <OfferBanner />
-      <CursorFollower />
+      
+      {!(isMobile) ? <CursorFollower /> : ''}
 
       {/* Switch between Desktop / Mobile Navbar */}
       {isMobile ? <NavbarMin /> : <NavbarMax />}
