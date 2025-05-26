@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import HorizontalShowcaseSlider from '../components/HorizontalShowcaseSlider';
 import FeatureCarousel from '../components/FeatureCarousel';
 import '../styles/application-design.css';
-
+import FloatingIcons from '../components/FloatingIcons';
 
 
 function ApplicationDesign() {
@@ -132,6 +132,7 @@ function ApplicationDesign() {
   return (
     <>
       <section className="app-intro-section">
+        <FloatingIcons category="appDevelopment" />
         <div className="app-intro-container">
           <img src="/assets/app-dev-bg-2.png" alt="App Intro" className="intro-image" />
           <div className="intro-text">

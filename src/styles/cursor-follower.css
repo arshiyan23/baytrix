@@ -1,0 +1,20 @@
+/* CursorFollower.css */
+.cursor-circle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+  transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+  will-change: transform;
+  z-index: 9999;
+}
+
+.cursor-circle.expand {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.3);
+}

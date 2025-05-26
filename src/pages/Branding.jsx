@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
 import "../styles/branding.css";
-import "../styles/floating-blobs.css";
 import ScheduleCall from '../components/ScheduleCall';
 import ProcessHeading from "../components/ProcessHeading";
+import FloatingIcons from "../components/FloatingIcons";
 
 const features = [
   {
@@ -83,45 +83,7 @@ const brandingSteps = [
   },
 ];
 
-//random blobs func
-function getRandomBlobStyle() {
-  const size = Math.floor(Math.random() * 60) + 40;
-  const top = Math.floor(Math.random() * 300);
-  const left = Math.floor(Math.random() * 100);
-  const duration = (Math.random() * 4 + 5).toFixed(1);
-  return {
-    width: `${size}px`,
-    height: `${size}px`,
-    top: `${top}px`,
-    left: `${left}%`,
-    animationDuration: `${duration}s`,
-  };
-}
-
 function Branding() {
-
-  //random blobs
-  useEffect(() => {
-    const items = document.querySelectorAll(".brnd-feature-card");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-    items.forEach((item) => observer.observe(item));
-    return () => observer.disconnect();
-  }, []);
-
-  const blobs = Array.from({ length: 8 }, (_, i) => (
-    <div key={i} className="brnd-floating-blob" style={getRandomBlobStyle()} />
-  ));
-
   //schedule a meeting section
   const [showScheduleCall, setShowScheduleCall] = useState(false);
   useEffect(() => {
@@ -181,7 +143,7 @@ function Branding() {
     <>
       {/* HERO SECTION */}
       <section className="brnd-hero-section">
-        {blobs}
+        <FloatingIcons category="branding" />
         <div className="brnd-hero-container">
           <img
             src="/assets/branding-intro2.png"

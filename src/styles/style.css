@@ -58,11 +58,13 @@ body {
     flex: 1;
     min-width: 300px;
     text-align: right;
+    z-index: 1;
 }
 
 .hero-image img {
     width: 100%;
     max-width: 500px;
+    z-index: 1;
     /* margin: 40px 0px; */
 }
 

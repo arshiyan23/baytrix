@@ -3,6 +3,7 @@ import "../styles/social-media-management.css";
 import ProcessHeading from "../components/ProcessHeading";
 import VerticalShowcaseSlider from "../components/VerticalShowcaseSlider";
 import ScheduleCall from "../components/ScheduleCall";
+import FloatingIcons from "../components/FloatingIcons";
 
 function SocialMediaManagement() {
   useEffect(() => {
@@ -140,6 +141,7 @@ function SocialMediaManagement() {
   return (
     <>
       <section className="smm-hero-section">
+        <FloatingIcons category="socialMediaManagement" />
         <div className="smm-hero-content">
           <img src="/assets/smm-hero2.png" alt="Social Media" className="smm-hero-img" />
           <div className="smm-hero-text">

@@ -30,6 +30,7 @@ import Portfolio from './pages/Portfolio';
 import PortfolioItem from './components/PortfolioItem';
 import ScrollToTopBtn from './components/ScrollToTopBtn';
 import BetterThanAi from './components/BetterThanAi';
+import CursorFollower from './components/CursorFollower';
 
 
 // Hook to track window size
@@ -80,6 +81,7 @@ function AppContent() {
     <>
       <PromoPopUp visible={showPopup} onClose={() => setShowPopup(false)} />
       <OfferBanner />
+      <CursorFollower />
 
       {/* Switch between Desktop / Mobile Navbar */}
       {isMobile ? <NavbarMin /> : <NavbarMax />}

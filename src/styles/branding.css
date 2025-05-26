@@ -24,6 +24,7 @@
   max-width: 500px;
   border-radius: 16px;
   margin-right: 80px;
+  z-index: 1;
 }
 .brnd-hero-text {
   flex: 1;

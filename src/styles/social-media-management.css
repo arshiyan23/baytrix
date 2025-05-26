@@ -20,6 +20,7 @@
 .smm-hero-img {
   width: 100%;
   max-width: 500px;
+  z-index: 1;
   /* animation: float 6s ease-in-out infinite; */
 }
 

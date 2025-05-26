@@ -1,0 +1,39 @@
+.floating-icon {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+/* Animations */
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%      { transform: translateY(-20px) scale(1.05); }
+}
+
+@keyframes bounceSpin {
+  0%   { transform: translateY(0) rotate(0deg); }
+  30%  { transform: translateY(-15px) rotate(360deg); }
+  60%  { transform: translateY(0) rotate(720deg); }
+  100% { transform: translateY(-10px) rotate(1080deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.2); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25%      { transform: rotate(10deg); }
+  75%      { transform: rotate(-10deg); }
+}
+
+/* Animation classes */
+
+.anim-float { animation-name: floatIcon; }
+.anim-bounce-spin { animation-name: bounceSpin; }
+.anim-pulse { animation-name: pulse; }
+.anim-wiggle { animation-name: wiggle; }
