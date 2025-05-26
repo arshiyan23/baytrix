@@ -41,6 +41,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -86,13 +87,15 @@
   position: relative;
   overflow: hidden;
   border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* move shadow here instead */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  /* move shadow here instead */
 }
 
 .gallery-item .image-wrapper img {
   margin-bottom: 0;
   width: 100%;
-  height: 300px; /* fixed height for consistent crop */
+  height: 300px;
+  /* fixed height for consistent crop */
   object-fit: cover;
   object-position: top;
   display: block;
@@ -171,21 +174,58 @@
 
 
 /* Animation delay for staggered effect */
-.gallery-item:nth-child(1) { animation-delay: 0ms; }
-.gallery-item:nth-child(2) { animation-delay: 100ms; }
-.gallery-item:nth-child(3) { animation-delay: 200ms; }
-.gallery-item:nth-child(4) { animation-delay: 300ms; }
-.gallery-item:nth-child(5) { animation-delay: 400ms; }
-.gallery-item:nth-child(6) { animation-delay: 500ms; }
-.gallery-item:nth-child(7) { animation-delay: 600ms; }
-.gallery-item:nth-child(8) { animation-delay: 700ms; }
-.gallery-item:nth-child(9) { animation-delay: 800ms; }
+.gallery-item:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+.gallery-item:nth-child(2) {
+  animation-delay: 100ms;
+}
+
+.gallery-item:nth-child(3) {
+  animation-delay: 200ms;
+}
+
+.gallery-item:nth-child(4) {
+  animation-delay: 300ms;
+}
+
+.gallery-item:nth-child(5) {
+  animation-delay: 400ms;
+}
+
+.gallery-item:nth-child(6) {
+  animation-delay: 500ms;
+}
+
+.gallery-item:nth-child(7) {
+  animation-delay: 600ms;
+}
+
+.gallery-item:nth-child(8) {
+  animation-delay: 700ms;
+}
+
+.gallery-item:nth-child(9) {
+  animation-delay: 800ms;
+}
 
 @keyframes horizontalBounce {
-  0%   { transform: translateX(0); }
-  30%  { transform: translateX(6px); }
-  60%  { transform: translateX(-3px); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(0);
+  }
+
+  30% {
+    transform: translateX(6px);
+  }
+
+  60% {
+    transform: translateX(-3px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 /* Mobile tweaks */
@@ -205,5 +245,26 @@
 
   .overlay-content h3 {
     font-size: 1rem;
+  }
+
+
+  .gallery-item .overlay {
+    bottom: -100%;
+    opacity: 0;
+    transition: bottom 0.4s ease, opacity 0.4s ease;
+    pointer-events: none;
+    /* disables hover on mobile */
+  }
+
+  .gallery-item.mobile-scroll-show .overlay {
+    bottom: 0;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Prevent hover effects from triggering on mobile */
+  .gallery-item:hover .overlay {
+    bottom: -100%;
+    opacity: 0;
   }
 }
