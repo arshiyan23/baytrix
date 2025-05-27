@@ -5,9 +5,9 @@ import "../styles/vertical-showcase-slider.css";
 import NumStats from "./NumStats";
 
 const statsData = [
-  { id: "impressionsCounter", icon: "/assets/impressions-ico.png", value: "0", targetValue: "120K+", label: "Total Impressions" },
+  { id: "impressionsCounter", icon: "/assets/impressions-ico.png", value: "0",  targetValue: "120K+", label: "Total Impressions" },
   { id: "engagementCounter",  icon: "/assets/engagements-ico.png", value: "0%", targetValue: "11.2%", label: "Avg. Engagement Rate" },
-  { id: "reachCounter",       icon: "/assets/reach-ico.png",    value: "0", targetValue: "30K+",  label: "Accounts Reached" }
+  { id: "reachCounter",       icon: "/assets/reach-ico.png",    value: "0",  targetValue: "30K+",  label: "Accounts Reached" }
 ];
 
 const VerticalShowcaseSlider = ({
@@ -43,7 +43,7 @@ const VerticalShowcaseSlider = ({
       <div className="engagement-showcase-section">
         <div className="engagement-showcase-wrapper">
 
-          {/* LEFT: scroll-triggered slide-in + cross-fade */}
+          {/* LEFT stays the same */}
           <motion.div
             className="engagement-left"
             initial={{ opacity: 0, x: -100 }}
@@ -53,9 +53,7 @@ const VerticalShowcaseSlider = ({
           >
             <div className="floating-phone-wrapper">
               <div className="fixed-image-container">
-                {/* preload next image */}
                 <img src={nextSlide.image} alt="preload" style={{ display: "none" }} />
-
                 <AnimatePresence mode="sync" initial={false}>
                   <motion.img
                     key={currentIndex}
@@ -72,7 +70,7 @@ const VerticalShowcaseSlider = ({
             </div>
           </motion.div>
 
-          {/* RIGHT: scroll-triggered slide-in + stacked cross-fade */}
+          {/* RIGHT: now using mode="wait" for sequential fade */}
           <motion.div
             className="engagement-right"
             initial={{ opacity: 0, x: 100 }}
@@ -81,7 +79,7 @@ const VerticalShowcaseSlider = ({
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <div className="engagement-text-wrapper">
-              <AnimatePresence mode="sync" initial={false}>
+              <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                   key={currentIndex}
                   className="engagement-text-slide"

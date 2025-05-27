@@ -38,7 +38,7 @@ const appFeatures = [
   {
     title: "Admin Monitoring Pages",
     description: "Comprehensive admin pages to monitor app performance and usage: manage users and roles, configure settings, view real‐time analytics and logs.",
-    image: "/assets/portfolio/admin-mockup.png",
+    image: "/assets/portfolio/crm-mockup.png",
     icon: "/assets/icons/admin.png"
   },
 ];
