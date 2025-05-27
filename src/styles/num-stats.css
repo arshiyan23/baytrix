@@ -5,7 +5,6 @@
   overflow: visible;
 }
 
-/* Stat Section with matching pink container */
 .num-stat-section {
   /* background-color: #fcddec; */
   /* background-color: #f8e8f0; */
@@ -13,7 +12,7 @@
   border: 1px solid #7249ac3c;
   border-bottom-right-radius: 30px;
   border-radius: 30px;
-  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 0;
