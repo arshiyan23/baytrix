@@ -108,23 +108,7 @@ function ApplicationDesign() {
 
   const companies = [
     {
-      name: "GoWash",
-      description: "Gowash is a modern, mobile-first car washing service built for convenience, quality, and care.",
-      images: ["/assets/port1.png", "/assets/port4.png"],
-      logo: "/assets/gowash.png"
-    },
-    {
-      name: "Emiway Bantai",
-      description: "A self-made Indian rapper without any backing from record labels — a true symbol of independent hustle.",
-      images: ["/assets/port1.png", "/assets/port4.png"],
-      logo: "/assets/eb.png"
-    },
-
-    {
-      name: "Compass",
-      description: "Turning ideas into real-world impact with strategic guidance, operational support, and hands-on execution.",
-      images: ["/assets/port1.png", "/assets/port4.png"],
-      logo: "/assets/compass.png"
+      images: ["/assets/portfolio/mockup-test.png", "/assets/port4.png"],
     }
   ];
 
@@ -138,7 +122,7 @@ function ApplicationDesign() {
           <div className="intro-text">
             <h2>APPLICATION DESIGN</h2>
             <p>
-              Why Choose Our App Services? <br/>We combine strategy, design, and cutting-edge tech to deliver apps that
+              We combine strategy, design, and cutting-edge tech to deliver apps that
               scale and delight users.
             </p>
             <button
@@ -167,16 +151,7 @@ function ApplicationDesign() {
       {/* feature section */}
       <FeatureCarousel />
 
-      {/* our app work */}
-      <HorizontalShowcaseSlider
-        companies={companies}
-        headingBackgroundText="SUCCESS"
-        headingForegroundText="APPS DEVELOPED"
-        foregroundTextColor="white"
-      />
-
-
-      <section className="app-service-section">
+            <section className="app-service-section">
         <ProcessHeading
           backgroundText="PROCESS"
           foregroundText="DEVELOPMENT STAGES"
@@ -200,6 +175,47 @@ function ApplicationDesign() {
         </div>
       </section>
 
+      {/* our app work */}
+      <HorizontalShowcaseSlider
+        companies={companies}
+        headingBackgroundText="SUCCESS"
+        headingForegroundText="APPS DEVELOPED"
+        foregroundTextColor="white"
+      />
+      
+      <section className="success-section">
+        <div className="success-wrapper">
+          <ProcessHeading 
+          backgroundText="NON-STOP" 
+          foregroundText="POWERING YOUR GROWTH" 
+          backgroundTextFill='#f5f0ff'
+          description='We build reliable, scalable digital solutions that help your
+            business move faster, reach further, and grow stronger.'
+          />
+          <div className="success-container">
+            <div className="success-item">
+              <img src="/assets/icon-apps.png" alt="Apps" className="success-icon" />
+              <div className="success-number" id="appsCounter">0</div>
+              <p className="success-text">Apps Running</p>
+            </div>
+            <div className="success-item">
+              <img src="/assets/icon-users.png" alt="Users" className="success-icon" />
+              <div className="success-number" id="usersCounter">0</div>
+              <p className="success-text">Users Served</p>
+            </div>
+            <div className="success-item">
+              <img src="/assets/icon-uptime.png" alt="Uptime" className="success-icon" />
+              <div className="success-number" id="uptimeCounter">0%</div>
+              <p className="success-text">Uptime Guarantee</p>
+            </div>
+            <div className="success-item">
+              <img src="/assets/icon-reviews.png" alt="Reviews" className="success-icon" />
+              <div className="success-number" id="reviewsCounter">0%</div>
+              <p className="success-text">Reviews Received</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="post-launch-section">
         <ProcessHeading
@@ -280,40 +296,6 @@ function ApplicationDesign() {
         </div>
       </section>
 
-
-      <section className="success-section">
-        <div className="success-wrapper">
-          <ProcessHeading 
-          backgroundText="NON-STOP" 
-          foregroundText="POWERING YOUR GROWTH" 
-          backgroundTextFill='#f5f0ff'
-          description='We build reliable, scalable digital solutions that help your
-            business move faster, reach further, and grow stronger.'
-          />
-          <div className="success-container">
-            <div className="success-item">
-              <img src="/assets/icon-apps.png" alt="Apps" className="success-icon" />
-              <div className="success-number" id="appsCounter">0</div>
-              <p className="success-text">Apps Running</p>
-            </div>
-            <div className="success-item">
-              <img src="/assets/icon-users.png" alt="Users" className="success-icon" />
-              <div className="success-number" id="usersCounter">0</div>
-              <p className="success-text">Users Served</p>
-            </div>
-            <div className="success-item">
-              <img src="/assets/icon-uptime.png" alt="Uptime" className="success-icon" />
-              <div className="success-number" id="uptimeCounter">0%</div>
-              <p className="success-text">Uptime Guarantee</p>
-            </div>
-            <div className="success-item">
-              <img src="/assets/icon-reviews.png" alt="Reviews" className="success-icon" />
-              <div className="success-number" id="reviewsCounter">0%</div>
-              <p className="success-text">Reviews Received</p>
-            </div>
-          </div>
-        </div>
-      </section>
       {showScheduleCall && (
         <ScheduleCall onClose={() => setShowScheduleCall(false)} />
       )}

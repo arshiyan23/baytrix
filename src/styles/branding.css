@@ -48,7 +48,6 @@
    FEATURES SECTION – Animated Card Reveal on Hover
 ───────────────────────────────────────────────────────────────────────── */
 .brnd-features-section {
-  background: white;
   color: #333;
   padding: 4rem 2rem;
   text-align: center;
@@ -67,11 +66,12 @@
 ───────────────────────────────────────────────────────────────────────── */
 .brnd-feature-card {
   position: relative;
-  background: white;
+  background: #f5f0ff;
   padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); */
   overflow: hidden;
   transition: transform 0.3s ease;
+  border-radius: 10px;
 }
 
 /* Purple skewed background effect that reveals on hover */
@@ -161,9 +161,77 @@
   }
 }
 
+/* why branding matters section  */
+.brnd-importance-section {
+  /* background-color: #f5f0ff; */
+  color: #7349ac;
+  padding: 4rem 2rem;
+  padding-bottom: 2rem;
+  /* border: 1px solid #7349ac; */
+}
+
+/* .brnd-importance-heading span {
+  display: block;
+  color: #7349ac;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+} */
+/* .brnd-importance-heading h2 {
+  font-size: 2.5rem;
+  margin: 0;
+} */
+
+.brnd-importance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1250px;
+  margin: 0 auto;
+  /* border: 1px solid #7349ac;
+  border-radius: 10px; */
+}
+
+.brnd-importance-card {
+  /* background-color: #111; */
+  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); */
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: left;
+  border: 1px solid #7249ac3c;
+  border-radius: 10px;
+}
+.brnd-importance-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+}
+.brnd-importance-card h3 {
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem;
+  color: #7349ac;
+}
+.brnd-importance-card p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .brnd-importance-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .brnd-importance-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* branding-process.css */
 .branding-process-container {
-  background-color: #f5f0ff;
+  /* background-color: #f5f0ff; */
   padding: 2rem 0;
   overflow: hidden;
 }
@@ -212,7 +280,7 @@
   font-size: 1.1rem;
   margin-bottom: 0.8rem;
   font-weight: 600;
-  color: #333;
+  color: #7349ac;
 }
 
 .branding-content p {

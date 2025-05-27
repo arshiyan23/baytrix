@@ -129,7 +129,7 @@ export default function FeatureCarousel() {
           foregroundText="WHAT WE OFFER"
           description="We build personalized applications that streamline operations,
         enhance user experience, and maximize your ROI—tailored to your specific needs."
-          backgroundTextFill="#f5f0ff"
+          // backgroundTextFill="#f5f0ff"
         />
       </div>
 

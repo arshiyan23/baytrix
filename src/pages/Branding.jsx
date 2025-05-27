@@ -71,6 +71,25 @@ const brandingSteps = [
   },
 ];
 
+const importanceItems = [
+  {
+    title: "Establish Credibility",
+    desc: "A solid brand identity builds confidence and positions you as an industry authority.",
+    icon: "/assets/credebility.png",
+  },
+  {
+    title: "Stand Out Visually",
+    desc: "Unique design elements and messaging make your brand memorable in a crowded market.",
+    icon: "/assets/person-find.png",
+  },
+  {
+    title: "Inspire Customer Loyalty",
+    desc: "Authentic brand experiences turn customers into repeat buyers and enthusiastic advocates.",
+    icon: "/assets/loyalty.png",
+  },
+];
+
+
 
 function Branding() {
   // state tracking for timeline section
@@ -179,6 +198,28 @@ function Branding() {
         </div>
       </section>
 
+      {/* importance of branding */}
+
+      <section className="brnd-importance-section">
+          <ProcessHeading
+            foregroundText="WHY BRANDING MATTERS"
+            backgroundText="IMPORTANCE"
+            description="Branding is crucial because it creates recognition and trust, 
+            turning your business into a memorable presence that customers feel 
+            confident in and return to again and again."
+            //  backgroundTextFill="#f5f0ff"
+          />
+        <div className="brnd-importance-grid">
+          {importanceItems.map((item, i) => (
+            <div key={i} className="brnd-importance-card">
+              <img src={item.icon} alt={item.title} className="brnd-importance-icon" />
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* FEATURES SECTION */}
       <section className="brnd-features-section">
         <ProcessHeading
@@ -203,13 +244,14 @@ function Branding() {
         </div>
       </section>
 
+
+
       {/* SLIDER SECTION */}
 
       <section className="branding-process-container">
         <ProcessHeading
           foregroundText="OUR TIMELINE"
           backgroundText="PROCEDURE"
-          backgroundTextFill="#f5f0ff"
           description="We follow a structured, creative 
           approach to shape your brand’s identity—from discovery and 
           strategy to visuals and final delivery. Every step ensures consistency and impact."
@@ -235,7 +277,6 @@ function Branding() {
           </motion.div>
         </div>
       </section>
-      );
       {showScheduleCall && (
         <ScheduleCall onClose={() => setShowScheduleCall(false)} />
       )}

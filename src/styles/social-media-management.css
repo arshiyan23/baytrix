@@ -4,6 +4,7 @@
   color: white;
   position: relative;
   padding: 40px;
+  overflow: hidden;
 }
 
 .smm-hero-content {
@@ -275,6 +276,9 @@
   color: #555;
   text-align: center;
   background-color: #f5f0ff;
+  border-bottom: 1px solid #7249ac3c;
+  border-top: 1px solid #7249ac3c;
+
 }
 
 .social-success-section .success-wrapper {

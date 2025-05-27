@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import ProcessHeading from "./ProcessHeading";
-import '../styles/vertical-showcase-slider.css'
+import '../styles/vertical-showcase-slider.css';
 
 const VerticalShowcaseSlider = ({ 
   companies, 
@@ -11,11 +11,13 @@ const VerticalShowcaseSlider = ({
   const [currentCompanyIndex, setCurrentCompanyIndex] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  // Preload next image
   useEffect(() => {
     const img = new Image();
     img.src = companies[currentCompanyIndex].images[currentImageIndex];
   }, [companies, currentCompanyIndex, currentImageIndex]);
 
+  // 🔄 Auto‐slide logic copied from HorizontalShowcaseSlider
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex(prev =>
@@ -72,7 +74,7 @@ const VerticalShowcaseSlider = ({
         <div className="engagement-left">
           <AnimatePresence mode="wait">
             <motion.img
-              key={currentCompanyIndex + "-" + currentImageIndex}
+              key={`${currentCompanyIndex}-${currentImageIndex}`}
               src={currentCompany.images[currentImageIndex]}
               alt="Social Media Post"
               className="engagement-image"
