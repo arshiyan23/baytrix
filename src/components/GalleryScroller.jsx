@@ -27,6 +27,7 @@ const GalleryScroller = () => {
   const containersRef = useRef({});
   const navigate = useNavigate();
 
+  // Track visibility using IntersectionObserver
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -40,26 +41,32 @@ const GalleryScroller = () => {
       { threshold: 0.5 }
     );
 
-    Object.values(containersRef.current).forEach((el) => el && observer.observe(el));
+    Object.values(containersRef.current).forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
     return () => observer.disconnect();
   }, []);
 
+  // Highlight logic based on visible items
   useEffect(() => {
     const visibleKeys = Object.entries(visibleEntries)
-      .filter(([_, v]) => v)
-      .map(([k]) => k);
-    if (!visibleKeys.length) return;
+      .filter(([_, isVisible]) => isVisible)
+      .map(([key]) => key);
+
+    if (visibleKeys.length === 0) return;
 
     const randomKey = visibleKeys[Math.floor(Math.random() * visibleKeys.length)];
-    const [row, idx] = randomKey.split('-');
+    const [row, index] = randomKey.split('-');
 
+    setHighlightedIndex(parseInt(index));
     setHighlightedRow(row);
-    setHighlightedIndex(parseInt(idx));
 
     const timer = setTimeout(() => {
-      setHighlightedRow(null);
       setHighlightedIndex(null);
-    }, 1000);
+      setHighlightedRow(null);
+    }, 2000);
+
     return () => clearTimeout(timer);
   }, [visibleEntries]);
 
@@ -68,14 +75,13 @@ const GalleryScroller = () => {
       <ProcessHeading
         backgroundText="SHOWCASE"
         foregroundText="CREATIVE HIGHLIGHTS"
-        backgroundTextFill="#f5f0ff"
+        backgroundTextFill='#f5f0ff'
         description="Discover a selection of our standout projects, showcasing creativity and impactful results. See how we turn ideas into reality."
       />
 
       {/* Top Row */}
       <div
         className={`image-row-wrapper top ${hoveredRow === 'top' ? 'paused' : ''}`}
-        onMouseEnter={() => setHoveredRow('top')}
         onMouseLeave={() => setHoveredRow(null)}
       >
         <div className="image-row">
@@ -86,19 +92,17 @@ const GalleryScroller = () => {
 
             return (
               <div
-                key={`${key}-${idx}`}
+                key={key + '-' + idx}
                 data-key={key}
-                ref={el => (containersRef.current[`${key}-${idx}`] = el)}
-                className={`image-wrapper ${isHighlighted ? 'highlight' : ''}`}
+                ref={(el) => (containersRef.current[`${key}-${idx}`] = el)}
+                className={`image-container ${isHighlighted ? 'highlight' : ''}`}
                 onClick={() => navigate('/portfolio')}
                 onMouseEnter={() => setHoveredRow('top')}
               >
-                <div className="image-container">
-                  <img src={src} alt={`top-${idx}`} />
-                  {(hoveredRow === 'top' || isHighlighted) && (
-                    <button className="view-more-btn">View More</button>
-                  )}
-                </div>
+                <img src={src} alt={`top-${idx}`} />
+                {(hoveredRow === 'top' || isHighlighted) && (
+                  <button className="view-more-btn">View More</button>
+                )}
               </div>
             );
           })}
@@ -108,7 +112,6 @@ const GalleryScroller = () => {
       {/* Bottom Row */}
       <div
         className={`image-row-wrapper bottom ${hoveredRow === 'bottom' ? 'paused' : ''}`}
-        onMouseEnter={() => setHoveredRow('bottom')}
         onMouseLeave={() => setHoveredRow(null)}
       >
         <div className="image-row reverse">
@@ -119,19 +122,17 @@ const GalleryScroller = () => {
 
             return (
               <div
-                key={`${key}-${idx}`}
+                key={key + '-' + idx}
                 data-key={key}
-                ref={el => (containersRef.current[`${key}-${idx}`] = el)}
-                className={`image-wrapper ${isHighlighted ? 'highlight' : ''}`}
+                ref={(el) => (containersRef.current[`${key}-${idx}`] = el)}
+                className={`image-container ${isHighlighted ? 'highlight' : ''}`}
                 onClick={() => navigate('/portfolio')}
                 onMouseEnter={() => setHoveredRow('bottom')}
               >
-                <div className="image-container">
-                  <img src={src} alt={`bottom-${idx}`} />
-                  {(hoveredRow === 'bottom' || isHighlighted) && (
-                    <button className="view-more-btn">View More</button>
-                  )}
-                </div>
+                <img src={src} alt={`bottom-${idx}`} />
+                {(hoveredRow === 'bottom' || isHighlighted) && (
+                  <button className="view-more-btn">View More</button>
+                )}
               </div>
             );
           })}
