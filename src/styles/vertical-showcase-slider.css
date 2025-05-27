@@ -65,6 +65,7 @@
   overflow: hidden;
   text-align: center;
   z-index: 1;
+  top: 40px
 }
 
 /* ⚠️ FIXED: use position, and give enough min-height so it never collapses */
@@ -83,7 +84,7 @@
 }
 
 .company-logo-bg {
-  max-width: 150px;
+  max-width: 90px;
   margin-bottom: 20px;
 }
 
@@ -152,9 +153,10 @@
     display: flex;
     justify-content: center;
   }
-  
+
   .engagement-right {
     width: 85%;
+    top: 0
   }
 
   .company-logo-bg {
