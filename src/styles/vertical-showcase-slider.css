@@ -1,26 +1,29 @@
-/* Engagement Section */
-.engagement-showcase-section {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  flex-wrap: wrap;
-  min-height: 500px;
-  background-color: #f5f0ff;
-  flex-direction: column;
-  margin-bottom: 100px;
-  padding-top: 20px;
-  border-bottom:  1px solid #7249ac3c;
-  border-top:  1px solid #7249ac3c;
-
+.white-bg-wrapper {
+  background-color: white;
+  position: relative;
+  overflow: visible;
+  padding-bottom: 20px;
 }
 
-.engagement-space {
-  margin-bottom: 100px;
+.engagement-showcase-section {
+  /* background-color: #f5f0ff; */
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border: 1px solid #7249ac3c;
+  border-bottom: none;
+  position: relative;
+  margin: 0 auto;
+  max-width: 1050px;
+  overflow: visible;
+  z-index: 1;
 }
 
 .engagement-showcase-wrapper {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
 }
 
 .engagement-left,
@@ -30,47 +33,33 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 0 2rem;
 }
 
-.engagement-left {
-  min-height: 350px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.floating-phone-wrapper {
+  position: relative;
+  z-index: 2;
+  transform: translateY(60px); /* Phone pops out visually */
 }
 
 .engagement-image {
   max-width: 300px;
-  width: 40%;
+  width: 100%;
   border-radius: 30px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
   transition: opacity 0.5s ease-in-out;
 }
 
 .engagement-right {
   position: relative;
   overflow: hidden;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  align-items: center;
   text-align: center;
+  z-index: 1;
 }
 
 .company-logo-bg {
-  align-items: center;
-  text-align: center;
   max-width: 150px;
   margin-bottom: 20px;
-  border-radius: 20px;
-}
-
-.engagement-text {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 500px;
-  text-align: center;
 }
 
 .engagement-text-wrapper {
@@ -81,18 +70,13 @@
 .engagement-text h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: #7349ac;
 }
 
 .engagement-text p {
   font-size: 1.1rem;
   line-height: 1.6;
   color: #555;
-}
-
-.engagement-arrows {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
 }
 
 .engagement-slider-row {
@@ -118,39 +102,40 @@
   color: #fcddec;
 }
 
-/* Vertical layout for Mobile */
+/* Responsive */
 @media (max-width: 768px) {
   .engagement-showcase-section {
-    margin-bottom: 0px;
-    padding-top: 50px;
+    padding: 40px 20px;
+    border-radius: 0;
   }
 
   .engagement-showcase-wrapper {
-    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .floating-phone-wrapper {
+    transform: translateY(10px);
+    display: flex;
+    justify-content: center; /* 🟢 Center the image */
+    align-items: center;
     width: 100%;
+    padding-bottom: 40px;
+
   }
 
   .engagement-image {
-    width: 60%;
+    width: 50%;
+    margin: 0 auto; /* 🟢 Ensure image is centered */
   }
 
-  .engagement-right {
-    background-color: transparent;
-    color: #7349ac;
-    border: none;
-  }
-
-  .engagement-arrow {
-    color: #7349ac;
-  }
-
-  .engagement-space {
-    margin-bottom: 0px;
+  .engagement-left {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* 🟢 Just in case */
   }
 
   .company-logo-bg {
     max-width: 100px;
-    margin-bottom: 20px;
-    border-radius: 20px;
   }
 }
+

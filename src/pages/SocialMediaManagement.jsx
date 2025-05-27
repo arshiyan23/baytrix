@@ -6,6 +6,55 @@ import ScheduleCall from "../components/ScheduleCall";
 import FloatingIcons from "../components/FloatingIcons";
 
 function SocialMediaManagement() {
+  // data for verticalshowcaseslider
+    const postFeatures = [
+    {
+      title: "Best Designs",
+      description: "Every post is crafted with on-brand colors, modern typography, and visual hierarchy to stand out in crowded feeds.",
+      image: "/assets/insta-post1.png",
+      icon: "/assets/better-design.png"
+    },
+    {
+      title: "Best Quality",
+      description: "We use high-resolution visuals optimized for each platform, ensuring posts look sharp on all screen sizes.",
+      image: "/assets/insta-post1.png",
+      icon: "/assets/better-image.png"
+    },
+    {
+      title: "Interactive Stories",
+      description: "We design story posts that encourage engagement through polls, questions, sliders, and more.",
+      image: "/assets/insta-post1.png",
+
+      icon: "/assets/stories.png"
+    },
+    {
+      title: "Infographics",
+      description: "We break down complex data into clean, digestible visuals for educational or promotional purposes.",
+      image: "/assets/insta-post1.png",
+
+      icon: "/assets/infographics.png"
+    },
+    {
+      title: "Branded Announcements",
+      description: "From product launches to event updates, we design announcement posts that feel native to your brand.",
+      image: "/assets/insta-post1.png",
+
+      icon: "/assets/announcement.png"
+    },
+    {
+      title: "Reels Thumbnails",
+      description: "We design eye-catching covers for Instagram Reels and TikToks to maximize clicks and brand consistency.",
+      image: "/assets/insta-post1.png",
+
+      icon: "/assets/reel-thumbnails.png"
+    }
+  ];
+
+
+    //schedule a meeting section
+  const [showScheduleCall, setShowScheduleCall] = useState(false);
+
+  // hex card effect
   useEffect(() => {
     const cards = document.querySelectorAll(".smm-feature, .hex-card");
     const observer = new IntersectionObserver(
@@ -24,6 +73,8 @@ function SocialMediaManagement() {
     return () => observer.disconnect();
 
   }, []);
+
+  // stats effect
   useEffect(() => {
     const counters = [
       { id: "impressionsCounter", end: 120, suffix: "K+" },
@@ -67,74 +118,29 @@ function SocialMediaManagement() {
     });
   }, []);
 
-  // const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setCurrentImageIndex(prev => (prev + 1) % 3);
-  //   }, 3000);
-  //   return () => clearInterval(interval);
-  // }, []);
 
-  const companies = [
-    {
-      name: "GoWash",
-      description: "Gowash is a modern, mobile-first car washing service built for convenience, quality, and care.",
-      images: ["/assets/insta-post1.png", "/assets/insta-post2.png", "/assets/insta-post3.png"],
-      logo: "/assets/gowash.png"
-    },
-    {
-      name: "Emiway Bantai",
-      description: "A self-made Indian rapper without any backing from record labels — a true symbol of independent hustle.",
-      images: ["/assets/insta-post1.png", "/assets/insta-post2.png", "/assets/insta-post3.png"],
-      logo: "/assets/eb.png"
-    },
-    {
-      name: "Compass",
-      description: "Turning ideas into real-world impact with strategic guidance, operational support, and hands-on execution.",
-      images: ["/assets/insta-post1.png", "/assets/insta-post2.png", "/assets/insta-post3.png"],
-      logo: "/assets/compass.png"
-    }
-  ];
-
-  const testimonialsData = [
-    {
-      image: "/assets/emiway-bantai-records.png",
-      name: "Emiway Bantai",
-      role: "(Founder, Bantai Records)",
-      description: "The service was excellent and truly exceeded expectations.",
-    },
-    {
-      image: "/assets/sehaj-gowash.png",
-      name: "Sehajpal Singh",
-      role: "(Founder & CEO, GoWash)",
-      description: "Amazing experience from start to finish!",
-    },
-    {
-      image: "/assets/tamer-compass.png",
-      name: "Tamer Huwaidi",
-      role: "(Co-Founder, Compass)",
-      description: "Highly recommend them to anyone seeking quality.",
-    },
-  ];
-
-  //schedule a meeting section
-  const [showScheduleCall, setShowScheduleCall] = useState(false);
+  // timeline effect
   useEffect(() => {
-    const items = document.querySelectorAll(".timeline-item");
+    const items = document.querySelectorAll(".fade-in-right");
+    if (!items.length) {
+      console.warn("No .fade-in-right items found");
+      return;
+    }
 
-    const timelineObserver = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("animate");
-            timelineObserver.unobserve(entry.target);
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.2 }
     );
-    items.forEach(item => timelineObserver.observe(item));
-    return () => timelineObserver.disconnect();
+
+    items.forEach(item => observer.observe(item));
+    return () => observer.disconnect();
   }, []);
 
 
@@ -222,9 +228,9 @@ function SocialMediaManagement() {
 
       {/* our posts for brands section */}
       <VerticalShowcaseSlider
-        companies={companies}
         headingBackgroundText="CONTENT"
         headingForegroundText="PUBLISHED FOR BRANDS"
+        slideShowData={postFeatures}
       />
 
       <section className="smm-timeline-section">
@@ -278,8 +284,7 @@ function SocialMediaManagement() {
         </div>
       </section>
 
-
-      <section className="social-success-section">
+      {/* <section className="social-success-section">
         <div className="success-wrapper">
           <ProcessHeading
             backgroundText="REACH METRICS"
@@ -308,14 +313,7 @@ function SocialMediaManagement() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* <TestimonialSlider
-        testimonials={testimonialsData}
-        headingBackgroundText="SATISFIED"
-        headingForegroundText="TESTIMONIALS"
-        foregroundTextColor='white'
-      /> */}
+      </section> */}
 
       {showScheduleCall && (
         <ScheduleCall onClose={() => setShowScheduleCall(false)} />
