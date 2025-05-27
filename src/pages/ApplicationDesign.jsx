@@ -10,38 +10,39 @@ import FloatingIcons from '../components/FloatingIcons';
 function ApplicationDesign() {
 
   // data for horizontalshowcaseslider
-  const appFeatures = [
-    {
-      title: "Modern UI Design",
-      description: "Showcasing clean, intuitive interfaces designed with user experience at the core — tailored to your brand and audience.",
-      image: "/assets/portfolio/crm-mockup.png",
-      icon: "/assets/icons/ui-design.png"
-    },
-    {
-      title: "User Flows & Navigation",
-      description: "Clear, goal-oriented user journeys with thoughtful navigation structures to improve usability and retention.",
-      image: "/assets/portfolio/tradewise-mockup.png",
-      icon: "/assets/icons/user-flow.png"
-    },
-    {
-      title: "Custom Dashboards",
-      description: "Visually engaging dashboards that turn complex data into actionable insights, ideal for admins, users, or analytics.",
-      image: "/assets/portfolio/crm-mockup.png",
-      icon: "/assets/icons/dashboard.png"
-    },
-    {
-      title: "Component-Based Systems",
-      description: "Scalable, reusable UI components built with React or similar frameworks to ensure consistency and efficiency.",
-      image: "/assets/portfolio/crm-mockup.png",
-      icon: "/assets/icons/components.png"
-    },
-    {
-      title: "Mobile Responsiveness",
-      description: "Interfaces that adapt perfectly across mobile, tablet, and desktop — no compromise on experience or functionality.",
-      image: "/assets/portfolio/crm-mockup.png",
-      icon: "/assets/icons/responsive.png"
-    },
-  ];
+const appFeatures = [
+  {
+    title: "Modern UI Design",
+    description: "Showcasing clean, intuitive interfaces designed with user experience at the core — tailored to your brand and audience.",
+    image: "/assets/portfolio/crm-mockup.png",
+    icon: "/assets/icons/ui-design.png"
+  },
+  {
+    title: "Custom Dashboards",
+    description: "Visually engaging dashboards that turn complex data into actionable insights, ideal for admins, users, or analytics.",
+    image: "/assets/portfolio/crm-mockup.png",
+    icon: "/assets/icons/dashboard.png"
+  },
+  {
+    title: "Component-Based Systems",
+    description: "Scalable, reusable UI components built with React or similar frameworks to ensure consistency and efficiency.",
+    image: "/assets/portfolio/crm-mockup.png",
+    icon: "/assets/icons/components.png"
+  },
+  {
+    title: "Mobile Responsiveness",
+    description: "Interfaces that adapt perfectly across mobile, tablet, and desktop — no compromise on experience or functionality.",
+    image: "/assets/portfolio/crm-mockup.png",
+    icon: "/assets/icons/responsive.png"
+  },
+  {
+    title: "Admin Monitoring Pages",
+    description: "Comprehensive admin pages to monitor app performance and usage: manage users and roles, configure settings, view real‐time analytics and logs.",
+    image: "/assets/portfolio/admin-mockup.png",
+    icon: "/assets/icons/admin.png"
+  },
+];
+
 
   const [selectedTab, setSelectedTab] = useState(0);
   const stages = [

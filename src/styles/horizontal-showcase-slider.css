@@ -3,6 +3,7 @@
   position: relative;
   overflow: visible;
   padding-bottom: 20px;
+  overflow-x: hidden;
 }
 
 .hrzn-engagement-showcase-section {
