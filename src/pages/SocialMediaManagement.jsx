@@ -17,7 +17,7 @@ function SocialMediaManagement() {
     {
       title: "Best Quality",
       description: "We use high-resolution visuals optimized for each platform, ensuring posts look sharp on all screen sizes.",
-      image: "/assets/insta-post1.png",
+      image: "/assets/insta-post2.png",
       icon: "/assets/better-image.png"
     },
     {
@@ -75,48 +75,48 @@ function SocialMediaManagement() {
   }, []);
 
   // stats effect
-  useEffect(() => {
-    const counters = [
-      { id: "impressionsCounter", end: 120, suffix: "K+" },
-      { id: "engagementCounter", end: 11.2, suffix: "%" },
-      { id: "reachCounter", end: 30, suffix: "K+" },
-    ];
+  // useEffect(() => {
+  //   const counters = [
+  //     { id: "impressionsCounter", end: 120, suffix: "K+" },
+  //     { id: "engagementCounter", end: 11.2, suffix: "%" },
+  //     { id: "reachCounter", end: 30, suffix: "K+" },
+  //   ];
 
-    counters.forEach(({ id, end, suffix }) => {
-      const el = document.getElementById(id);
-      const parent = el?.closest(".success-item");
-      if (!el || !parent) return;
+  //   counters.forEach(({ id, end, suffix }) => {
+  //     const el = document.getElementById(id);
+  //     const parent = el?.closest(".success-item");
+  //     if (!el || !parent) return;
 
-      const animate = () => {
-        const duration = 1000;
-        const startTime = performance.now();
+  //     const animate = () => {
+  //       const duration = 1000;
+  //       const startTime = performance.now();
 
-        const update = (currentTime) => {
-          const progress = Math.min((currentTime - startTime) / duration, 1);
-          const value = typeof end === "number" && end % 1 !== 0
-            ? (progress * end).toFixed(1)
-            : Math.floor(progress * end);
-          el.textContent = `${value}${suffix}`;
-          if (progress < 1) requestAnimationFrame(update);
-        };
+  //       const update = (currentTime) => {
+  //         const progress = Math.min((currentTime - startTime) / duration, 1);
+  //         const value = typeof end === "number" && end % 1 !== 0
+  //           ? (progress * end).toFixed(1)
+  //           : Math.floor(progress * end);
+  //         el.textContent = `${value}${suffix}`;
+  //         if (progress < 1) requestAnimationFrame(update);
+  //       };
 
-        requestAnimationFrame(update);
-      };
+  //       requestAnimationFrame(update);
+  //     };
 
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            parent.classList.add("visible");
-            animate();
-            observer.disconnect();
-          }
-        },
-        { threshold: 0.5 }
-      );
+  //     const observer = new IntersectionObserver(
+  //       ([entry]) => {
+  //         if (entry.isIntersecting) {
+  //           parent.classList.add("visible");
+  //           animate();
+  //           observer.disconnect();
+  //         }
+  //       },
+  //       { threshold: 0.5 }
+  //     );
 
-      observer.observe(parent);
-    });
-  }, []);
+  //     observer.observe(parent);
+  //   });
+  // }, []);
 
 
   // timeline effect

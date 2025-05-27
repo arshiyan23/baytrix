@@ -62,7 +62,7 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <a href="/">
-            <img src="/assets/baytixlogo-removebg-preview.png"
+            <img src="/assets/baytixlogo-nobg.png"
               alt="Digital Services Overview" className='footer-logo' />
           </a>
           <div className="footer-legal">

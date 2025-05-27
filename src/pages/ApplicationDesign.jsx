@@ -8,6 +8,41 @@ import FloatingIcons from '../components/FloatingIcons';
 
 
 function ApplicationDesign() {
+
+  // data for horizontalshowcaseslider
+  const appFeatures = [
+    {
+      title: "Modern UI Design",
+      description: "Showcasing clean, intuitive interfaces designed with user experience at the core — tailored to your brand and audience.",
+      image: "/assets/portfolio/crm-mockup.png",
+      icon: "/assets/icons/ui-design.png"
+    },
+    {
+      title: "User Flows & Navigation",
+      description: "Clear, goal-oriented user journeys with thoughtful navigation structures to improve usability and retention.",
+      image: "/assets/portfolio/tradewise-mockup.png",
+      icon: "/assets/icons/user-flow.png"
+    },
+    {
+      title: "Custom Dashboards",
+      description: "Visually engaging dashboards that turn complex data into actionable insights, ideal for admins, users, or analytics.",
+      image: "/assets/portfolio/crm-mockup.png",
+      icon: "/assets/icons/dashboard.png"
+    },
+    {
+      title: "Component-Based Systems",
+      description: "Scalable, reusable UI components built with React or similar frameworks to ensure consistency and efficiency.",
+      image: "/assets/portfolio/crm-mockup.png",
+      icon: "/assets/icons/components.png"
+    },
+    {
+      title: "Mobile Responsiveness",
+      description: "Interfaces that adapt perfectly across mobile, tablet, and desktop — no compromise on experience or functionality.",
+      image: "/assets/portfolio/crm-mockup.png",
+      icon: "/assets/icons/responsive.png"
+    },
+  ];
+
   const [selectedTab, setSelectedTab] = useState(0);
   const stages = [
     {
@@ -62,55 +97,49 @@ function ApplicationDesign() {
 
 
   // stats section 
-  useEffect(() => {
-    const counters = [
-      { id: "appsCounter", end: 20, suffix: "+" },
-      { id: "usersCounter", end: 1000, suffix: "+" },
-      { id: "uptimeCounter", end: 99.9, suffix: "%" },
-      { id: "reviewsCounter", end: 10, suffix: "K+" }
-    ];
+  // useEffect(() => {
+  //   const counters = [
+  //     { id: "appsCounter", end: 20, suffix: "+" },
+  //     { id: "usersCounter", end: 1000, suffix: "+" },
+  //     { id: "uptimeCounter", end: 99.9, suffix: "%" },
+  //     { id: "reviewsCounter", end: 10, suffix: "K+" }
+  //   ];
 
-    counters.forEach(({ id, end, suffix }) => {
-      const el = document.getElementById(id);
-      const parent = el?.closest(".success-item");
-      if (!el || !parent) return;
+  //   counters.forEach(({ id, end, suffix }) => {
+  //     const el = document.getElementById(id);
+  //     const parent = el?.closest(".success-item");
+  //     if (!el || !parent) return;
 
-      const animate = () => {
-        const duration = 1000;
-        const startTime = performance.now();
+  //     const animate = () => {
+  //       const duration = 1000;
+  //       const startTime = performance.now();
 
-        const update = (currentTime) => {
-          const progress = Math.min((currentTime - startTime) / duration, 1);
-          const value = end === 99.9
-            ? (progress * end).toFixed(1)
-            : Math.floor(progress * end);
-          el.textContent = `${value}${suffix}`;
-          if (progress < 1) requestAnimationFrame(update);
-        };
+  //       const update = (currentTime) => {
+  //         const progress = Math.min((currentTime - startTime) / duration, 1);
+  //         const value = end === 99.9
+  //           ? (progress * end).toFixed(1)
+  //           : Math.floor(progress * end);
+  //         el.textContent = `${value}${suffix}`;
+  //         if (progress < 1) requestAnimationFrame(update);
+  //       };
 
-        requestAnimationFrame(update);
-      };
+  //       requestAnimationFrame(update);
+  //     };
 
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            parent.classList.add("visible");
-            animate();
-            observer.disconnect();
-          }
-        },
-        { threshold: 0.5 }
-      );
+  //     const observer = new IntersectionObserver(
+  //       ([entry]) => {
+  //         if (entry.isIntersecting) {
+  //           parent.classList.add("visible");
+  //           animate();
+  //           observer.disconnect();
+  //         }
+  //       },
+  //       { threshold: 0.5 }
+  //     );
 
-      observer.observe(parent);
-    });
-  }, []);
-
-  const companies = [
-    {
-      images: ["/assets/portfolio/mockup-test.png", "/assets/port4.png"],
-    }
-  ];
+  //     observer.observe(parent);
+  //   });
+  // }, []);
 
 
   return (
@@ -135,23 +164,18 @@ function ApplicationDesign() {
         </div>
       </section>
 
-      {/* <svg
-        className="intro-wave"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 100"
-        preserveAspectRatio="none"
-      >
-        <path
-          d="M0,0 C480,100 960,0 1440,100 L1440,0 L0,0 Z"
-          className="app-curve"
-        />
-      </svg> */}
-
-
       {/* feature section */}
       <FeatureCarousel />
 
-            <section className="app-service-section">
+      {/* our app work */}
+      <HorizontalShowcaseSlider
+        slideShowData={appFeatures}
+        headingBackgroundText="SUCCESS"
+        headingForegroundText="APPS DEVELOPED"
+        description="Discover the custom applications we've built for brands — designed for scalability, optimized for performance, and crafted to deliver seamless user experiences."
+      />
+
+      <section className="app-service-section">
         <ProcessHeading
           backgroundText="PROCESS"
           foregroundText="DEVELOPMENT STAGES"
@@ -175,15 +199,8 @@ function ApplicationDesign() {
         </div>
       </section>
 
-      {/* our app work */}
-      <HorizontalShowcaseSlider
-        companies={companies}
-        headingBackgroundText="SUCCESS"
-        headingForegroundText="APPS DEVELOPED"
-        foregroundTextColor="white"
-      />
-      
-      <section className="success-section">
+
+      {/* <section className="success-section">
         <div className="success-wrapper">
           <ProcessHeading 
           backgroundText="NON-STOP" 
@@ -215,7 +232,7 @@ function ApplicationDesign() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="post-launch-section">
         <ProcessHeading

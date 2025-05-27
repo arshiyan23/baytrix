@@ -1,66 +1,101 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import "../styles/num-stats.css";
 
-function NumStats({ backgroundText, foregroundText, statsData }) {
+function NumStats({ statsData }) {
+  const containerRef = useRef(null);
+
   useEffect(() => {
-    statsData.forEach(({ id, targetValue }) => {
-      const el = document.getElementById(id);
-      const parent = el?.closest(".num-stat-item");
-      if (!el || !parent) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // trigger count-up in staggered fashion
+          statsData.forEach(({ id, targetValue }, i) => {
+            setTimeout(() => animateValue(id, targetValue), i * 500);
+          });
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.4 }
+    );
 
-      const match = targetValue.toString().match(/^(\d+(\.\d+)?)([^\d]*)$/);
-      if (!match) return;
-
-      const [, numberStr, , suffix = ""] = match;
-      const end = parseFloat(numberStr);
-
-      const animate = () => {
-        const duration = 1000;
-        const startTime = performance.now();
-
-        const update = (currentTime) => {
-          const progress = Math.min((currentTime - startTime) / duration, 1);
-          const currentValue = targetValue.includes(".")
-            ? (progress * end).toFixed(1)
-            : Math.floor(progress * end);
-          el.textContent = `${currentValue}${suffix}`;
-          if (progress < 1) requestAnimationFrame(update);
-        };
-
-        requestAnimationFrame(update);
-      };
-
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            parent.classList.add("visible");
-            animate();
-            observer.disconnect();
-          }
-        },
-        { threshold: 0.5 }
-      );
-
-      observer.observe(parent);
-    });
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
   }, [statsData]);
 
+  const animateValue = (id, targetValue) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const match = targetValue.toString().match(/^(\d+(\.\d+)?)([^\d]*)$/);
+    if (!match) return;
+    const [, numStr, , suffix = ""] = match;
+    const end = parseFloat(numStr);
+    const duration = 5000;
+    const start = performance.now();
+
+    const update = now => {
+      const prog = Math.min((now - start) / duration, 1);
+      const val = targetValue.includes('.')
+        ? (prog * end).toFixed(1)
+        : Math.floor(prog * end);
+      el.textContent = `${val}${suffix}`;
+      if (prog < 1) requestAnimationFrame(update);
+    };
+
+    requestAnimationFrame(update);
+  };
+
+  // Variants
+  const sectionVariants = {
+    hidden: { y: -350 },               // no opacity here
+    visible: {
+      y: 0,
+      transition: {
+        when: "beforeChildren",
+        duration: 0.5,
+        delayChildren: 0.5,
+        staggerChildren: 0.3,
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: -80 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
+
   return (
-    <section className="white-bg-wrapper">
+    <motion.section
+      className="white-bg-wrapper"
+      ref={containerRef}
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{
+        once: true,
+        margin: "0px 0px -300px 0px"
+      }}
+    >
       <div className="num-stat-section">
-        <div className="num-stat-wrapper">
-          <div className="num-stat-container">
-            {statsData.map(({ id, icon, value, label }, index) => (
-              <div className="num-stat-item" key={id || index}>
-                <img src={icon} alt={label} className="num-stat-icon" />
-                <div className="num-stat-number" id={id}>{value}</div>
-                <p className="num-stat-text">{label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+        <motion.div
+          className="num-stat-container"
+        // empty; children will be staggered by parent
+        >
+          {statsData.map(({ id, icon, value, label }) => (
+            <motion.div
+              className="num-stat-item"
+              key={id}
+              variants={itemVariants}
+            >
+              <img src={icon} alt={label} className="num-stat-icon" />
+              <div className="num-stat-number" id={id}>{value}</div>
+              <p className="num-stat-text">{label}</p>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

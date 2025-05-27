@@ -42,13 +42,13 @@ const NavbarMax = () => {
 
   return (
     <header className="max-header">
-      <Link to="/">
+      <a href="/">
         <img
-          src="/assets/baytixlogo-removebg-preview.png"
+          src="/assets/baytixlogo-nobg.png"
           alt="Digital Services Overview"
           className="logo"
         />
-      </Link>
+      </a>
       <nav>
         <ul>
           <li>

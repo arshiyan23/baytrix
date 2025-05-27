@@ -6,8 +6,6 @@
 }
 
 .engagement-showcase-section {
-  /* background-color: #f5f0ff; */
-  /* border: 1px solid #7249ac3c; */
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
   border-bottom: none;
@@ -26,6 +24,26 @@
   position: relative;
 }
 
+.fixed-image-container {
+  position: relative;
+  width: 320px;
+  height: 640px;
+  overflow: hidden;
+  background: url('/assets/portfolio/iphone-mockup.png') center/contain no-repeat;
+}
+
+.engagement-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 16px;
+  /* we keep z-index: -1 so it stays behind the mockup */
+  z-index: -1;
+}
+
 .engagement-left,
 .engagement-right {
   flex: 1 1 50%;
@@ -39,15 +57,7 @@
 .floating-phone-wrapper {
   position: relative;
   z-index: 2;
-  transform: translateY(60px); /* Phone pops out visually */
-}
-
-.engagement-image {
-  max-width: 300px;
-  width: 100%;
-  border-radius: 30px;
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-  transition: opacity 0.5s ease-in-out;
+  transform: translateY(60px);
 }
 
 .engagement-right {
@@ -57,14 +67,24 @@
   z-index: 1;
 }
 
+/* ⚠️ FIXED: use position, and give enough min-height so it never collapses */
+.engagement-text-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 340px; /* adjust this value to match your tallest slide */
+}
+
+/* Each slide is stacked absolutely inside the wrapper */
+.engagement-text-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
 .company-logo-bg {
   max-width: 150px;
   margin-bottom: 20px;
-}
-
-.engagement-text-wrapper {
-  display: block;
-  width: 100%;
 }
 
 .engagement-text h2 {
@@ -104,11 +124,6 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .engagement-showcase-section {
-    padding: 40px 20px;
-    border-radius: 0;
-  }
-
   .engagement-showcase-wrapper {
     flex-direction: column;
   }
@@ -116,26 +131,46 @@
   .floating-phone-wrapper {
     transform: translateY(10px);
     display: flex;
-    justify-content: center; /* 🟢 Center the image */
+    justify-content: center;
     align-items: center;
     width: 100%;
     padding-bottom: 40px;
+  }
 
+  /* ← PATCH STARTS HERE */
+  .fixed-image-container {
+    width: 100%;
+    height: 550px;
   }
 
   .engagement-image {
-    width: 50%;
-    margin: 0 auto; /* 🟢 Ensure image is centered */
+    margin: 0 auto;
   }
 
   .engagement-left {
     width: 100%;
     display: flex;
-    justify-content: center; /* 🟢 Just in case */
+    justify-content: center;
+  }
+  
+  .engagement-right {
+    width: 100%;
   }
 
   .company-logo-bg {
-    max-width: 100px;
+    max-width: 60px;
+  }
+
+  .engagement-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .engagement-text p {
+    font-size: 1rem;
+  }
+
+  .engagement-slider-row {
+    gap: 1rem;
   }
 }
-

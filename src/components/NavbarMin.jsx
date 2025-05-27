@@ -48,7 +48,7 @@ const NavbarMin = () => {
     <header className="min-header">
       <Link to="/">
         <img
-          src="/assets/baytixlogo-removebg-preview.png"
+          src="/assets/baytixlogo-nobg.png"
           alt="Logo"
           className="min-logo"
         />

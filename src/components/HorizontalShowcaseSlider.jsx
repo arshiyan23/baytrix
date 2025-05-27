@@ -1,62 +1,119 @@
-// HorizontalShowcaseSlider.jsx
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import "../styles/horizontal-showcase-slider.css";
 import ProcessHeading from "./ProcessHeading";
+import "../styles/horizontal-showcase-slider.css";
+import NumStats from "./NumStats";
+
+const statsData = [
+  { id: "appsCounter",    icon: "/assets/icon-apps.png",    value: "0", targetValue: "52+",  label: "Apps Running" },
+  { id: "usersCounter",   icon: "/assets/icon-users.png",   value: "0", targetValue: "75K+", label: "Users Served" },
+  { id: "uptimeCounter",  icon: "/assets/icon-uptime.png",  value: "0%", targetValue: "99.9%", label: "Uptime Guarantee" },
+  { id: "reviewsCounter", icon: "/assets/icon-reviews.png", value: "0%", targetValue: "100%",  label: "Reviews Received" }
+];
 
 const HorizontalShowcaseSlider = ({
-  companies,
   headingBackgroundText = "BACKGROUND TXT",
   headingForegroundText = "FOREGROUND TXT",
-  foregroundTextColor = "#7349ac"
+  description = "",
+  slideShowData = []
 }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex(prev => (prev + 1) % companies[0].images.length);
-    }, 3000);
+      setCurrentIndex(prev => (prev + 1) % slideShowData.length);
+    }, 4000);
     return () => clearInterval(interval);
-  }, [companies]);
+  }, [slideShowData.length]);
 
-  const currentImages = companies[0].images;
+  const handleNext = () => setCurrentIndex(i => (i + 1) % slideShowData.length);
+  const handlePrev = () => setCurrentIndex(i => (i - 1 + slideShowData.length) % slideShowData.length);
+
+  const currentSlide = slideShowData[currentIndex];
 
   return (
-    <section className="horizontal-showcase-container">
+    <section className="hrzn-white-bg-wrapper">
       <ProcessHeading
         backgroundText={headingBackgroundText}
         foregroundText={headingForegroundText}
-        foregroundTextColor={foregroundTextColor}
-        backgroundTextFill={foregroundTextColor}
-        description="Explore the powerful apps we’ve engineered for various brands, designed to enhance user experience, streamline processes, and drive business growth."
+        description={description}
       />
 
-      <div className="horizontal-showcase-section single">
-        <div className="image-wrapper full-width">
-          <AnimatePresence mode="wait">
-            <motion.img
-              key={currentImageIndex}
-              src={currentImages[currentImageIndex]}
-              alt={`Showcase ${currentImageIndex + 1}`}
-              className="horizontal-image"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.2 }}
-            />
-          </AnimatePresence>
+      <div className="hrzn-engagement-showcase-section">
+        <div className="hrzn-engagement-showcase-wrapper">
+          
+          {/* LEFT: scroll-triggered slide-in */}
+          <motion.div
+            className="hrzn-engagement-left"
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <div className="hrzn-floating-phone-wrapper">
+              <div className="hrzn-fixed-image-container">
+                {/* CROSS-FADE TRANSITION */}
+                <AnimatePresence mode="sync" initial={false}>
+                  <motion.img
+                    key={currentIndex}
+                    src={currentSlide.image}
+                    alt="App Preview"
+                    className="hrzn-engagement-image"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.4 }}
+                  />
+                </AnimatePresence>
+              </div>
+            </div>
+          </motion.div>
 
-          <div className="image-indicators">
-            {currentImages.map((_, index) => (
-              <button
-                key={index}
-                className={`indicator-dot ${index === currentImageIndex ? "active" : ""}`}
-                onClick={() => setCurrentImageIndex(index)}
-              />
-            ))}
-          </div>
+          {/* RIGHT: scroll-triggered slide-in */}
+          <motion.div
+            className="hrzn-engagement-right"
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentIndex}
+                className="hrzn-engagement-text-wrapper"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.4 }}
+              >
+                <img
+                  src={currentSlide.icon}
+                  alt={`${currentSlide.title} icon`}
+                  className="hrzn-company-logo-bg"
+                />
+
+                <div className="hrzn-engagement-slider-row">
+                  <button className="hrzn-engagement-arrow" onClick={handlePrev}>
+                    &lt;
+                  </button>
+
+                  <div className="hrzn-engagement-text">
+                    <h2>{currentSlide.title}</h2>
+                    <p>{currentSlide.description}</p>
+                  </div>
+
+                  <button className="hrzn-engagement-arrow" onClick={handleNext}>
+                    &gt;
+                  </button>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </motion.div>
+
         </div>
       </div>
+
+      <NumStats statsData={statsData} />
     </section>
   );
 };
