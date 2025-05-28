@@ -7,51 +7,48 @@ import FloatingIcons from "../components/FloatingIcons";
 
 function SocialMediaManagement() {
   // data for verticalshowcaseslider
-    const postFeatures = [
+  const postFeatures = [
     {
       title: "Best Designs",
       description: "Every post is crafted with on-brand colors, modern typography, and visual hierarchy to stand out in crowded feeds.",
-      image: "/assets/insta-post1.png",
+      image: "/assets/portfolio/sm-posts/insta-post1.png",
       icon: "/assets/better-design.png"
     },
     {
       title: "Best Quality",
       description: "We use high-resolution visuals optimized for each platform, ensuring posts look sharp on all screen sizes.",
-      image: "/assets/insta-post2.png",
+      image: "/assets/portfolio/sm-posts/insta-post2.png",
       icon: "/assets/better-image.png"
     },
     {
       title: "Interactive Stories",
       description: "We design story posts that encourage engagement through polls, questions, sliders, and more.",
-      image: "/assets/insta-post1.png",
-
+      image: "/assets/portfolio/sm-posts/insta-post3.png",
       icon: "/assets/stories.png"
     },
     {
       title: "Infographics",
       description: "We break down complex data into clean, digestible visuals for educational or promotional purposes.",
-      image: "/assets/insta-post1.png",
-
+      image: "/assets/portfolio/sm-posts/insta-post1.png",
       icon: "/assets/infographics.png"
     },
     {
       title: "Branded Announcements",
       description: "From product launches to event updates, we design announcement posts that feel native to your brand.",
-      image: "/assets/insta-post1.png",
-
+      image: "/assets/portfolio/sm-posts/insta-post4.png",
       icon: "/assets/announcement.png"
     },
     {
       title: "Reels Thumbnails",
       description: "We design eye-catching covers for Instagram Reels and TikToks to maximize clicks and brand consistency.",
-      image: "/assets/insta-post1.png",
+      image: "/assets/portfolio/sm-posts/insta-post1.png",
 
       icon: "/assets/reel-thumbnails.png"
     }
   ];
 
 
-    //schedule a meeting section
+  //schedule a meeting section
   const [showScheduleCall, setShowScheduleCall] = useState(false);
 
   // hex card effect
