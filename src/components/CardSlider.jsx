@@ -2,6 +2,8 @@ import "../styles/card-slider.css";
 import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import ProcessHeading from "./ProcessHeading";
+import { useNavigate } from 'react-router-dom';
+
 
 const cardData = [
     {
@@ -35,6 +37,8 @@ const cardData = [
 ];
 
 const CardSlider = () => {
+    const navigate = useNavigate();
+
     const sectionRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: sectionRef,
@@ -94,7 +98,7 @@ const CardSlider = () => {
                                     x: "-50%",
                                     y: isExpanded || isSqueezed ? "-50%" : "0%",
                                     fontSize: isExpanded ? "1.8rem" : "1.5rem",
-                                    opacity: isSqueezed ? 1 : 1, 
+                                    opacity: isSqueezed ? 1 : 1,
                                     rotate: isSqueezed ? -90 : 0, //rotates the title 
                                     transformOrigin: isSqueezed ? "center center" : "top left"
                                 }}
@@ -141,7 +145,7 @@ const CardSlider = () => {
                                         y: isExpanded ? 0 : 0,
                                     }}
                                     transition={{ delay: 0.1, duration: 0.4 }}
-                                    onClick={() => {}}
+                                    onClick={()=>{navigate(card.link)}}
                                 >
                                     View More
                                 </motion.button>
