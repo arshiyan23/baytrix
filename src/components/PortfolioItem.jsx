@@ -1,88 +1,65 @@
-import React, { useRef } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { portfolioItems } from '../data/portfolioData';
 import '../styles/portfolio-item.css';
-import ProcessHeading from './ProcessHeading';
 
 export default function PortfolioItem() {
   const { id } = useParams();
-  const navigate = useNavigate();
+  const item = portfolioItems.find(i => i.id === id) || portfolioItems[0];
+  const { title, category, description, images } = item;
 
-  // find the item or fallback
-  const item = portfolioItems.find((i) => i.id === id) || portfolioItems[0];
-  // destructure images: first for hero, rest for carousel
-  const [heroImage, ...carouselImages] = item.images;
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [fading, setFading] = useState(false);
 
-  const carouselRef = useRef(null);
-  const scroll = (dir) => {
-    if (!carouselRef.current) return;
-    const viewWidth = carouselRef.current.clientWidth;
-    carouselRef.current.scrollBy({ left: dir * viewWidth, behavior: 'smooth' });
+  const changeImage = newIndex => {
+    setFading(true);
+    setTimeout(() => {
+      setCurrentIndex(newIndex);
+      setFading(false);
+    }, 300);
   };
+
+  const prevImage = () =>
+    changeImage((currentIndex - 1 + images.length) % images.length);
+  const nextImage = () =>
+    changeImage((currentIndex + 1) % images.length);
 
   return (
     <div className="portfolio-item-detail-page">
-      <ProcessHeading
-        foregroundText='PROJECT JOURNEY'
-        backgroundText='OUR IMPACT'
-      />
-      <div className="portfolio-item-detail-hero">
-        <div className="portfolio-item-detail-image">
-          <img src={heroImage} alt={item.title} />
+
+      {/* left: carousel */}
+      <div className="carousel-section">
+        <div className="carousel-wrapper">
+          <button className="arrow-button left" onClick={prevImage}>‹</button>
+          <img
+            key={currentIndex}
+            className={`main-image ${fading ? 'fade-out' : 'fade-in'}`}
+            src={images[currentIndex]}
+            alt={`${title} screenshot ${currentIndex + 1}`}
+          />
+          <button className="arrow-button right" onClick={nextImage}>›</button>
         </div>
-        <div className="portfolio-item-detail-info">
-          <button
-            className="portfolio-item-back-btn"
-            onClick={() => navigate(-1)}
-          >
-            ← Back
-          </button>
-          <h1>{item.title.toUpperCase()}</h1>
-          <div className="portfolio-item-underline" />
-          <div className="portfolio-item-meta">
-            <div>
-              <h4>Client:</h4>
-              <p>{item.title}</p>
-            </div>
-            <div>
-              <h4>Industry:</h4>
-              <p>{item.category}</p>
-            </div>
-            <div>
-              <h4>Description:</h4>
-              <p>{item.description}</p>
-            </div>
-          </div>
+        <div className="thumbnails">
+          {images.map((src, idx) => (
+            <img
+              key={idx}
+              className={`thumbnail ${currentIndex === idx ? 'active' : ''}`}
+              src={src}
+              alt={`${title} thumb ${idx + 1}`}
+              onClick={() => changeImage(idx)}
+            />
+          ))}
         </div>
       </div>
 
-      <h2 className="portfolio-item-section-title">
-        {item.title.toUpperCase()}'S GALLERY
-      </h2>
-
-      <div className="portfolio-item-related-carousel-wrapper">
-        <button
-          className="portfolio-item-arrow left"
-          onClick={() => scroll(-1)}
-        >
-          ‹
-        </button>
-        <div
-          className="portfolio-item-related-carousel"
-          ref={carouselRef}
-        >
-          {carouselImages.map((src, idx) => (
-            <div className="portfolio-item-carousel-item" key={idx}>
-              <img src={src} alt={`${item.title} ${idx + 2}`} />
-            </div>
-          ))}
+      {/* right: project info */}
+      <div className="info-section">
+        <div className="case-study-label">Case Study</div>
+        <h1 className="portfolio-item-title">{title}</h1>
+        <p className="portfolio-item-category">{category}</p>
+        <div className="portfolio-item-description">
+          <p>{description}</p>
         </div>
-        <button
-          className="portfolio-item-arrow right"
-          onClick={() => scroll(1)}
-        >
-          ›
-        </button>
       </div>
     </div>
   );

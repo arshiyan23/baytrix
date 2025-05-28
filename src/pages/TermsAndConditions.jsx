@@ -32,7 +32,7 @@ const TermsAndConditions = () => {
             <section className="terms-section">
                 <h2>2. Services Provided</h2>
                 <p>
-                    Baytix offers Branding, Application Design, Social Media Management, Marketing Ads, and AI Integration
+                    Baytix offers Branding, Application Design, Social Media Management, and Marketing Ads
                     services tailored for startups and businesses. The scope of services will be agreed upon in writing with each client.
                 </p>
             </section>

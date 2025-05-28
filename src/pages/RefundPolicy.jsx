@@ -21,7 +21,7 @@ const RefundPolicy = () => {
             <section className="refund-section">
                 <p>
                     At Baytix, we are committed to providing high-quality services in Branding, Application Design,
-                    Social Media Management, Marketing Ads, and AI Integration.
+                    Social Media Management, and Marketing Ads.
                 </p>
                 <p>
                     Due to the customized and digital nature of our services, we do not offer refunds once a project has commenced,

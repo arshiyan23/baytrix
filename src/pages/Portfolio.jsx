@@ -61,7 +61,7 @@ const Portfolio = () => {
                     <h1>OUR PORTFOLIO</h1>
                     <p>
                         Dive into our digital masterpieces — from 
-                        Branding and App Design to Social Media Management, Marketing Ads and AI Integration.
+                        Branding and App Design to Social Media Management, And Marketing Ads.
                         We bring innovation, creativity, and results.
                     </p>
 

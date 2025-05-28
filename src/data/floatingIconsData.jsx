@@ -83,7 +83,7 @@ export const floatingIconsData = {
     'fas fa-code',              // App Dev
     'fas fa-palette',           // Branding
     'fab fa-instagram',         // SMM
-    'fas fa-robot',             // AI Integration
+    // 'fas fa-robot',             // AI Integration
     'fas fa-bullhorn',          // Marketing
     'fas fa-lightbulb',         // Common across ideas
     'fas fa-chart-line',        // Growth

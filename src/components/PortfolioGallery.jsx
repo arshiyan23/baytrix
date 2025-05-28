@@ -9,7 +9,7 @@ const categories = [
   'Application Design',
   'Social Media Management',
   'Marketing Ads',
-  'AI Integration',
+  // 'AI Integration',
 ];
 
 export default function PortfolioGallery() {

@@ -22,7 +22,7 @@ const FAQSection = () => {
       question: "What services does Baytix offer?",
       answer: (
         <>
-          Baytix specializes in branding, app design, social media management, marketing ads, and AI integration to help businesses grow and stand out.
+          Baytix specializes in Branding, App Design, Social Media Management, and Marketing Ads to help businesses grow and stand out.
           <br />
           <span> Get in touch with our experts to learn more about our offerings.</span>{" "}
           <button className="faq-contact-button" onClick={() => setShowScheduleCall(true)}>
@@ -41,11 +41,11 @@ const FAQSection = () => {
       answer:
         "Absolutely! While we offer monthly retainers for ongoing support, we also take on standalone projects like logo design, app prototypes, or ad campaigns.",
     },
-    {
-      question: "How does the AI integration service work?",
-      answer:
-        "We assess your business needs and implement AI tools to automate workflows, improve customer engagement, or generate smart insights—customized to your operations.",
-    },
+    // {
+    //   question: "How does the AI integration service work?",
+    //   answer:
+    //     "We assess your business needs and implement AI tools to automate workflows, improve customer engagement, or generate smart insights—customized to your operations.",
+    // },
     {
       question: "How soon can we get started?",
       answer:

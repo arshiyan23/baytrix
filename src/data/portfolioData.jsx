@@ -3,13 +3,13 @@
 export const portfolioItems = [
   {
     id: '1',
-    title: 'Kart Space',
-    category: 'E-commerce',
+    title: 'E-commerce Store',
+    category: 'Application Design',
     year: 2020,
     rating: 10,
     description: 'Kart Space Hypermarket offers unbeatable variety and value, all in one convenient stop.',
     images: [
-        '/assets/portfolio/kartspace/kartspace-homepage.png',
+        '/assets/portfolio/kartspace/mockup-thumbnail.png',
         '/assets/portfolio/kartspace/kartspace-homepage.png',
         '/assets/portfolio/kartspace/kartspace-fruits-page.png',
         '/assets/portfolio/kartspace/kartspace-electronicspage.png',
@@ -21,13 +21,13 @@ export const portfolioItems = [
   },
     {
     id: '2',
-    title: 'Trade Wise',
-    category: 'Stock Trading',
+    title: 'Finance',
+    category: 'Application Design',
     year: 2023,
     rating: 10,
     description: 'Trade Wise empowers your financial future with smart tools, expert insight, and unbeatable value — all in one powerful platform.',
     images: [
-        '/assets/portfolio/tradewise/tradewise-homepage.png',
+        '/assets/portfolio/tradewise/mockup-thumbnail.png',
         '/assets/portfolio/tradewise/tradewise-homepage.png',
         '/assets/portfolio/tradewise/tradewise-portfolio.png',
         '/assets/portfolio/tradewise/tradewise-watchlist.png',
@@ -37,6 +37,23 @@ export const portfolioItems = [
         '/assets/portfolio/tradewise/tradewise-settings.png',
         '/assets/portfolio/tradewise/tradewise-help.png',
         '/assets/portfolio/tradewise/tradewise-chat.png',
+    ],
+  },
+  {
+    id: '3',
+    title: 'Automotive Services',
+    category: 'Application Design',
+    year: 2022,
+    rating: 10,
+    description: 'Trade Wise empowers your financial future with smart tools, expert insight, and unbeatable value — all in one powerful platform.',
+    images: [
+        '/assets/portfolio/gowash/mockup-thumbnail.png',
+        '/assets/portfolio/gowash/mockup-thumbnail.png',
+        '/assets/portfolio/gowash/mockup-thumbnail.png',
+        '/assets/portfolio/gowash/mockup-thumbnail.png',
+        '/assets/portfolio/gowash/mockup-thumbnail.png',
+        '/assets/portfolio/gowash/mockup-thumbnail.png',
+        '/assets/portfolio/gowash/mockup-thumbnail.png',
     ],
   },
   // Add similar entries for others if needed
