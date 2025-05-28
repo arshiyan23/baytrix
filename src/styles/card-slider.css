@@ -1,99 +1,104 @@
 .srvc-card-slider-frame {
-  padding: 4rem 0;
+    padding: 4rem 0;
 }
 
 .srvc-card-slider {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  /* padding: 2rem; */
-  overflow-x: hidden;
-  flex-wrap: nowrap;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    /* padding: 2rem; */
+    overflow-x: hidden;
+    flex-wrap: nowrap;
 }
 
 .srvc-card {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  height: 360px;
-  border-radius: 1rem;
-  padding: 1rem;
-  position: relative;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  overflow: hidden;
-  flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    height: 360px;
+    border-radius: 1rem;
+    padding: 1rem;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
+    flex-shrink: 0;
 }
 
 .srvc-card-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.3;
 }
 
 .srvc-card-title {
-  font-weight: 600;
-  color: white;
-  position: absolute;
-  z-index: 3;
-  margin: 0;
-  text-align: center;
-  width: 100%;
+    font-weight: 600;
+    color: white;
+    position: absolute;
+    z-index: 3;
+    margin: 0;
+    text-align: center;
+    width: 100%;
 }
 
 .srvc-card-content {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  text-align: center;
-  z-index: 2;
-  width: 90%;
-  box-sizing: border-box; /
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+    z-index: 2;
+    width: 90%;
+    box-sizing: border-box;/
 }
 
 .srvc-card-content p {
-  font-size: 1rem;
-  line-height: 1.4;                
-  margin: 0 auto;
-  color: white;
-  text-align: center;
-  width: 100%;
-  overflow-wrap: break-word;
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    width: 100%;
+    overflow-wrap: break-word;
 }
 
 
 .srvc-card-content button {
-  padding: 0.6rem 1rem;
-  border: none;
-  border-radius: 8px;
-  background: white;
-  color: #7349ac;
-  font-weight: bold;
-  cursor: pointer;
-  text-align: center;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background: white;
+    color: #7349ac;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.srvc-card-content button:hover {
+    background-color: rgb(203, 203, 203);
 }
 
 .srvc-slider-header {
-  text-align: center;
-  margin-bottom: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .srvc-slider-header h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  color: white;
-  max-width: 900px;
-  margin: 0 auto;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 
@@ -101,15 +106,19 @@
    TABLET: turn into two-column wrap, no horizontal scroll
    ------------------------------------------------------------------- */
 @media (max-width: 1024px) {
-  .srvc-card-slider {
-    flex-wrap: wrap;          /* allow cards to wrap onto new lines */
-    justify-content: center;  /* center each row */
+    .srvc-card-slider {
+        flex-wrap: wrap;
+        /* allow cards to wrap onto new lines */
+        justify-content: center;
+        /* center each row */
 
-  }
-  .srvc-card {
-    flex: 0 1 45%;            /* each card takes ~45% of container */
-    max-width: 45%;
-    margin-bottom: 1.5rem;    /* spacing between rows */
-  }
+    }
+
+    .srvc-card {
+        flex: 0 1 45%;
+        /* each card takes ~45% of container */
+        max-width: 45%;
+        margin-bottom: 1.5rem;
+        /* spacing between rows */
+    }
 }
-
