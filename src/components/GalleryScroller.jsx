@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import '../styles/gallery-scroller.css';
 import ProcessHeading from './ProcessHeading';
 import { useNavigate } from 'react-router-dom';
+import { motion, useInView } from 'framer-motion';
 
 const topImages = [
   '/assets/portfolio/kartspace/kartspace-electronicspage.png',
@@ -19,127 +20,91 @@ const bottomImages = [
   '/assets/portfolio/feedback-central.png',
 ];
 
-const GalleryScroller = () => {
-  const [hoveredRow, setHoveredRow] = useState(null);
-  const [highlightedIndex, setHighlightedIndex] = useState(null);
-  const [highlightedRow, setHighlightedRow] = useState(null);
-  const [visibleEntries, setVisibleEntries] = useState({});
-  const containersRef = useRef({});
+export default function GalleryScroller() {
   const navigate = useNavigate();
-
-  // Track visibility using IntersectionObserver
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const updated = { ...visibleEntries };
-        entries.forEach((entry) => {
-          const key = entry.target.getAttribute('data-key');
-          updated[key] = entry.isIntersecting;
-        });
-        setVisibleEntries(updated);
-      },
-      { threshold: 0.5 }
-    );
-
-    Object.values(containersRef.current).forEach((el) => {
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  // Highlight logic based on visible items
-  useEffect(() => {
-    const visibleKeys = Object.entries(visibleEntries)
-      .filter(([_, isVisible]) => isVisible)
-      .map(([key]) => key);
-
-    if (visibleKeys.length === 0) return;
-
-    const randomKey = visibleKeys[Math.floor(Math.random() * visibleKeys.length)];
-    const [row, index] = randomKey.split('-');
-
-    setHighlightedIndex(parseInt(index));
-    setHighlightedRow(row);
-
-    const timer = setTimeout(() => {
-      setHighlightedIndex(null);
-      setHighlightedRow(null);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, [visibleEntries]);
+  const wrapperRef = useRef(null);
+  const isInView = useInView(wrapperRef, { once: true, amount: 0.3 });
+  const [hoveredRow, setHoveredRow] = useState(null);
 
   return (
-    <div className="gallery-wrapper">
+    <div className="gallery-wrapper" ref={wrapperRef}>
       <ProcessHeading
         backgroundText="SHOWCASE"
         foregroundText="CREATIVE HIGHLIGHTS"
-        // backgroundTextFill='#f5f0ff'
         description="Discover a selection of our standout projects, showcasing creativity and impactful results. See how we turn ideas into reality."
       />
 
-      {/* Top Row */}
-      <div
-        className={`image-row-wrapper top ${hoveredRow === 'top' ? 'paused' : ''}`}
+      {/* Top Row: reveal then continuous scroll via Framer Motion */}
+      <motion.div
+        className="image-row-wrapper top"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.8, rootMargin: '-100px 0px' }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        onMouseEnter={() => setHoveredRow('top')}
         onMouseLeave={() => setHoveredRow(null)}
       >
-        <div className="image-row">
+        <motion.div
+          className="image-row"
+          initial={{ x: '0%' }}
+          animate={{ x: ['0%', '-50%'] }}
+          transition={{ repeat: Infinity, ease: 'linear', duration: 40 }}
+        >
           {[...topImages, ...topImages].map((src, idx) => {
             const trueIdx = idx % topImages.length;
-            const key = `top-${trueIdx}`;
-            const isHighlighted = highlightedRow === 'top' && trueIdx === highlightedIndex;
-
             return (
               <div
-                key={key + '-' + idx}
-                data-key={key}
-                ref={(el) => (containersRef.current[`${key}-${idx}`] = el)}
-                className={`image-container ${isHighlighted ? 'highlight' : ''}`}
+                key={`top-${trueIdx}-${idx}`}
+                className="image-container"
                 onClick={() => navigate('/portfolio')}
                 onMouseEnter={() => setHoveredRow('top')}
+                onMouseLeave={() => setHoveredRow(null)}
               >
-                <img src={src} alt={`top-${idx}`} />
-                {(hoveredRow === 'top' || isHighlighted) && (
+                <img src={src} alt={`top-${trueIdx}`} />
+                {hoveredRow === 'top' && (
                   <button className="view-more-btn">View More</button>
                 )}
               </div>
             );
           })}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      {/* Bottom Row */}
-      <div
-        className={`image-row-wrapper bottom ${hoveredRow === 'bottom' ? 'paused' : ''}`}
+      {/* Bottom Row: reveal then continuous reverse scroll */}
+      <motion.div
+        className="image-row-wrapper bottom"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.6, rootMargin: '-100px 0px' }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        onMouseEnter={() => setHoveredRow('bottom')}
         onMouseLeave={() => setHoveredRow(null)}
       >
-        <div className="image-row reverse">
+        <motion.div
+          className="image-row reverse"
+          initial={{ x: '-50%' }}
+          animate={{ x: ['-50%', '0%'] }}
+          transition={{ repeat: Infinity, ease: 'linear', duration: 40 }}
+        >
           {[...bottomImages, ...bottomImages].map((src, idx) => {
             const trueIdx = idx % bottomImages.length;
-            const key = `bottom-${trueIdx}`;
-            const isHighlighted = highlightedRow === 'bottom' && trueIdx === highlightedIndex;
-
             return (
               <div
-                key={key + '-' + idx}
-                data-key={key}
-                ref={(el) => (containersRef.current[`${key}-${idx}`] = el)}
-                className={`image-container ${isHighlighted ? 'highlight' : ''}`}
+                key={`bottom-${trueIdx}-${idx}`}
+                className="image-container"
                 onClick={() => navigate('/portfolio')}
                 onMouseEnter={() => setHoveredRow('bottom')}
+                onMouseLeave={() => setHoveredRow(null)}
               >
-                <img src={src} alt={`bottom-${idx}`} />
-                {(hoveredRow === 'bottom' || isHighlighted) && (
+                <img src={src} alt={`bottom-${trueIdx}`} />
+                {hoveredRow === 'bottom' && (
                   <button className="view-more-btn">View More</button>
                 )}
               </div>
             );
           })}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
-};
-
-export default GalleryScroller;
+}

@@ -115,7 +115,7 @@ const BetterThanAi = () => {
 
   const toggleView = () => {
     setExpanded(!expanded);
-    if (expanded) navigate('/#support')
+    // if (expanded) navigate('/#support')
   };
 
   return (
