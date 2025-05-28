@@ -9,7 +9,9 @@
   /* background-color: #fcddec; */
   /* background-color: #f8e8f0; */
   background-color: #f5f0ff;
-  border: 1px solid #7249ac3c;
+  /* border: 1px solid #7249ac3c; */
+  border: 2px dashed #7249ac3c;
+
   border-bottom-right-radius: 30px;
   border-radius: 30px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);

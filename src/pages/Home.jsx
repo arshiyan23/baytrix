@@ -7,6 +7,7 @@ import GalleryScroller from '../components/GalleryScroller';
 import ProcessHeading from '../components/ProcessHeading';
 import FloatingBlobs from '../components/FloatingBlobs';
 import FloatingIcons from '../components/FloatingIcons';
+import CardSlider from '../components/CardSlider';
 
 const Home = () => {
   const location = useLocation();
@@ -62,13 +63,11 @@ const Home = () => {
 
       <LogoSlider />
 
-
-      <section id="services" className="services">
+      {/* <section id="services" className="services">
         <ProcessHeading
         foregroundText='OUR SERVICES'
         backgroundText='EXPERTISE' 
-        description='We empower businesses with innovative digital strategies that build strong identities, boost engagement, and drive measurable growth across platforms.
-'
+        description='We empower businesses with innovative digital strategies that build strong identities, boost engagement, and drive measurable growth across platforms.'
         />
         <div className="service-container">
           <ServiceCard
@@ -95,14 +94,16 @@ const Home = () => {
             desc="SEO to boost brand visibility, along with content, and PPC strategies."
             link="marketing-ads"
           />
-          {/* <ServiceCard
+          <ServiceCard
             imgSrc="/assets/ai_automation.png"
             title="AI Integration"
             desc="Automate tasks using AI for faster, smarter business operations."
             link="ai-integration"
-          /> */}
+          />
         </div>
-      </section>
+      </section> */}
+
+      <CardSlider />
 
       {/* <section id="portfolio" className="portfolio">
         <Portfolio />

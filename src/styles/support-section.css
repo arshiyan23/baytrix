@@ -1,10 +1,12 @@
 .support-wrapper {
-  text-align: center; /* Center the inline-block children horizontally */
+  text-align: center;
+  /* Center the inline-block children horizontally */
   max-width: 1200px;
   margin: 40px auto;
   padding: 40px 20px;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-top: 2px dashed #7249ac3c;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
 }
 
 /* Desktop: inline-block two columns */
@@ -12,7 +14,7 @@
 .support-illustration {
   display: inline-block;
   vertical-align: top;
-  width: 480px; 
+  width: 480px;
   box-sizing: border-box;
 }
 
@@ -26,14 +28,14 @@
 /* Styling for support text */
 .support-text h2 {
   font-size: 2rem;
-  color: #2d1a4f;
+  color: #7349ac;
   margin-bottom: 20px;
 }
 
 .support-text ul {
   list-style: none;
   padding: 0;
-  color: #3e2960;
+  color: #555;
 }
 
 .support-text li {
@@ -72,6 +74,7 @@
   color: white;
   position: relative;
   box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .chat-header {
@@ -110,12 +113,12 @@
 }
 
 .chat-message.user {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: flex-start;
-    text-align: right;
-    
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+  text-align: right;
+
 }
 
 .chat-message.user .message {

@@ -75,7 +75,7 @@ const GalleryScroller = () => {
       <ProcessHeading
         backgroundText="SHOWCASE"
         foregroundText="CREATIVE HIGHLIGHTS"
-        backgroundTextFill='#f5f0ff'
+        // backgroundTextFill='#f5f0ff'
         description="Discover a selection of our standout projects, showcasing creativity and impactful results. See how we turn ideas into reality."
       />
 

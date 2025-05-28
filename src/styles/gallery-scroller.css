@@ -1,14 +1,14 @@
 .gallery-wrapper {
     overflow: hidden;
     width: 100%;
-    background: #f5f0ff;
+    /* background: #f5f0ff; */
     padding: 2.5rem 0;
     padding-bottom: 80px;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    border-bottom:  1px solid #7249ac3c;
-    border-top:  1px solid #7249ac3c;
+    border-top: 2px dashed #7249ac3c;
+    border-bottom: 2px dashed #7249ac3c;
 }
 
 .image-row-wrapper {
@@ -69,8 +69,7 @@
     object-position: top;
     border-radius: 8px;
     transition: transform 0.4s ease;
-    border-right:  1px solid #7249ac3c;
-    border-bottom:  1px solid #7249ac3c;
+    border: 2px solid #7249ac3c;
 }
 
 .image-container:hover img {
