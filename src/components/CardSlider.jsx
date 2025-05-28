@@ -1,48 +1,59 @@
 import "../styles/card-slider.css";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import ProcessHeading from "./ProcessHeading";
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 
 const cardData = [
     {
-        title: "Branding",
+        title: "BRANDING",
         image: "/assets/branding-2.png",
         description: "Build a strong Brand identity through graphical content",
         link: "/branding",
-        color: "#8a5fd1", // softer violet, analogous to #7349ac
+        color: "#8a5fd1",
     },
     {
-        title: "Application Design",
+        title: "APPLICATION DESIGN",
         image: "/assets/app-design.png",
         description: "Mobile apps, web apps, websites, and full-stack digital platforms",
         link: "/application-design",
-        color: "#b678f1", // lighter lavender, complements your purple
+        color: "#5c6bc0",
     },
     {
-        title: "Social Media Management",
+        title: "SOCIAL MEDIA MANAGEMENT",
         image: "/assets/smm-2.png",
         description: "Grow your audience across social media platforms.",
         link: "/social-media-management",
-        color: "#5c6bc0", // muted indigo, gives balance
+        color: "#d675b9",
     },
     {
-        title: "Marketing Ads",
+        title: "MARKETING ADS",
         image: "/assets/marketing-ads.png",
         description: "SEO to boost brand visibility, along with content, and PPC strategies.",
         link: "/marketing-ads",
-        color: "#a463c7", // rich pinkish purple, in your color family
+        color: "#8a5fd1",
     },
 ];
 
 const CardSlider = () => {
     const navigate = useNavigate();
-
     const sectionRef = useRef(null);
+
+    // track mobile vs desktop
+    const [isMobile, setIsMobile] = useState(
+        typeof window !== "undefined" && window.innerWidth < 768
+    );
+    useEffect(() => {
+        const onResize = () => setIsMobile(window.innerWidth < 768);
+        window.addEventListener("resize", onResize);
+        return () => window.removeEventListener("resize", onResize);
+    }, []);
+    // use a tighter start on mobile
+    const startOffset = isMobile ? 0.7 : 0.9;
+    const endOffset = isMobile ? 1.15 : 1;
     const { scrollYProgress } = useScroll({
         target: sectionRef,
-        offset: ["start 0.9", "end 1"],
+        offset: [`start ${startOffset}`, `end ${endOffset}`],
     });
 
     const [activeIndex, setActiveIndex] = useState(null);
@@ -54,6 +65,7 @@ const CardSlider = () => {
                 backgroundText="EXPERTISE"
                 description="We empower businesses with innovative digital strategies that build strong identities, boost engagement, and drive measurable growth across platforms."
             />
+
             <div className="srvc-card-slider">
                 {cardData.map((card, index) => {
                     const isLeft = index < cardData.length / 2;
@@ -62,11 +74,11 @@ const CardSlider = () => {
                         [0, 1],
                         isLeft ? ["-300px", "0px"] : ["300px", "0px"]
                     );
-                    const opacity = useTransform(scrollYProgress, [0, 0.6, 1], [
-                        0,
-                        0.2,
-                        1,
-                    ]);
+                    const opacity = useTransform(
+                        scrollYProgress,
+                        [0, 0.6, 1],
+                        [0, 0.2, 1]
+                    );
 
                     let targetWidth = 280;
                     if (activeIndex !== null) {
@@ -89,21 +101,21 @@ const CardSlider = () => {
                             }}
                             onMouseEnter={() => setActiveIndex(index)}
                             onMouseLeave={() => setActiveIndex(null)}
-                            onClick={()=>{navigate(card.link)}}
+                            onClick={() => navigate(card.link)}
                         >
-                            <motion.h2
+                            <motion.h1
                                 className="srvc-card-title"
+                                initial={{ opacity: 0, y: -20 }}
                                 animate={{
-                                    top: isExpanded || isSqueezed ? "50%" : "1rem",
+                                    top: isExpanded || isSqueezed ? "50%" : "50%",
                                     left: "50%",
                                     x: "-50%",
-                                    y: isExpanded || isSqueezed ? "-50%" : "0%",
-                                    fontSize: isExpanded ? "1.8rem" : "1.5rem",
-                                    opacity: isSqueezed ? 1 : 1,
-                                    rotate: isSqueezed ? -90 : 0, //rotates the title 
-                                    transformOrigin: isSqueezed ? "center center" : "top left"
+                                    y: "-50%",
+                                    fontSize: isExpanded ? "1.8rem" : "1.35rem",
+                                    opacity: 1,
+                                    rotate: isSqueezed ? -90 : 0,
+                                    transformOrigin: "center center",
                                 }}
-                                initial={{ opacity: 0, y: -20 }}
                                 transition={{
                                     type: "spring",
                                     stiffness: 170,
@@ -111,7 +123,8 @@ const CardSlider = () => {
                                 }}
                             >
                                 {card.title}
-                            </motion.h2>
+                            </motion.h1>
+
                             <img
                                 src={card.image}
                                 alt={card.title}
@@ -132,21 +145,24 @@ const CardSlider = () => {
                                 transition={{ duration: 0.4 }}
                             >
                                 <motion.p
+                                    initial={{ opacity: 1 }}
                                     animate={{
-                                        opacity: isExpanded || isIdle ? 1 : 0,
-                                        y: isExpanded ? 0 : 0,
+                                        opacity: isExpanded ? 1 : 0,
                                     }}
-                                    transition={{ delay: 0.05, duration: 0.4 }}
+                                    transition={{
+                                        duration: 0.4,
+                                        delay: isExpanded ? 0.2 : 0,
+                                    }}
                                 >
                                     {card.description}
                                 </motion.p>
+
                                 <motion.button
                                     animate={{
                                         opacity: isExpanded || isIdle ? 1 : 0,
                                         y: isExpanded ? 0 : 0,
                                     }}
                                     transition={{ delay: 0.1, duration: 0.4 }}
-                                    // onClick={()=>{navigate(card.link)}}
                                 >
                                     View More
                                 </motion.button>

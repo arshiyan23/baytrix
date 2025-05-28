@@ -35,7 +35,7 @@
   object-fit: cover;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.25;
+  opacity: 0.3;
 }
 
 .srvc-card-title {
@@ -50,7 +50,6 @@
 
 .srvc-card-content {
   position: absolute;
-  left: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,15 +57,20 @@
   gap: 1rem;
   text-align: center;
   z-index: 2;
+  width: 90%;
+  box-sizing: border-box; /
 }
 
 .srvc-card-content p {
   font-size: 1rem;
-  margin: 0;
+  line-height: 1.4;                
+  margin: 0 auto;
   color: white;
   text-align: center;
-  word-break: break-word;
+  width: 100%;
+  overflow-wrap: break-word;
 }
+
 
 .srvc-card-content button {
   padding: 0.6rem 1rem;
@@ -91,3 +95,21 @@
   max-width: 900px;
   margin: 0 auto;
 }
+
+
+/* -------------------------------------------------------------------
+   TABLET: turn into two-column wrap, no horizontal scroll
+   ------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .srvc-card-slider {
+    flex-wrap: wrap;          /* allow cards to wrap onto new lines */
+    justify-content: center;  /* center each row */
+
+  }
+  .srvc-card {
+    flex: 0 1 45%;            /* each card takes ~45% of container */
+    max-width: 45%;
+    margin-bottom: 1.5rem;    /* spacing between rows */
+  }
+}
+
