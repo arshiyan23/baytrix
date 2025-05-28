@@ -89,6 +89,7 @@ const CardSlider = () => {
                             }}
                             onMouseEnter={() => setActiveIndex(index)}
                             onMouseLeave={() => setActiveIndex(null)}
+                            onClick={()=>{navigate(card.link)}}
                         >
                             <motion.h2
                                 className="srvc-card-title"
@@ -145,7 +146,7 @@ const CardSlider = () => {
                                         y: isExpanded ? 0 : 0,
                                     }}
                                     transition={{ delay: 0.1, duration: 0.4 }}
-                                    onClick={()=>{navigate(card.link)}}
+                                    // onClick={()=>{navigate(card.link)}}
                                 >
                                     View More
                                 </motion.button>
