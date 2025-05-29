@@ -148,7 +148,7 @@ const appFeatures = [
       <section className="app-intro-section">
         <FloatingIcons category="appDevelopment" />
         <div className="app-intro-container">
-          <img src="/assets/app-dev-bg-2.png" alt="App Intro" className="intro-image" />
+          <img src="/assets/app-dev.png" alt="App Intro" className="intro-image" />
           <div className="intro-text">
             <h2>APPLICATION DESIGN</h2>
             <p>

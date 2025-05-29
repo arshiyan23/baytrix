@@ -36,10 +36,9 @@
         translateZ(calc(var(--abs-offset) * -30rem)) 
         translateX(calc(var(--direction) * -5rem));
     /* filter: blur(calc(var(--abs-offset) * 0.3rem)); */
-    transition: all 0.3s ease-out;
+    /* opacity: calc(1 - var(--abs-offset) * 0.8); */
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
     will-change: transform, opacity;
-
-
 }
 
 .crsl-card {
@@ -48,7 +47,7 @@
     border-radius: 1rem;
     overflow: hidden;
     display: flex;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); */
     flex-direction: column;
 }
 
@@ -90,7 +89,7 @@
     transform: translateY(-50%);
     z-index: 2;
     user-select: none;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
 
 }
 

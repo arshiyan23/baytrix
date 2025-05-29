@@ -1,6 +1,7 @@
 /* Wrapper and Layout */
 .btai-wrapper {
   margin: 40px auto;
+  border-top: 2px dashed #7249ac3c;
 }
 
 .btai-container {
@@ -68,18 +69,22 @@
 .btai-view-more-button {
   margin-top: 20px;
   padding: 12px 24px;
-  background-color: #7349ac;
-  color: white;
-  border: none;
-  border-radius: 8px;
+  color: #7349ac;
   font-size: 1rem;
-  /* font-weight: 600; */
+  font-weight: 600;
+  border: none;
+  background-color: transparent;
+  transition: color 0.3s ease;
+  letter-spacing: 0.5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  /* border-radius: 8px; */
+  /* transition: background-color 0.3s ease; */
 }
-
-.btai-view-more-button:hover {
-  background-color: #5c3b92;
+.btai-arrow{
+  display: inline-block;
+  margin-left: 6px;
+  font-weight: bold;
+  animation: horizontalBounce 0.6s ease-in-out infinite;
 }
 
 /* the circle on the timeline */
@@ -169,6 +174,24 @@
   font-size: 1rem;
   color: #555;
   line-height: 1.6;
+}
+
+@keyframes horizontalBounce {
+  0% {
+    transform: translateX(0);
+  }
+
+  30% {
+    transform: translateX(6px);
+  }
+
+  60% {
+    transform: translateX(-3px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 /* Mobile Responsiveness */

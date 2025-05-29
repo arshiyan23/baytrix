@@ -52,7 +52,7 @@ const Home = () => {
           </div>
 
           <div className="hero-image">
-            <img src="/assets/bg3.png" alt="Digital Services Overview" />
+            <img src="/assets/home-hero.png" alt="Digital Services Overview" />
           </div>
 
           {/* <p className="hero-bottom-text">TRUSTED BY TOP BRANDS</p> */}

@@ -11,7 +11,6 @@ const Card = ({ image }) => (
     </div>
 );
 
-
 const ChevronLeftIcon = () => (
     <svg className="nav-icon" viewBox="0 0 24 24" fill="currentColor">
         <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
@@ -24,9 +23,7 @@ const ChevronRightIcon = () => (
     </svg>
 );
 
-const Carousel3D = ({
-    cards
-}) => {
+const Carousel3D = ({ cards }) => {
     const [active, setActive] = useState(0);
     const count = cards.length;
 
@@ -76,7 +73,14 @@ const Carousel3D = ({
                                     opacity: absOffset >= MAX_VISIBILITY ? 0 : 1,
                                 }}
                             >
-                                <Card image={card.image} title={card.title} />
+                                {/* pass the blurred image for non-active cards */}
+                                <Card
+                                  image={
+                                    i === active
+                                      ? card.image
+                                      : card.imageBlur
+                                  }
+                                />
                             </div>
                         );
                     })}
@@ -86,8 +90,6 @@ const Carousel3D = ({
                     </button>
                 </div>
             </div>
-
-            
 
             {/* Dots */}
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}>

@@ -94,27 +94,35 @@ export default function CardSlider() {
                             }}
                             onMouseEnter={() => !isMobile && setActiveIndex(index)}
                             onMouseLeave={() => !isMobile && setActiveIndex(null)}
-                            onClick={() => isMobile && navigate(card.link)}
+                            onClick={() => navigate(card.link)}
                         >
                             {/* TITLE */}
                             <motion.h1
                                 className="srvc-card-title"
                                 initial={{ opacity: 0, y: -20 }}
                                 animate={{
-                                    top: isMobile? "45%": "50%",
+                                    top: isMobile ? "45%" : "50%",
                                     left: "50%",
                                     x: "-50%",
                                     y: "-50%",
                                     fontSize: isExpanded ? "1.8rem" : "1.35rem",
                                     opacity: 1,
-                                    // only rotate on desktop squeeze
-                                    rotate: isMobile ? 0 : (isSqueezed ? -90 : 0),
+                                    rotate: isMobile ? 0 : isSqueezed ? -90 : 0,
                                     transformOrigin: "center center",
                                 }}
                                 transition={{ type: "spring", stiffness: 170, damping: 30 }}
                             >
-                                {card.title}
+                                {
+                                    isSqueezed
+                                        ? card.title === "SOCIAL MEDIA MANAGEMENT"
+                                            ? "SM MANAGEMENT"
+                                            : card.title === "APPLICATION DESIGN"
+                                                ? "APP DESIGN"
+                                                : card.title
+                                        : card.title
+                                }
                             </motion.h1>
+
 
                             <img
                                 src={card.image}

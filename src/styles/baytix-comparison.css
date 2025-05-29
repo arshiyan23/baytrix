@@ -1,0 +1,213 @@
+/* overall layout */
+.cmpr-wrapper {
+    text-align: center;
+    /* padding: 60px 0; */
+    box-sizing: border-box;
+    border-bottom: 2px dashed #7249ac3c;
+}
+
+.cmpr-container {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+/* left vs right panels */
+.cmpr-left-panel,
+.cmpr-right-panel {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.cmpr-left-panel {
+    flex: 2;
+}
+
+.cmpr-right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #c2a0f134; */
+    transition: all 0.5s ease;
+}
+
+.cmpr-right-panel.loaded {
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+/* hide image when loaded */
+.cmpr-right-panel.loaded .cmpr-calendar-img {
+    display: none;
+}
+
+/* titles */
+.cmpr-title {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    color: #7349ac;
+}
+
+.cmpr-subtitle {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+/* comparison table */
+.cmpr-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: auto;
+    color: #555;
+}
+
+.cmpr-table th:nth-child(2) {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.cmpr-table tbody tr:last-child td:nth-child(2) {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.cmpr-table th,
+.cmpr-table td {
+    padding: 1rem 0.5rem;
+    vertical-align: middle;
+}
+
+.cmpr-table th:first-child,
+.cmpr-table td:first-child {
+    text-align: left;
+}
+
+.cmpr-table th:nth-child(2),
+.cmpr-table td:nth-child(2) {
+    background: #e5d2ff34;
+    text-align: center;
+}
+
+.cmpr-table th:nth-child(3),
+.cmpr-table td:nth-child(3) {
+    text-align: center;
+}
+
+/* logo & icons */
+.cmpr-logo {
+    max-width: 50%;
+    height: auto;
+}
+
+.cmpr-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* metric text */
+.cmpr-metric-name {
+    font-weight: 500;
+}
+
+.cmpr-metric-desc {
+    font-size: 0.875rem;
+    color: #999;
+    margin-top: 0.25rem;
+}
+
+/* calendly placeholder & spinner */
+.cmpr-calendar-placeholder {
+    background-color: #7349ac;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+.cmpr-calendar-placeholder:hover {
+    background-color: #5c3b92;
+}
+
+.cmpr-spinner {
+    width: 40px;
+    height: 40px;
+    margin: 1rem auto;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #7349ac;
+    border-radius: 50%;
+    animation: cmpr-spin 1s linear infinite;
+}
+
+@keyframes cmpr-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.cmpr-calendar-embed-container {
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* new illustration above text */
+.cmpr-calendar-img {
+    width: 180px;
+    margin-bottom: 1rem;
+}
+
+/* ——— MOBILE RESPONSIVE ——— */
+@media (max-width: 768px) {
+    .cmpr-container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .cmpr-left-panel,
+    .cmpr-right-panel {
+        flex: none;
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .cmpr-metric-desc {
+        display: none;
+    }
+
+    .cmpr-title {
+        font-size: 1.5rem;
+    }
+
+    .cmpr-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .cmpr-table th,
+    .cmpr-table td {
+        padding: 0.5rem 0.25rem;
+        font-size: 0.9rem;
+    }
+
+    .cmpr-calendar-img {
+        width: 120px;
+        margin-bottom: 1rem;
+    }
+
+    .cmpr-logo {
+        max-width: 65%;
+    }
+}

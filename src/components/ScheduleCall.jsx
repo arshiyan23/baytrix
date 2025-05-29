@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "../styles/schedule-call.css";
-import illustration from "/assets/booking.png";
 
 function ScheduleCall({ onClose }) {
   const [fadeOut, setFadeOut] = useState(false);
@@ -39,7 +38,7 @@ function ScheduleCall({ onClose }) {
           {!showCalendly && (
             <div className="illustration-wrapper">
               <img
-                src={illustration}
+                src="/assets/booking.png"
                 alt="Consultation Illustration"
                 className="illustration"
               />

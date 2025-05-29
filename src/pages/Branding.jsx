@@ -92,28 +92,29 @@ const importanceItems = [
 
 const cardData = [
   {
-    title: 'Card 1',
+    title: 'Dynamic Visuals',
     image: '/assets/portfolio/kartspace/kartspace-cart.png',
+    imageBlur: '/assets/portfolio/kartspace/kartspace-cart-blur.png',
   },
   {
-    title: 'Card 2',
+    title: 'Immersive Branding',
     image: '/assets/portfolio/tradewise/mockup-thumbnail.png',
-
+    imageBlur: '/assets/portfolio/tradewise/mockup-thumbnail-blur.png',
   },
   {
-    title: 'Card 3',
+    title: 'Creative Execution',
     image: '/assets/portfolio/kartspace/kartspace-cart.png',
-
+    imageBlur: '/assets/portfolio/kartspace/kartspace-cart-blur.png',
   },
   {
-    title: 'Card 4',
+    title: 'Strategic Design',
     image: '/assets/portfolio/kartspace/kartspace-cart.png',
-
+    imageBlur: '/assets/portfolio/kartspace/kartspace-cart-blur.png',
   },
   {
-    title: 'Card 5',
+    title: 'Engaging Interfaces',
     image: '/assets/portfolio/kartspace/kartspace-cart.png',
-
+    imageBlur: '/assets/portfolio/kartspace/kartspace-cart-blur.png',
   },
 ];
 

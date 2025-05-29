@@ -154,9 +154,13 @@ const BetterThanAi = () => {
             ))}
           </div>
           <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
-            <button className="btai-view-more-button" onClick={toggleView}>
-              {expanded ? 'View Less' : 'Read More'}
-            </button>
+            {!expanded ?
+              <button className="btai-view-more-button" onClick={toggleView}>
+                Read More <span className="btai-arrow">→</span>
+              </button>
+              : <button className="btai-view-more-button" onClick={toggleView}>
+                <span style={{marginRight:"6px"}}>←</span>View Less
+              </button>}
           </div>
         </div>
       </div>

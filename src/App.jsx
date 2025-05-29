@@ -31,6 +31,7 @@ import PortfolioItem from './components/PortfolioItem';
 import ScrollToTopBtn from './components/ScrollToTopBtn';
 import BetterThanAi from './components/BetterThanAi';
 import CursorFollower from './components/CursorFollower';
+import BaytixComparison from './components/BaytixComparison';
 
 
 // Hook to track window size
@@ -115,8 +116,9 @@ function AppContent() {
           statsData={statsData}
         />
       )} */}
-      <BetterThanAi />
+      <BaytixComparison />
       <SupportSection />
+      <BetterThanAi />
       <FaqSection />
       <Footer />
     </>
