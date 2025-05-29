@@ -7,7 +7,7 @@ const featureList = [
     {
     title: "Websites",
     desc: "We craft responsive, SEO-optimized websites that elevate your online presence.",
-    image: "/assets/website_app.png",
+    image: "/assets/website_app.webp",
     stats: {
       running: "100+",
       users: "2M+",
@@ -15,16 +15,16 @@ const featureList = [
       launched: "200+",
     },
     icons: {
-      running: "/assets/running.png",
-      users: "/assets/users.png",
-      countries: "/assets/countries.png",
-      launched: "/assets/launched.png",
+      running: "/assets/running.webp",
+      users: "/assets/users.webp",
+      countries: "/assets/countries.webp",
+      launched: "/assets/launched.webp",
     },
   },
     {
     title: "Desktop Applications",
     desc: "We create cross-platform desktop software with sleek UI and powerful performance for Windows, macOS, and Linux.",
-    image: "/assets/desktop_app.png",
+    image: "/assets/desktop_app.webp",
     stats: {
       running: "15+",
       users: "300K+",
@@ -32,16 +32,16 @@ const featureList = [
       launched: "35+",
     },
     icons: {
-      running: "/assets/running.png",
-      users: "/assets/users.png",
-      countries: "/assets/countries.png",
-      launched: "/assets/launched.png",
+      running: "/assets/running.webp",
+      users: "/assets/users.webp",
+      countries: "/assets/countries.webp",
+      launched: "/assets/launched.webp",
     },
   },
   {
     title: "Mobile Applications",
     desc: "We design and develop high-performance iOS and Android mobile applications tailored to your business needs.",
-    image: "/assets/mobile_apps.png",
+    image: "/assets/mobile_apps.webp",
     stats: {
       running: "20+",
       users: "500K+",
@@ -49,16 +49,16 @@ const featureList = [
       launched: "50+",
     },
     icons: {
-      running: "/assets/apps-ico.png",
-      users: "/assets/users.png",
-      countries: "/assets/countries.png",
-      launched: "/assets/launched.png",
+      running: "/assets/apps-ico.webp",
+      users: "/assets/users.webp",
+      countries: "/assets/countries.webp",
+      launched: "/assets/launched.webp",
     },
   },
   {
     title: "Web Applications",
     desc: "Our team builds robust, scalable browser-based applications including dashboards, SaaS platforms, and enterprise tools.",
-    image: "/assets/web_apps.png",
+    image: "/assets/web_apps.webp",
     stats: {
       running: "30+",
       users: "1M+",
@@ -66,16 +66,16 @@ const featureList = [
       launched: "75+",
     },
     icons: {
-      running: "/assets/running.png",
-      users: "/assets/users.png",
-      countries: "/assets/countries.png",
-      launched: "/assets/launched.png",
+      running: "/assets/running.webp",
+      users: "/assets/users.webp",
+      countries: "/assets/countries.webp",
+      launched: "/assets/launched.webp",
     },
   },
   {
     title: "App Integration",
     desc: "Maximize productivity with seamless integrations for tools like Zoho, Office 365, Slack, and more.",
-    image: "/assets/app_integration.png",
+    image: "/assets/app_integration.webp",
     stats: {
       running: "40+",
       users: "1.5M+",
@@ -83,10 +83,10 @@ const featureList = [
       launched: "100+",
     },
     icons: {
-      running: "/assets/running.png",
-      users: "/assets/users.png",
-      countries: "/assets/countries.png",
-      launched: "/assets/launched.png",
+      running: "/assets/running.webp",
+      users: "/assets/users.webp",
+      countries: "/assets/countries.webp",
+      launched: "/assets/launched.webp",
     },
   },
 ];

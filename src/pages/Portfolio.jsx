@@ -100,7 +100,7 @@ const Portfolio = () => {
                 </div>
 
                 <div className="hero-portfolio-image">
-                    <img src={"/assets/portfolio.png"} alt="Portfolio Visual" />
+                    <img src={"/assets/portfolio.webp"} alt="Portfolio Visual" />
                 </div>
             </section>
             <PortfolioGallery />

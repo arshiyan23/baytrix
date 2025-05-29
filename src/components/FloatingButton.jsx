@@ -35,20 +35,20 @@ const FloatingButton = () => {
           {showFreeWebsiteBtn && (
             <button className="floating-offer-btn" onClick={() => setShowPromo(true)}>
               <span className="floating-offer-badge">+1</span>
-              <img src="/assets/offer-ico.png" alt="Offer" width={20} height={20} />
+              <img src="/assets/offer-ico.webp" alt="Offer" width={20} height={20} />
               Free Website
             </button>
           )}
           <button onClick={handleSupport}>
-            <img src="/assets/support-ico.png" alt="Help" width={20} height={20} />
+            <img src="/assets/support-ico.webp" alt="Help" width={20} height={20} />
             Support
           </button>
           <button onClick={handleWhatsApp}>
-            <img src="/assets/whatsapp-ico.png" alt="WhatsApp" width={20} height={20} />
+            <img src="/assets/whatsapp-ico.webp" alt="WhatsApp" width={20} height={20} />
             WhatsApp
           </button>
           <button onClick={() => window.open("https://linktr.ee/Baytix", "_blank")}>
-            <img src="/assets/linktree-ico.png" alt="Socials" width={20} height={20} />
+            <img src="/assets/linktree-ico.webp" alt="Socials" width={20} height={20} />
             Socials
           </button>
         </div>
@@ -58,7 +58,7 @@ const FloatingButton = () => {
           aria-label="Toggle Floating Button"
         >
           {!open && <span className="floating-offer-badge main-badge">+1</span>}
-          {open ? "×" : <img src="/assets/hamburger-ico.png" alt="Open Help" width={22} height={22} />}
+          {open ? "×" : <img src="/assets/hamburger-ico.webp" alt="Open Help" width={22} height={22} />}
         </button>
 
       </div>

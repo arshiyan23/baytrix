@@ -102,7 +102,7 @@ const Contact = () => (
     <div className="contact-wrapper">
         <div className="contact-grid">
             <div className="grid-image">
-                <img src="/assets/contact-hero.png" alt="Contact Illustration" />
+                <img src="/assets/contact-hero.webp" alt="Contact Illustration" />
                 <h1 className="contact-title">Contact Us</h1>
             </div>
 

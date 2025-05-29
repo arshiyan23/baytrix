@@ -52,7 +52,7 @@ const Home = () => {
           </div>
 
           <div className="hero-image">
-            <img src="/assets/home-hero.png" alt="Digital Services Overview" />
+            <img src="/assets/home-hero.webp" alt="Digital Services Overview" />
           </div>
 
           {/* <p className="hero-bottom-text">TRUSTED BY TOP BRANDS</p> */}
@@ -71,31 +71,31 @@ const Home = () => {
         />
         <div className="service-container">
           <ServiceCard
-            imgSrc="/assets/branding.png"
+            imgSrc="/assets/branding.webp"
             title="Branding"
             desc="Build a strong Brand identity through graphical content"
             link="/branding"
           />
           <ServiceCard
-            imgSrc="/assets/application_design2.png"
+            imgSrc="/assets/application_design2.webp"
             title="Application Design"
             desc="Mobile apps, web apps, websites, and full-stack digital platforms"
             link="/application-design"
           />
           <ServiceCard
-            imgSrc="/assets/smm.png"
+            imgSrc="/assets/smm.webp"
             title="Social Media Management"
             desc="Grow your audience across social media platforms."
             link='social-media-management'
           />
           <ServiceCard
-            imgSrc="/assets/marketing.png"
+            imgSrc="/assets/marketing.webp"
             title="Marketing Ads"
             desc="SEO to boost brand visibility, along with content, and PPC strategies."
             link="marketing-ads"
           />
           <ServiceCard
-            imgSrc="/assets/ai_automation.png"
+            imgSrc="/assets/ai_automation.webp"
             title="AI Integration"
             desc="Automate tasks using AI for faster, smarter business operations."
             link="ai-integration"

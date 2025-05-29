@@ -5,7 +5,7 @@ const NotFound = () => {
     <div className="notfound-wrapper">
       <div className="notfound-container">
         <img
-          src="/assets/404.png"
+          src="/assets/404.webp"
           alt="Page Not Found"
           className="notfound-image"
         />

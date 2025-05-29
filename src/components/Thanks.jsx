@@ -6,7 +6,7 @@ const Thanks = () => (
   <div className="popup-panel thank-you-mode">
     <div className="thank-you-wrapper">
       <img
-        src="/assets/thanks.png"
+        src="/assets/thanks.webp"
         alt="Thank You"
         className="thank-you-image"
         loading="lazy"

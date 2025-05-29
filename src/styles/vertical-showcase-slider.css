@@ -30,7 +30,7 @@
   width: 320px;
   height: 640px;
   overflow: hidden;
-  background: url('/assets/portfolio/iphone-mockup.png') center/contain no-repeat;
+  background: url('/assets/portfolio/iphone-mockup.webp') center/contain no-repeat;
 }
 
 .engagement-image {

@@ -11,39 +11,39 @@ function SocialMediaManagement() {
     {
       title: "Best Designs",
       description: "Every post is crafted with on-brand colors, modern typography, and visual hierarchy to stand out in crowded feeds.",
-      image: "/assets/portfolio/sm-posts/insta-post1.png",
-      icon: "/assets/better-design.png"
+      image: "/assets/portfolio/sm-posts/insta-post1.webp",
+      icon: "/assets/better-design.webp"
     },
     {
       title: "Best Quality",
       description: "We use high-resolution visuals optimized for each platform, ensuring posts look sharp on all screen sizes.",
-      image: "/assets/portfolio/sm-posts/insta-post2.png",
-      icon: "/assets/better-image.png"
+      image: "/assets/portfolio/sm-posts/insta-post2.webp",
+      icon: "/assets/better-image.webp"
     },
     {
       title: "Interactive Stories",
       description: "We design story posts that encourage engagement through polls, questions, sliders, and more.",
-      image: "/assets/portfolio/sm-posts/insta-post3.png",
-      icon: "/assets/stories.png"
+      image: "/assets/portfolio/sm-posts/insta-post3.webp",
+      icon: "/assets/stories.webp"
     },
     {
       title: "Infographics",
       description: "We break down complex data into clean, digestible visuals for educational or promotional purposes.",
-      image: "/assets/portfolio/sm-posts/insta-post1.png",
-      icon: "/assets/infographics.png"
+      image: "/assets/portfolio/sm-posts/insta-post1.webp",
+      icon: "/assets/infographics.webp"
     },
     {
       title: "Branded Announcements",
       description: "From product launches to event updates, we design announcement posts that feel native to your brand.",
-      image: "/assets/portfolio/sm-posts/insta-post4.png",
-      icon: "/assets/announcement.png"
+      image: "/assets/portfolio/sm-posts/insta-post4.webp",
+      icon: "/assets/announcement.webp"
     },
     {
       title: "Reels Thumbnails",
       description: "We design eye-catching covers for Instagram Reels and TikToks to maximize clicks and brand consistency.",
-      image: "/assets/portfolio/sm-posts/insta-post1.png",
+      image: "/assets/portfolio/sm-posts/insta-post1.webp",
 
-      icon: "/assets/reel-thumbnails.png"
+      icon: "/assets/reel-thumbnails.webp"
     }
   ];
 
@@ -146,7 +146,7 @@ function SocialMediaManagement() {
       <section className="smm-hero-section">
         <FloatingIcons category="socialMediaManagement" />
         <div className="smm-hero-content">
-          <img src="/assets/smm-hero2.png" alt="Social Media" className="smm-hero-img" />
+          <img src="/assets/smm-hero2.webp" alt="Social Media" className="smm-hero-img" />
           <div className="smm-hero-text">
             <h2>SOCIAL MEDIA MANAGEMENT</h2>
             <p>
@@ -188,27 +188,27 @@ function SocialMediaManagement() {
             {
               title: "Instagram",
               desc: "Branded posts & visual storytelling",
-              icon: "/assets/instagram-ico.png",
+              icon: "/assets/instagram-ico.webp",
             },
             {
               title: "Google MB",
               desc: "Timely updates to boost local presence",
-              icon: "/assets/google-ads-ico2.png",
+              icon: "/assets/google-ads-ico2.webp",
             },
             {
               title: "Facebook",
               desc: "Engaging content to grow your page",
-              icon: "/assets/facebook-ico.png",
+              icon: "/assets/facebook-ico.webp",
             },
             {
               title: "WhatsApp",
               desc: "Custom messages & broadcast designs",
-              icon: "/assets/whatsapp-buss-ico2.png",
+              icon: "/assets/whatsapp-buss-ico2.webp",
             },
             {
               title: "TikTok",
               desc: "Creative ideas for viral short videos",
-              icon: "/assets/tiktok-ico.png",
+              icon: "/assets/tiktok-ico.webp",
             },
 
           ].map((service, i) => (
@@ -237,32 +237,32 @@ function SocialMediaManagement() {
             {
               title: "Content Planning",
               desc: "Strategize content calendars aligned with your goals.",
-              icon: "/assets/strategize-ico.png",
+              icon: "/assets/strategize-ico.webp",
             },
             {
               title: "Post Design",
               desc: "Eye-catching, on-brand post visuals.",
-              icon: "/assets/post-design.png",
+              icon: "/assets/post-design.webp",
             },
             {
               title: "Performance Analytics",
               desc: "Track engagement and optimize results.",
-              icon: "/assets/growth-ico.png",
+              icon: "/assets/growth-ico.webp",
             },
             {
               title: "Hashtag Strategy",
               desc: "Use trending hashtags to boost reach.",
-              icon: "/assets/hashtag-ico.png",
+              icon: "/assets/hashtag-ico.webp",
             },
             {
               title: "Ad Management",
               desc: "Run and track conversion-focused ads.",
-              icon: "/assets/ads-ico.png",
+              icon: "/assets/ads-ico.webp",
             },
             {
               title: "Account Growth",
               desc: "Grow followers through smart targeting.",
-              icon: "/assets/followers-ico.png",
+              icon: "/assets/followers-ico.webp",
             },
           ].map((item, i) => (
             <div className="smm-timeline-step fade-in-right" key={i}>
@@ -294,17 +294,17 @@ function SocialMediaManagement() {
           </p>
           <div className="success-container">
             <div className="success-item">
-              <img src="/assets/impressions-ico.png" alt="Impressions" className="success-icon" />
+              <img src="/assets/impressions-ico.webp" alt="Impressions" className="success-icon" />
               <div className="success-number" id="impressionsCounter">0</div>
               <p className="success-text">Total Impressions</p>
             </div>
             <div className="success-item">
-              <img src="/assets/engagements-ico.png" alt="Engagement" className="success-icon" />
+              <img src="/assets/engagements-ico.webp" alt="Engagement" className="success-icon" />
               <div className="success-number" id="engagementCounter">0%</div>
               <p className="success-text">Avg. Engagement Rate</p>
             </div>
             <div className="success-item">
-              <img src="/assets/reach-ico.png" alt="Reach" className="success-icon" />
+              <img src="/assets/reach-ico.webp" alt="Reach" className="success-icon" />
               <div className="success-number" id="reachCounter">0</div>
               <p className="success-text">Accounts Reached</p>
             </div>

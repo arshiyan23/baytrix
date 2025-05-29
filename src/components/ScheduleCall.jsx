@@ -38,7 +38,7 @@ function ScheduleCall({ onClose }) {
           {!showCalendly && (
             <div className="illustration-wrapper">
               <img
-                src="/assets/booking.png"
+                src="/assets/booking.webp"
                 alt="Consultation Illustration"
                 className="illustration"
               />

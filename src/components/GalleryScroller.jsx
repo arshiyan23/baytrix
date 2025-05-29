@@ -5,19 +5,19 @@ import { useNavigate } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
 
 const topImages = [
-  '/assets/portfolio/kartspace/kartspace-electronicspage.png',
-  '/assets/portfolio/poster.jpeg',
-  '/assets/portfolio/tradewise/tradewise-chat.png',
-  '/assets/portfolio/fitlife-homepage.png',
-  '/assets/portfolio/crm.png',
+  '/assets/portfolio/kartspace/kartspace-electronicspage.webp',
+  '/assets/portfolio/poster.webp',
+  '/assets/portfolio/tradewise/tradewise-chat.webp',
+  '/assets/portfolio/fitlife-homepage.webp',
+  '/assets/portfolio/crm.webp',
 ];
 
 const bottomImages = [
-  '/assets/portfolio/kartspace/kartspace-fruits-page.png',
-  '/assets/portfolio/tradewise/tradewise-homepage.png',
-  '/assets/portfolio/bottles.png',
-  '/assets/portfolio/gowash.png',
-  '/assets/portfolio/feedback-central.png',
+  '/assets/portfolio/kartspace/kartspace-fruits-page.webp',
+  '/assets/portfolio/tradewise/tradewise-homepage.webp',
+  '/assets/portfolio/bottles.webp',
+  '/assets/portfolio/gowash.webp',
+  '/assets/portfolio/feedback-central.webp',
 ];
 
 export default function GalleryScroller() {

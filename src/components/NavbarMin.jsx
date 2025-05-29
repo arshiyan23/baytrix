@@ -48,7 +48,7 @@ const NavbarMin = () => {
     <header className="min-header">
       <Link to="/">
         <img
-          src="/assets/baytixlogo-nobg.png"
+          src="/assets/baytixlogo-nobg.webp"
           alt="Logo"
           className="min-logo"
         />
@@ -61,7 +61,7 @@ const NavbarMin = () => {
         onAnimationEnd={onHamburgerAnimEnd}
         aria-label="Open menu"
       >
-        <img src="/assets/hamburger-ico.png" alt="Open menu" className="min-hamburger-img" />
+        <img src="/assets/hamburger-ico.webp" alt="Open menu" className="min-hamburger-img" />
       </button>
 
       <nav

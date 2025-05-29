@@ -37,10 +37,10 @@ const SupportSection = () => {
                             <div className="message">
                                 <strong>Numrain (Customer):</strong> Hi, I need help setting up my first website.
                             </div>
-                            <img src="/assets/female_avatar.png" alt="User" className="avatar" />
+                            <img src="/assets/female_avatar.webp" alt="User" className="avatar" />
                         </div>
                         <div className="chat-message agent">
-                            <img src="/assets/male_avatar.png" alt="Agent" className="avatar" />
+                            <img src="/assets/male_avatar.webp" alt="Agent" className="avatar" />
                             <div className="message">
                                 <strong>Izhaan (Support):</strong> Absolutely! I’ll guide you step-by-step. Let’s get started together.
                             </div>

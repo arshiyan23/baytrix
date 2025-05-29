@@ -5,10 +5,10 @@ import "../styles/horizontal-showcase-slider.css";
 import NumStats from "./NumStats";
 
 const statsData = [
-  { id: "appsCounter",    icon: "/assets/icon-apps.png",    value: "0", targetValue: "52+",  label: "Apps Running" },
-  { id: "usersCounter",   icon: "/assets/icon-users.png",   value: "0", targetValue: "75K+", label: "Users Served" },
-  { id: "uptimeCounter",  icon: "/assets/icon-uptime.png",  value: "0%", targetValue: "99.9%", label: "Uptime Guarantee" },
-  { id: "reviewsCounter", icon: "/assets/icon-reviews.png", value: "0%", targetValue: "100%",  label: "Reviews Received" }
+  { id: "appsCounter",    icon: "/assets/icon-apps.webp",    value: "0", targetValue: "52+",  label: "Apps Running" },
+  { id: "usersCounter",   icon: "/assets/icon-users.webp",   value: "0", targetValue: "75K+", label: "Users Served" },
+  { id: "uptimeCounter",  icon: "/assets/icon-uptime.webp",  value: "0%", targetValue: "99.9%", label: "Uptime Guarantee" },
+  { id: "reviewsCounter", icon: "/assets/icon-reviews.webp", value: "0%", targetValue: "100%",  label: "Reviews Received" }
 ];
 
 const HorizontalShowcaseSlider = ({

@@ -5,10 +5,10 @@ import ProcessHeading from "./ProcessHeading";
 import { useNavigate } from "react-router-dom";
 
 const cardData = [
-    { title: "BRANDING", image: "/assets/branding-2.png", description: "Build a unique Brand identity through graphical content", link: "/branding", color: "#8a5fd1" },
-    { title: "APPLICATION DESIGN", image: "/assets/app-design.png", description: "Mobile apps, web apps, websites, and full-stack digital platforms", link: "/application-design", color: "#5c6bc0" },
-    { title: "SOCIAL MEDIA MANAGEMENT", image: "/assets/smm-2.png", description: "Grow your audience across social media platforms.", link: "/social-media-management", color: "#d675b9" },
-    { title: "MARKETING ADS", image: "/assets/marketing-ads.png", description: "SEO to boost brand visibility, along with content, and PPC strategies.", link: "/marketing-ads", color: "#8a5fd1" },
+    { title: "BRANDING", image: "/assets/branding-2.webp", description: "Build a unique Brand identity through graphical content", link: "/branding", color: "#8a5fd1" },
+    { title: "APPLICATION DESIGN", image: "/assets/app-design.webp", description: "Mobile apps, web apps, websites, and full-stack digital platforms", link: "/application-design", color: "#5c6bc0" },
+    { title: "SOCIAL MEDIA MANAGEMENT", image: "/assets/smm-2.webp", description: "Grow your audience across social media platforms.", link: "/social-media-management", color: "#d675b9" },
+    { title: "MARKETING ADS", image: "/assets/marketing-ads.webp", description: "SEO to boost brand visibility, along with content, and PPC strategies.", link: "/marketing-ads", color: "#8a5fd1" },
 ];
 
 export default function CardSlider() {

@@ -16,7 +16,7 @@ const TermsAndConditions = () => {
             <p className="terms-updated">Last updated: May 19, 2025</p>
 
             <img
-                src="/assets/terms-illustration2.png"
+                src="/assets/terms-illustration2.webp"
                 alt="Baytix Services Illustration"
                 className="terms-image"
             />

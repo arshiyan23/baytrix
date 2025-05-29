@@ -15,7 +15,7 @@ const PrivacyPolicy = () => {
             <p className="privacy-updated">Last updated: May 19, 2025</p>
 
             <img
-                src="/assets/privacy-illustration.png"
+                src="/assets/privacy-illustration.webp"
                 alt="Privacy Illustration"
                 className="privacy-image"
             />

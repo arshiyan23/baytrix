@@ -67,11 +67,11 @@ function AppContent() {
 
   // Stats data (for Home page)
   // const statsData = [
-  //   { id: "clients", icon: "/assets/icon-users.png", value: "0", targetValue: "32+", label: "Clients Served" },
-  //   { id: "projects", icon: "/assets/icon-projects.png", value: "0", targetValue: "140+", label: "Projects completed" },
-  //   { id: "exp", icon: "/assets/icon-years.png", value: "0", targetValue: "10+", label: "Years of Experience" },
-  //   { id: "retention", icon: "/assets/icon-retention.png", value: "0%", targetValue: "100%", label: "Retention Rate" },
-  //   { id: "reviewsCount", icon: "/assets/icon-reviews.png", value: "0%", targetValue: "10K+", label: "Reviews Received" },
+  //   { id: "clients", icon: "/assets/icon-users.webp", value: "0", targetValue: "32+", label: "Clients Served" },
+  //   { id: "projects", icon: "/assets/icon-projects.webp", value: "0", targetValue: "140+", label: "Projects completed" },
+  //   { id: "exp", icon: "/assets/icon-years.webp", value: "0", targetValue: "10+", label: "Years of Experience" },
+  //   { id: "retention", icon: "/assets/icon-retention.webp", value: "0%", targetValue: "100%", label: "Retention Rate" },
+  //   { id: "reviewsCount", icon: "/assets/icon-reviews.webp", value: "0%", targetValue: "10K+", label: "Reviews Received" },
   // ];
 
   // Decide which navbar to render based on width

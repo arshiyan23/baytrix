@@ -24,7 +24,7 @@ const ChevronRightIcon = () => (
 
 const testimonials = [
     {
-        thumbnailSrc: '/assets/man.png',
+        thumbnailSrc: '/assets/man.webp',
         videoSrc: 'https://www.w3schools.com/html/mov_bbb.mp4',
         quote: 'They helped us scale with beautiful UI and marketing. I highly recommend them to anyone seeking quality.',
         author: 'Sehajpal Singh',
@@ -32,7 +32,7 @@ const testimonials = [
         website: 'gowash.in',
     },
     {
-        thumbnailSrc: '/assets/emiway-bantai-records.png',
+        thumbnailSrc: '/assets/emiway-bantai-records.webp',
         videoSrc: 'https://www.w3schools.com/html/mov_bbb.mp4',
         quote: 'Baytix truly transformed our online presence. Their service was excellent and truly exceeded expectations.',
         author: 'Emiway Bantai',
@@ -40,7 +40,7 @@ const testimonials = [
         website: 'bantai.in',
     },
     {
-        thumbnailSrc: '/assets/tamer-compass.png',
+        thumbnailSrc: '/assets/tamer-compass.webp',
         videoSrc: 'https://www.w3schools.com/html/mov_bbb.mp4',
         quote: 'Very professional attitude towards work and a great support staff. Amazing experience from start to finish!',
         author: 'Tamer Huwaidi',

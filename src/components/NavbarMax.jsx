@@ -44,7 +44,7 @@ const NavbarMax = () => {
     <header className="max-header">
       <a href="/">
         <img
-          src="/assets/baytixlogo-nobg.png"
+          src="/assets/baytixlogo-nobg.webp"
           alt="Digital Services Overview"
           className="logo"
         />

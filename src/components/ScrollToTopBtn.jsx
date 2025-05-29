@@ -28,7 +28,7 @@ const ScrollToTopBtn = () => {
       onClick={scrollToTop}
       aria-label="Scroll to top"
     >
-      <img src='/assets/arrow-up.png'></img>
+      <img src='/assets/arrow-up.webp'></img>
     </button>
   );
 };

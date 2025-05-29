@@ -14,7 +14,7 @@ const RefundPolicy = () => {
             <p className="refund-updated">Last updated: May 19, 2025</p>
 
             <img
-                src="/assets/refund-illustration2.png"
+                src="/assets/refund-illustration2.webp"
                 className="refund-image"
             />
 

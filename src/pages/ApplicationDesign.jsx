@@ -14,32 +14,32 @@ const appFeatures = [
   {
     title: "Modern UI Design",
     description: "Showcasing clean, intuitive interfaces designed with user experience at the core — tailored to your brand and audience.",
-    image: "/assets/portfolio/crm-mockup.png",
-    icon: "/assets/icons/ui-design.png"
+    image: "/assets/portfolio/crm-mockup.webp",
+    icon: "/assets/icons/ui-design.webp"
   },
   {
     title: "Custom Dashboards",
     description: "Visually engaging dashboards that turn complex data into actionable insights, ideal for admins, users, or analytics.",
-    image: "/assets/portfolio/crm-mockup.png",
-    icon: "/assets/icons/dashboard.png"
+    image: "/assets/portfolio/crm-mockup.webp",
+    icon: "/assets/icons/dashboard.webp"
   },
   {
     title: "Component-Based Systems",
     description: "Scalable, reusable UI components built with React or similar frameworks to ensure consistency and efficiency.",
-    image: "/assets/portfolio/crm-mockup.png",
-    icon: "/assets/icons/components.png"
+    image: "/assets/portfolio/crm-mockup.webp",
+    icon: "/assets/icons/components.webp"
   },
   {
     title: "Mobile Responsiveness",
     description: "Interfaces that adapt perfectly across mobile, tablet, and desktop — no compromise on experience or functionality.",
-    image: "/assets/portfolio/crm-mockup.png",
-    icon: "/assets/icons/responsive.png"
+    image: "/assets/portfolio/crm-mockup.webp",
+    icon: "/assets/icons/responsive.webp"
   },
   {
     title: "Admin Monitoring Pages",
     description: "Comprehensive admin pages to monitor app performance and usage: manage users and roles, configure settings, view real‐time analytics and logs.",
-    image: "/assets/portfolio/crm-mockup.png",
-    icon: "/assets/icons/admin.png"
+    image: "/assets/portfolio/crm-mockup.webp",
+    icon: "/assets/icons/admin.webp"
   },
 ];
 
@@ -49,27 +49,27 @@ const appFeatures = [
     {
       title: "Discovery & Strategy",
       desc: "We assess your needs to plan a custom app solution.",
-      icon: "/assets/discovery-strategy.png",
+      icon: "/assets/discovery-strategy.webp",
     },
     {
       title: "UI/UX Design",
       desc: "Designing intuitive, brand-aligned interfaces.",
-      icon: "/assets/ux-ui.png",
+      icon: "/assets/ux-ui.webp",
     },
     {
       title: "App Development",
       desc: "Building fast, scalable apps with modern tech.",
-      icon: "/assets/app-dev-bg-2.png",
+      icon: "/assets/app-dev-bg-2.webp",
     },
     {
       title: "Testing & QA",
       desc: "Thorough testing for a secure, bug-free app.",
-      icon: "/assets/qa-test.png",
+      icon: "/assets/qa-test.webp",
     },
     {
       title: "Launch & Support",
       desc: "Deploying and maintaining your app long-term.",
-      icon: "/assets/launch-supp3.png",
+      icon: "/assets/launch-supp3.webp",
     },
   ];
 
@@ -148,7 +148,7 @@ const appFeatures = [
       <section className="app-intro-section">
         <FloatingIcons category="appDevelopment" />
         <div className="app-intro-container">
-          <img src="/assets/app-dev.png" alt="App Intro" className="intro-image" />
+          <img src="/assets/app-dev.webp" alt="App Intro" className="intro-image" />
           <div className="intro-text">
             <h2>APPLICATION DESIGN</h2>
             <p>
@@ -212,22 +212,22 @@ const appFeatures = [
           />
           <div className="success-container">
             <div className="success-item">
-              <img src="/assets/icon-apps.png" alt="Apps" className="success-icon" />
+              <img src="/assets/icon-apps.webp" alt="Apps" className="success-icon" />
               <div className="success-number" id="appsCounter">0</div>
               <p className="success-text">Apps Running</p>
             </div>
             <div className="success-item">
-              <img src="/assets/icon-users.png" alt="Users" className="success-icon" />
+              <img src="/assets/icon-users.webp" alt="Users" className="success-icon" />
               <div className="success-number" id="usersCounter">0</div>
               <p className="success-text">Users Served</p>
             </div>
             <div className="success-item">
-              <img src="/assets/icon-uptime.png" alt="Uptime" className="success-icon" />
+              <img src="/assets/icon-uptime.webp" alt="Uptime" className="success-icon" />
               <div className="success-number" id="uptimeCounter">0%</div>
               <p className="success-text">Uptime Guarantee</p>
             </div>
             <div className="success-item">
-              <img src="/assets/icon-reviews.png" alt="Reviews" className="success-icon" />
+              <img src="/assets/icon-reviews.webp" alt="Reviews" className="success-icon" />
               <div className="success-number" id="reviewsCounter">0%</div>
               <p className="success-text">Reviews Received</p>
             </div>

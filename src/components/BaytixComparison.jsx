@@ -55,7 +55,7 @@ export default function BaytixComparison() {
                                 <th>Metric</th>
                                 <th>
                                     <img
-                                        src="/assets/baytixlogo-nobg-purple.png"
+                                        src="/assets/baytixlogo-nobg-purple.webp"
                                         alt="Baytix Logo"
                                         className="cmpr-logo"
                                     />
@@ -72,14 +72,14 @@ export default function BaytixComparison() {
                                     </td>
                                     <td className="cmpr-baytix-cell">
                                         <img
-                                            src="/assets/rounded-tick.png"
+                                            src="/assets/rounded-tick.webp"
                                             alt="✔"
                                             className="cmpr-icon"
                                         />
                                     </td>
                                     <td>
                                         <img
-                                            src="/assets/rounded-cross.png"
+                                            src="/assets/rounded-cross.webp"
                                             alt="✖"
                                             className="cmpr-icon"
                                         />
@@ -100,7 +100,7 @@ export default function BaytixComparison() {
                     layout
                 >
                     <motion.img
-                        src="/assets/booking.png"
+                        src="/assets/booking.webp"
                         alt="Schedule Illustration"
                         className="cmpr-calendar-img"
                         initial={{ opacity: 1, y: 0 }}

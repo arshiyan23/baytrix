@@ -5,9 +5,9 @@ import "../styles/vertical-showcase-slider.css";
 import NumStats from "./NumStats";
 
 const statsData = [
-  { id: "impressionsCounter", icon: "/assets/impressions-ico.png", value: "0",  targetValue: "120K+", label: "Total Impressions" },
-  { id: "engagementCounter",  icon: "/assets/engagements-ico.png", value: "0%", targetValue: "11.2%", label: "Avg. Engagement Rate" },
-  { id: "reachCounter",       icon: "/assets/reach-ico.png",    value: "0",  targetValue: "30K+",  label: "Accounts Reached" }
+  { id: "impressionsCounter", icon: "/assets/impressions-ico.webp", value: "0",  targetValue: "120K+", label: "Total Impressions" },
+  { id: "engagementCounter",  icon: "/assets/engagements-ico.webp", value: "0%", targetValue: "11.2%", label: "Avg. Engagement Rate" },
+  { id: "reachCounter",       icon: "/assets/reach-ico.webp",    value: "0",  targetValue: "30K+",  label: "Accounts Reached" }
 ];
 
 const VerticalShowcaseSlider = ({

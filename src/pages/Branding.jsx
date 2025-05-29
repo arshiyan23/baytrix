@@ -10,32 +10,32 @@ const features = [
   {
     title: "Color Palette",
     desc: "We define a consistent and appealing set of colors that represent your brand’s personality.",
-    icon: "/assets/branding-color.png",
+    icon: "/assets/branding-color.webp",
   },
   {
     title: "Logo Design",
     desc: "We craft versatile and memorable logos that visually communicate your brand essence.",
-    icon: "/assets/branding-logo.png",
+    icon: "/assets/branding-logo.webp",
   },
   {
     title: "Slogan & Tagline",
     desc: "We help define catchy slogans that reflect your brand’s mission and voice.",
-    icon: "/assets/branding-slogan.png",
+    icon: "/assets/branding-slogan.webp",
   },
   {
     title: "Typography",
     desc: "We select and pair fonts that enhance readability and brand recognition.",
-    icon: "/assets/branding-typography.png",
+    icon: "/assets/branding-typography.webp",
   },
   {
     title: "Imagery Style",
     desc: "We establish consistent visuals, illustrations, and photography direction.",
-    icon: "/assets/branding-imagery.png",
+    icon: "/assets/branding-imagery.webp",
   },
   {
     title: "Complete Identity",
     desc: "We shape a unified brand system — from tone to visual impact — across all channels.",
-    icon: "/assets/branding-identity.png",
+    icon: "/assets/branding-identity.webp",
   },
 ];
 
@@ -76,45 +76,45 @@ const importanceItems = [
   {
     title: "Establish Credibility",
     desc: "A solid brand identity builds confidence and positions you as an industry authority.",
-    icon: "/assets/credebility.png",
+    icon: "/assets/credebility.webp",
   },
   {
     title: "Stand Out Visually",
     desc: "Unique design elements and messaging make your brand memorable in a crowded market.",
-    icon: "/assets/person-find.png",
+    icon: "/assets/person-find.webp",
   },
   {
     title: "Inspire Customer Loyalty",
     desc: "Authentic brand experiences turn customers into repeat buyers and enthusiastic advocates.",
-    icon: "/assets/loyalty.png",
+    icon: "/assets/loyalty.webp",
   },
 ];
 
 const cardData = [
   {
     title: 'Dynamic Visuals',
-    image: '/assets/portfolio/kartspace/kartspace-cart.png',
-    imageBlur: '/assets/portfolio/kartspace/kartspace-cart-blur.png',
+    image: '/assets/portfolio/kartspace/kartspace-cart.webp',
+    imageBlur: '/assets/portfolio/kartspace/kartspace-cart-blur.webp',
   },
   {
     title: 'Immersive Branding',
-    image: '/assets/portfolio/tradewise/mockup-thumbnail.png',
-    imageBlur: '/assets/portfolio/tradewise/mockup-thumbnail-blur.png',
+    image: '/assets/portfolio/tradewise/mockup-thumbnail.webp',
+    imageBlur: '/assets/portfolio/tradewise/mockup-thumbnail-blur.webp',
   },
   {
     title: 'Creative Execution',
-    image: '/assets/portfolio/kartspace/kartspace-cart.png',
-    imageBlur: '/assets/portfolio/kartspace/kartspace-cart-blur.png',
+    image: '/assets/portfolio/kartspace/kartspace-cart.webp',
+    imageBlur: '/assets/portfolio/kartspace/kartspace-cart-blur.webp',
   },
   {
     title: 'Strategic Design',
-    image: '/assets/portfolio/kartspace/kartspace-cart.png',
-    imageBlur: '/assets/portfolio/kartspace/kartspace-cart-blur.png',
+    image: '/assets/portfolio/kartspace/kartspace-cart.webp',
+    imageBlur: '/assets/portfolio/kartspace/kartspace-cart-blur.webp',
   },
   {
     title: 'Engaging Interfaces',
-    image: '/assets/portfolio/kartspace/kartspace-cart.png',
-    imageBlur: '/assets/portfolio/kartspace/kartspace-cart-blur.png',
+    image: '/assets/portfolio/kartspace/kartspace-cart.webp',
+    imageBlur: '/assets/portfolio/kartspace/kartspace-cart-blur.webp',
   },
 ];
 
@@ -206,7 +206,7 @@ function Branding() {
         <FloatingIcons category="branding" />
         <div className="brnd-hero-container">
           <img
-            src="/assets/branding-intro2.png"
+            src="/assets/branding-intro2.webp"
             alt="Branding Intro"
             className="brnd-hero-img"
           />

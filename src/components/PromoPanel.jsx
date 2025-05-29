@@ -21,9 +21,9 @@ const PromoPanel = ({ onClaim }) => {
       </div>
      <div className="popup-image">
   <picture>
-    <source media="(max-width: 767px)" srcSet="/assets/website-promo2.png" />
+    <source media="(max-width: 767px)" srcSet="/assets/website-promo2.webp" />
     <img
-      src="/assets/website-promo.png"
+      src="/assets/website-promo.webp"
       alt="Get Started Illustration"
       loading="lazy"
     />
