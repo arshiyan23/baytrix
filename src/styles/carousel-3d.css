@@ -1,0 +1,107 @@
+.crsl-wrapper {
+    text-align: center;
+    /* max-width: 1200px; */
+    /* margin: 0 auto; */
+    /* background-color: #f5f0ff; */
+    padding: 60px 0;
+    box-sizing: border-box;
+    border-bottom: 2px dashed #7249ac3c;
+}
+
+.crsl-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.crsl-3d {
+    position: relative;
+    width: 850px;
+    height: 540px;
+    perspective: 800px;
+    transform-style: preserve-3d;
+    overflow: visible;
+}
+
+.crsl-card-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform:
+        rotateY(calc(var(--offset) * 50deg)) 
+        scaleY(calc(1 + var(--abs-offset) * -0.4))
+        translateZ(calc(var(--abs-offset) * -30rem)) 
+        translateX(calc(var(--direction) * -5rem));
+    /* filter: blur(calc(var(--abs-offset) * 0.3rem)); */
+    transition: all 0.3s ease-out;
+    will-change: transform, opacity;
+
+
+}
+
+.crsl-card {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    flex-direction: column;
+}
+
+.crsl-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.crsl-global-title {
+    margin-top: 1.5rem;
+    padding-top: 40px;
+    text-align: center;
+}
+
+.crsl-global-title h3 {
+    font-size: 2rem;
+    color: #7349ac;
+    font-weight: 600;
+    margin: 0;
+}
+
+.crsl-nav {
+    background-color: #555;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #f5f0ff;
+    transition: background-color 0.2s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    user-select: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+}
+
+.crsl-nav:hover {
+    background-color: #494949;
+}
+
+.crsl-left {
+    left: -3rem;
+}
+
+.crsl-right {
+    right: -3rem;
+}

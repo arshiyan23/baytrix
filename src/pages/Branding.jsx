@@ -4,6 +4,7 @@ import "../styles/branding.css";
 import ScheduleCall from '../components/ScheduleCall';
 import ProcessHeading from "../components/ProcessHeading";
 import FloatingIcons from "../components/FloatingIcons";
+import Carousel3D from "../components/Carousel3D";
 
 const features = [
   {
@@ -89,6 +90,33 @@ const importanceItems = [
   },
 ];
 
+const cardData = [
+  {
+    title: 'Card 1',
+    image: '/assets/portfolio/kartspace/kartspace-cart.png',
+  },
+  {
+    title: 'Card 2',
+    image: '/assets/portfolio/tradewise/mockup-thumbnail.png',
+
+  },
+  {
+    title: 'Card 3',
+    image: '/assets/portfolio/kartspace/kartspace-cart.png',
+
+  },
+  {
+    title: 'Card 4',
+    image: '/assets/portfolio/kartspace/kartspace-cart.png',
+
+  },
+  {
+    title: 'Card 5',
+    image: '/assets/portfolio/kartspace/kartspace-cart.png',
+
+  },
+];
+
 
 
 function Branding() {
@@ -170,7 +198,6 @@ function Branding() {
   }, [isPaused, isTrackInView, x]);
 
 
-
   return (
     <>
       {/* HERO SECTION */}
@@ -198,17 +225,21 @@ function Branding() {
         </div>
       </section>
 
+      <Carousel3D
+        cards={cardData}
+      />
+
       {/* importance of branding */}
 
       <section className="brnd-importance-section">
-          <ProcessHeading
-            foregroundText="WHY BRANDING MATTERS"
-            backgroundText="IMPORTANCE"
-            description="Branding is crucial because it creates recognition and trust, 
+        <ProcessHeading
+          foregroundText="WHY BRANDING MATTERS"
+          backgroundText="IMPORTANCE"
+          description="Branding is crucial because it creates recognition and trust, 
             turning your business into a memorable presence that customers feel 
             confident in and return to again and again."
-            //  backgroundTextFill="#f5f0ff"
-          />
+        //  backgroundTextFill="#f5f0ff"
+        />
         <div className="brnd-importance-grid">
           {importanceItems.map((item, i) => (
             <div key={i} className="brnd-importance-card">
