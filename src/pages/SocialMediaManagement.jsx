@@ -11,8 +11,7 @@ function SocialMediaManagement() {
     {
       title: "Best Designs",
       description: "Every post is crafted with on-brand colors, modern typography, and visual hierarchy to stand out in crowded feeds.",
-      // image: "/assets/2-cmprs.webp",
-      video: "/assets/portfolio/sm-posts/insta-post3.mp4",
+      image: "/assets/portfolio/sm-posts/insta-post1.webp",
       icon: "/assets/better-design.webp"
     },
     {
@@ -20,6 +19,12 @@ function SocialMediaManagement() {
       description: "We use high-resolution visuals optimized for each platform, ensuring posts look sharp on all screen sizes.",
       image: "/assets/portfolio/sm-posts/insta-post2.webp",
       icon: "/assets/better-image.webp"
+    },
+    {
+      title: "Reels Thumbnails",
+      description: "We design eye-catching covers for Instagram Reels and TikToks to maximize clicks and brand consistency.",
+      video: "/assets/portfolio/sm-posts/insta-post3.mp4",
+      icon: "/assets/reel-thumbnails.webp"
     },
     {
       title: "Interactive Stories",
@@ -39,13 +44,6 @@ function SocialMediaManagement() {
       image: "/assets/portfolio/sm-posts/insta-post4.webp",
       icon: "/assets/announcement.webp"
     },
-    {
-      title: "Reels Thumbnails",
-      description: "We design eye-catching covers for Instagram Reels and TikToks to maximize clicks and brand consistency.",
-      image: "/assets/portfolio/sm-posts/insta-post1.webp",
-
-      icon: "/assets/reel-thumbnails.webp"
-    }
   ];
 
 
