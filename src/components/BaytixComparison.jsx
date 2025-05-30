@@ -23,7 +23,7 @@ export default function BaytixComparison() {
     };
 
     return (
-        <div className="cmpr-wrapper">
+        <div className="cmpr-wrapper" id="why-choose-us">
             <ProcessHeading
                 foregroundText="WHY CHOOSE US?"
                 backgroundText="COMPARISON"

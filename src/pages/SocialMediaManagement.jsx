@@ -11,7 +11,8 @@ function SocialMediaManagement() {
     {
       title: "Best Designs",
       description: "Every post is crafted with on-brand colors, modern typography, and visual hierarchy to stand out in crowded feeds.",
-      image: "/assets/portfolio/sm-posts/insta-post1.webp",
+      // image: "/assets/2-cmprs.webp",
+      video: "/assets/portfolio/sm-posts/insta-post3.mp4",
       icon: "/assets/better-design.webp"
     },
     {

@@ -34,7 +34,7 @@ const FAQSection = () => {
     {
       question: "How is Baytix different from other agencies?",
       answer:
-        "We blend creativity with smart tech like AI to deliver unique branding and growth strategies tailored for modern businesses.",
+        "We blend creativity with smart tech to deliver unique branding and growth strategies tailored for modern businesses.",
     },
     {
       question: "Can I hire Baytix for a one-time project?",

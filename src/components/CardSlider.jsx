@@ -36,7 +36,7 @@ export default function CardSlider() {
     const [activeIndex, setActiveIndex] = useState(null);
 
     return (
-        <div ref={sectionRef} className="srvc-card-slider-frame">
+        <div ref={sectionRef} className="srvc-card-slider-frame" id="services">
             <ProcessHeading
                 foregroundText="OUR SERVICES"
                 backgroundText="EXPERTISE"
