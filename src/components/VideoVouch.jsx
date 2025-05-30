@@ -24,12 +24,12 @@ const ChevronRightIcon = () => (
 
 const testimonials = [
     {
-        thumbnailSrc: '/assets/man.webp',
-        videoSrc: 'https://www.w3schools.com/html/mov_bbb.mp4',
-        quote: 'They helped us scale with beautiful UI and marketing. I highly recommend them to anyone seeking quality.',
-        author: 'Sehajpal Singh',
-        title: '/ Founder at GoWash',
-        website: 'gowash.in',
+        thumbnailSrc: '/assets/sandy-vouch.webp',
+        videoSrc: 'https://ia800800.us.archive.org/9/items/sandy_testimonial/sandy-2.webm',
+        quote: 'Baytix truly transformed my online presence. Their service was excellent and truly exceeded expectations.',
+        author: 'Sandy',
+        title: '/ E-Sports Athlete',
+        website: 'sandstromsandymerch.com',
     },
     {
         thumbnailSrc: '/assets/emiway-bantai-records.webp',
@@ -71,6 +71,13 @@ const VideoVouch = () => {
         }, 300); // Half of transition duration
     };
 
+    const getYouTubeId = (url) => {
+    const regExp = /(?:youtube\.com.*(?:\\?|&)v=|youtu\.be\/)([^&]+)/;
+    const match = url.match(regExp);
+    return match ? match[1] : null;
+};
+
+
     useEffect(() => {
         setFadeClass('active');
     }, [currentIndex]);
@@ -88,27 +95,39 @@ const VideoVouch = () => {
                     <div className="vouch-image-section vouch-fade-slide-wrapper">
                         <div className={`vouch-fade-slide ${fadeClass}`}>
                             {isPlaying ? (
-                                <video
-                                    src={videoSrc}
-                                    controls
-                                    autoPlay
-                                    className="vouch-image"
-                                />
-                            ) : (
-                                <>
-                                    <img
-                                        src={thumbnailSrc}
-                                        alt={author}
-                                        className="vouch-image"
-                                    />
-                                    <div
-                                        className="play-button-overlay"
-                                        onClick={() => setIsPlaying(true)}
-                                    >
-                                        <PlayIcon />
-                                    </div>
-                                </>
-                            )}
+    videoSrc.includes('youtube.com') ? (
+        <iframe
+            src={`https://www.youtube.com/embed/${getYouTubeId(videoSrc)}`}
+            title={author}
+            className="vouch-video"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+        />
+    ) : (
+        <video
+            src={videoSrc}
+            controls
+            autoPlay
+            className="vouch-image"
+        />
+    )
+) : (
+    <>
+        <img
+            src={thumbnailSrc}
+            alt={author}
+            className="vouch-image"
+        />
+        <div
+            className="play-button-overlay"
+            onClick={() => setIsPlaying(true)}
+        >
+            <PlayIcon />
+        </div>
+    </>
+)}
+
                         </div>
                     </div>
 
