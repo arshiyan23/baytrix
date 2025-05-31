@@ -28,12 +28,12 @@ const Carousel3D = ({ cards }) => {
     const count = cards.length;
 
     // Auto-advance every 2 seconds
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setActive(prev => (prev + 1) % count);
-        }, 2000);
-        return () => clearInterval(interval);
-    }, [count]);
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         setActive(prev => (prev + 1) % count);
+    //     }, 2000);
+    //     return () => clearInterval(interval);
+    // }, [count]);
 
     const handlePrev = () => setActive(prev => (prev - 1 + count) % count);
     const handleNext = () => setActive(prev => (prev + 1) % count);

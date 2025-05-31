@@ -4,7 +4,7 @@ import '../styles/global-timer.css';
 const GlobalTimer = () => {
     const [timeLeft, setTimeLeft] = useState(null);
     const intervalRef = useRef(null);
-    let offerStartUTC = new Date("2025-05-28T17:47:00Z").getTime();
+    let offerStartUTC = new Date("2025-06-07T17:47:00Z").getTime();
     let offerEndUTC = offerStartUTC + 7 * 24 * 60 * 60 * 1000;
 
     useEffect(() => {

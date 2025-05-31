@@ -9,7 +9,7 @@ const PromoPanel = ({ onClaim }) => {
         <h2>Get Your FREE Custom Website Now!</h2>
         <p>
           <strong>Ready to launch your online presence?</strong><br />
-          For a limited time, claim your personalized website – absolutely <strong>FREE</strong>! Let our
+          For a limited time, claim your personalized website – absolutely <strong style={{ color: "#7349ac" }}>FREE</strong>! with no hidden costs. Let our
           digital experts build it for you.
         </p>
         <div className="popup-cta">
@@ -21,7 +21,7 @@ const PromoPanel = ({ onClaim }) => {
       </div>
      <div className="popup-image">
   <picture>
-    <source media="(max-width: 767px)" srcSet="/assets/website-promo2.webp" />
+    <source media="(max-width: 767px)" srcSet="/assets/website-promo-mob.webp" />
     <img
       src="/assets/website-promo.webp"
       alt="Get Started Illustration"
