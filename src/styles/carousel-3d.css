@@ -1,3 +1,4 @@
+/* ========= Wrapper and Container ========= */
 .crsl-wrapper {
     text-align: center;
     padding: 60px 0;
@@ -14,6 +15,7 @@
     overflow: hidden;
 }
 
+/* ========= 3D Carousel Core ========= */
 .crsl-3d {
     position: relative;
     width: 100%;
@@ -24,14 +26,15 @@
     overflow: visible;
 }
 
+/* ========= Card Containers and Cards ========= */
 .crsl-card-container {
     position: absolute;
     width: 100%;
     height: 100%;
     transform:
-        rotateY(calc(var(--offset) * 50deg)) 
+        rotateY(calc(var(--offset) * 50deg))
         scaleY(calc(1 + var(--abs-offset) * -0.4))
-        translateZ(calc(var(--abs-offset) * -30rem)) 
+        translateZ(calc(var(--abs-offset) * -30rem))
         translateX(calc(var(--direction) * -5rem));
     transition: opacity 0.3s ease-out, transform 0.3s ease-out;
     will-change: transform, opacity;
@@ -44,29 +47,18 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    background-color: #fff;
 }
 
 .crsl-image {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
+    border-radius: 1rem;
     display: block;
-    border-radius: 1rem 1rem 0 0;
 }
 
-.crsl-global-title {
-    margin-top: 1.5rem;
-    padding-top: 40px;
-    text-align: center;
-}
-
-.crsl-global-title h3 {
-    font-size: 2rem;
-    color: #7349ac;
-    font-weight: 600;
-    margin: 0;
-}
-
+/* ========= Navigation Buttons ========= */
 .crsl-nav {
     background-color: #555;
     border: none;
@@ -84,7 +76,7 @@
     transform: translateY(-50%);
     z-index: 2;
     user-select: none;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
 }
 
 .crsl-nav:hover {
@@ -99,14 +91,58 @@
     right: -3rem;
 }
 
-/* ========== Mobile responsiveness ========== */
+/* ========= Title Section ========= */
+.crsl-global-title {
+    margin-top: 1.5rem;
+    padding-top: 40px;
+    text-align: center;
+}
+
+.crsl-global-title h3 {
+    font-size: 2rem;
+    color: #7349ac;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* ========= Responsive Dots (No class but styling for inline span) ========= */
+.crsl-wrapper > div:last-of-type {
+    margin-top: 1rem;
+}
+
+@media (max-width: 480px) {
+    .crsl-wrapper > div:last-of-type {
+        margin-top: 0.75rem !important;
+    }
+}
+
+/* ========= Mobile Responsiveness for 3D → Flat Carousel ========= */
 @media (max-width: 768px) {
-    .crsl-3d {
-        height: 360px;
-        max-width: 95%;
-        perspective: 600px;
+    /* ──────────────────────────────────────────────────────────────
+       Disable all 3D transforms and hide every card-container except
+       the one with .active. That makes it a simple one‐image carousel.
+    */
+    .crsl-card-container {
+        display: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
     }
 
+    /* Only show the active card on mobile */
+    .crsl-card-container.active {
+        display: block !important;
+        /* Position it relative to fill the parent */
+        position: relative !important;
+    }
+
+    /* Flatten out the parent container (no perspective) */
+    .crsl-3d {
+        height: auto;
+        perspective: none;
+    }
+
+    /* Shrink the nav buttons a bit for mobile */
     .crsl-nav {
         width: 38px;
         height: 38px;
@@ -120,22 +156,44 @@
         right: -1.5rem;
     }
 
+    /* Make title text a bit smaller on mobile too */
     .crsl-global-title h3 {
         font-size: 1.5rem;
     }
 }
 
-@media (max-width: 480px) {
+/* ========= Tablet / Tight Desktop Adjustments ========= */
+@media (max-width: 1024px) {
     .crsl-3d {
-        height: 300px;
+        max-width: 90%;
+        height: 480px;
+        perspective: 700px;
     }
+}
 
-    .crsl-global-title h3 {
-        font-size: 1.25rem;
+@media (min-width: 769px) and (max-width: 1024px) {
+    .crsl-card-container {
+        transform:
+            rotateY(calc(var(--offset) * 45deg))
+            scaleY(calc(1 + var(--abs-offset) * -0.3))
+            translateZ(calc(var(--abs-offset) * -25rem))
+            translateX(calc(var(--direction) * -4rem));
     }
 
     .crsl-nav {
-        width: 32px;
-        height: 32px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .crsl-left {
+        left: -2rem;
+    }
+
+    .crsl-right {
+        right: -2rem;
+    }
+
+    .crsl-global-title h3 {
+        font-size: 1.75rem;
     }
 }

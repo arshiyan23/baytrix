@@ -63,7 +63,10 @@ const Carousel3D = ({ cards }) => {
                         return (
                             <div
                                 key={i}
-                                className="crsl-card-container"
+                                // ──────────────────────────────────────────────────────────────
+                                // Add "active" class when this index is the currently active one.
+                                // DO NOT remove or alter any existing comments or logic.
+                                className={`crsl-card-container${i === active ? ' active' : ''}`}
                                 style={{
                                     '--active': i === active ? 1 : 0,
                                     '--offset': offset / 3,

@@ -70,50 +70,6 @@ function SocialMediaManagement() {
 
   }, []);
 
-  // stats effect
-  // useEffect(() => {
-  //   const counters = [
-  //     { id: "impressionsCounter", end: 120, suffix: "K+" },
-  //     { id: "engagementCounter", end: 11.2, suffix: "%" },
-  //     { id: "reachCounter", end: 30, suffix: "K+" },
-  //   ];
-
-  //   counters.forEach(({ id, end, suffix }) => {
-  //     const el = document.getElementById(id);
-  //     const parent = el?.closest(".success-item");
-  //     if (!el || !parent) return;
-
-  //     const animate = () => {
-  //       const duration = 1000;
-  //       const startTime = performance.now();
-
-  //       const update = (currentTime) => {
-  //         const progress = Math.min((currentTime - startTime) / duration, 1);
-  //         const value = typeof end === "number" && end % 1 !== 0
-  //           ? (progress * end).toFixed(1)
-  //           : Math.floor(progress * end);
-  //         el.textContent = `${value}${suffix}`;
-  //         if (progress < 1) requestAnimationFrame(update);
-  //       };
-
-  //       requestAnimationFrame(update);
-  //     };
-
-  //     const observer = new IntersectionObserver(
-  //       ([entry]) => {
-  //         if (entry.isIntersecting) {
-  //           parent.classList.add("visible");
-  //           animate();
-  //           observer.disconnect();
-  //         }
-  //       },
-  //       { threshold: 0.5 }
-  //     );
-
-  //     observer.observe(parent);
-  //   });
-  // }, []);
-
 
   // timeline effect
   useEffect(() => {
@@ -279,37 +235,6 @@ function SocialMediaManagement() {
           ))}
         </div>
       </section>
-
-      {/* <section className="social-success-section">
-        <div className="success-wrapper">
-          <ProcessHeading
-            backgroundText="REACH METRICS"
-            foregroundText="SOCIAL MEDIA PERFORMANCE"
-            backgroundTextFill="#f5f0ff"
-            description="Our social campaigns are designed to increase visibility, boost interaction, and build strong audience connections."
-          />
-          <p className="success-desc-txt">
-
-          </p>
-          <div className="success-container">
-            <div className="success-item">
-              <img src="/assets/impressions-ico.webp" alt="Impressions" className="success-icon" />
-              <div className="success-number" id="impressionsCounter">0</div>
-              <p className="success-text">Total Impressions</p>
-            </div>
-            <div className="success-item">
-              <img src="/assets/engagements-ico.webp" alt="Engagement" className="success-icon" />
-              <div className="success-number" id="engagementCounter">0%</div>
-              <p className="success-text">Avg. Engagement Rate</p>
-            </div>
-            <div className="success-item">
-              <img src="/assets/reach-ico.webp" alt="Reach" className="success-icon" />
-              <div className="success-number" id="reachCounter">0</div>
-              <p className="success-text">Accounts Reached</p>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       {showScheduleCall && (
         <ScheduleCall onClose={() => setShowScheduleCall(false)} />

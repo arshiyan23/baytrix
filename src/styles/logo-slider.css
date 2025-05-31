@@ -1,28 +1,41 @@
+/* src/styles/logo-slider.css */
+
 .logo-slider-container {
   background-color: #7349ac;
+  width: 100%;
+}
+
+.logo-slider-static {
+  display: flex;
+  justify-content: center;
+  padding: 1.2rem 0;
 }
 
 .logo-slider-section {
+  width: 100%;
   overflow: hidden;
   padding: 1.2rem 0;
+  box-sizing: border-box;
 }
 
 .logo-slider-track {
   display: flex;
+  flex-wrap: nowrap;
   gap: 5rem;
   will-change: transform;
 }
 
-.logo-svg-wrapper {
+.logo-img-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* height: 45px; */
+  flex-shrink: 0;
   width: auto;
 }
 
-.logo-svg-wrapper svg {
-  height: 48px;
+.logo-img {
+  height: 42px;
   width: auto;
-  fill: white;
+  padding: 0 10px;
+  object-fit: contain;
 }

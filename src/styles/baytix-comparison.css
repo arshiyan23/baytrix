@@ -1,7 +1,5 @@
-/* overall layout */
 .cmpr-wrapper {
     text-align: center;
-    /* padding: 60px 0; */
     box-sizing: border-box;
     border-bottom: 2px dashed #7249ac3c;
 }
@@ -14,7 +12,6 @@
     overflow: hidden;
 }
 
-/* left vs right panels */
 .cmpr-left-panel,
 .cmpr-right-panel {
     background: #fff;
@@ -33,21 +30,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* background-color: #c2a0f134; */
-    transition: all 0.5s ease;
+    /* Removed: transition: all 0.5s ease; */
 }
 
-.cmpr-right-panel.loaded {
-    align-items: stretch;
-    justify-content: flex-start;
-}
-
-/* hide image when loaded */
-.cmpr-right-panel.loaded .cmpr-calendar-img {
-    display: none;
-}
-
-/* titles */
 .cmpr-title {
     font-size: 1.75rem;
     margin-bottom: 0.5rem;
@@ -60,7 +45,6 @@
     margin-bottom: 1.5rem;
 }
 
-/* comparison table */
 .cmpr-table {
     width: 100%;
     border-collapse: separate;
@@ -101,7 +85,6 @@
     text-align: center;
 }
 
-/* logo & icons */
 .cmpr-logo {
     max-width: 50%;
     height: auto;
@@ -112,7 +95,6 @@
     height: 24px;
 }
 
-/* metric text */
 .cmpr-metric-name {
     font-weight: 500;
 }
@@ -123,7 +105,6 @@
     margin-top: 0.25rem;
 }
 
-/* calendly placeholder & spinner */
 .cmpr-calendar-placeholder {
     background-color: #7349ac;
     color: white;
@@ -163,13 +144,23 @@
     overflow: hidden;
 }
 
-/* new illustration above text */
+/* Illustration image */
 .cmpr-calendar-img {
     width: 180px;
     margin-bottom: 1rem;
+    overflow: hidden;
+    max-height: 200px;
+    transition: max-height 0.4s ease, opacity 0.4s ease, margin-bottom 0.4s ease;
 }
 
-/* ——— MOBILE RESPONSIVE ——— */
+/* When hidden */
+.cmpr-calendar-img.hidden {
+    max-height: 0;
+    opacity: 0;
+    margin-bottom: 0;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     .cmpr-container {
         flex-direction: column;

@@ -97,58 +97,12 @@ const appFeatures = [
   }, []);
 
 
-  // stats section 
-  // useEffect(() => {
-  //   const counters = [
-  //     { id: "appsCounter", end: 20, suffix: "+" },
-  //     { id: "usersCounter", end: 1000, suffix: "+" },
-  //     { id: "uptimeCounter", end: 99.9, suffix: "%" },
-  //     { id: "reviewsCounter", end: 10, suffix: "K+" }
-  //   ];
-
-  //   counters.forEach(({ id, end, suffix }) => {
-  //     const el = document.getElementById(id);
-  //     const parent = el?.closest(".success-item");
-  //     if (!el || !parent) return;
-
-  //     const animate = () => {
-  //       const duration = 1000;
-  //       const startTime = performance.now();
-
-  //       const update = (currentTime) => {
-  //         const progress = Math.min((currentTime - startTime) / duration, 1);
-  //         const value = end === 99.9
-  //           ? (progress * end).toFixed(1)
-  //           : Math.floor(progress * end);
-  //         el.textContent = `${value}${suffix}`;
-  //         if (progress < 1) requestAnimationFrame(update);
-  //       };
-
-  //       requestAnimationFrame(update);
-  //     };
-
-  //     const observer = new IntersectionObserver(
-  //       ([entry]) => {
-  //         if (entry.isIntersecting) {
-  //           parent.classList.add("visible");
-  //           animate();
-  //           observer.disconnect();
-  //         }
-  //       },
-  //       { threshold: 0.5 }
-  //     );
-
-  //     observer.observe(parent);
-  //   });
-  // }, []);
-
-
   return (
     <>
       <section className="app-intro-section">
         <FloatingIcons category="appDevelopment" />
         <div className="app-intro-container">
-          <img src="/assets/app-dev.webp" alt="App Intro" className="intro-image" />
+          <img src="/assets/app-dev-hero.webp" alt="App Intro" className="intro-image" />
           <div className="intro-text">
             <h2>APPLICATION DESIGN</h2>
             <p>
@@ -199,41 +153,6 @@ const appFeatures = [
           ))}
         </div>
       </section>
-
-
-      {/* <section className="success-section">
-        <div className="success-wrapper">
-          <ProcessHeading 
-          backgroundText="NON-STOP" 
-          foregroundText="POWERING YOUR GROWTH" 
-          backgroundTextFill='#f5f0ff'
-          description='We build reliable, scalable digital solutions that help your
-            business move faster, reach further, and grow stronger.'
-          />
-          <div className="success-container">
-            <div className="success-item">
-              <img src="/assets/icon-apps.webp" alt="Apps" className="success-icon" />
-              <div className="success-number" id="appsCounter">0</div>
-              <p className="success-text">Apps Running</p>
-            </div>
-            <div className="success-item">
-              <img src="/assets/icon-users.webp" alt="Users" className="success-icon" />
-              <div className="success-number" id="usersCounter">0</div>
-              <p className="success-text">Users Served</p>
-            </div>
-            <div className="success-item">
-              <img src="/assets/icon-uptime.webp" alt="Uptime" className="success-icon" />
-              <div className="success-number" id="uptimeCounter">0%</div>
-              <p className="success-text">Uptime Guarantee</p>
-            </div>
-            <div className="success-item">
-              <img src="/assets/icon-reviews.webp" alt="Reviews" className="success-icon" />
-              <div className="success-number" id="reviewsCounter">0%</div>
-              <p className="success-text">Reviews Received</p>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       <section className="post-launch-section">
         <ProcessHeading
