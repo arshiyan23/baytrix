@@ -162,12 +162,17 @@
 }
 
 /* why branding matters section  */
-.brnd-importance-section {
-  /* background-color: #f5f0ff; */
-  color: #7349ac;
-  padding: 4rem 2rem;
+
+.brnd-importance-wrapper {
+  overflow: hidden;
+  text-align: center;
+  padding: 4rem 0;
   padding-bottom: 2rem;
-  /* border: 1px solid #7349ac; */
+}
+
+.brnd-importance-section {
+  color: #7349ac;
+  padding: 0 2rem;
 }
 
 /* .brnd-importance-heading span {
@@ -202,16 +207,19 @@
   border: 1px solid #7249ac3c;
   border-radius: 10px;
 }
+
 .brnd-importance-icon {
   width: 48px;
   height: 48px;
   margin-bottom: 1rem;
 }
+
 .brnd-importance-card h3 {
   font-size: 1.25rem;
   margin: 0 0 0.5rem;
   color: #7349ac;
 }
+
 .brnd-importance-card p {
   color: #555;
   font-size: 1rem;
@@ -223,6 +231,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media (max-width: 600px) {
   .brnd-importance-grid {
     grid-template-columns: 1fr;

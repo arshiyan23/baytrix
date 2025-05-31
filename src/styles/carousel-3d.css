@@ -83,6 +83,7 @@
     background-color: #494949;
 }
 
+/* Desktop/Tablet positions */
 .crsl-left {
     left: -3rem;
 }
@@ -116,12 +117,7 @@
     }
 }
 
-/* ========= Mobile Responsiveness for 3D → Flat Carousel ========= */
 @media (max-width: 768px) {
-    /* ──────────────────────────────────────────────────────────────
-       Disable all 3D transforms and hide every card-container except
-       the one with .active. That makes it a simple one‐image carousel.
-    */
     .crsl-card-container {
         display: none !important;
         transform: none !important;
@@ -129,36 +125,36 @@
         pointer-events: auto !important;
     }
 
-    /* Only show the active card on mobile */
-    .crsl-card-container.active {
-        display: block !important;
-        /* Position it relative to fill the parent */
-        position: relative !important;
-    }
-
-    /* Flatten out the parent container (no perspective) */
     .crsl-3d {
-        height: auto;
+        position: relative;
+        height: 300px;        /* ← ensure this is set */
         perspective: none;
+        overflow: hidden;     /* ← ensures the track’s overflow is clipped */
     }
 
-    /* Shrink the nav buttons a bit for mobile */
     .crsl-nav {
         width: 38px;
         height: 38px;
     }
 
     .crsl-left {
-        left: -1.5rem;
+        left: 1rem;
     }
 
     .crsl-right {
-        right: -1.5rem;
+        right: 1rem;
     }
 
-    /* Make title text a bit smaller on mobile too */
     .crsl-global-title h3 {
         font-size: 1.5rem;
+    }
+
+    /* No explicit CSS needed for .mobile-carousel-track here,
+       because we set display:flex and width/height inline in React. */
+
+    .mobile-card {
+        flex-shrink: 0;
+        overflow: hidden;
     }
 }
 

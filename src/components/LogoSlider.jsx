@@ -1,96 +1,67 @@
 // src/components/LogoSlider.jsx
-import React, {
-  useLayoutEffect,
-  useEffect,
-  useRef,
-  useState
-} from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
 import "../styles/logo-slider.css";
-import { brandLogos } from "../data/brandLogos";
+import { brandLogos as initialLogos } from "../data/brandLogos";
+
+const NORMAL_SPEED = 50; // px per second
+const SLOW_SPEED = 20;   // px per second when hovering
 
 const LogoSlider = () => {
-  const x = useMotionValue(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const [containerWidth, setContainerWidth] = useState(0);
-  const [singleTrackWidth, setSingleTrackWidth] = useState(0);
   const containerRef = useRef(null);
-  const trackRef = useRef(null);
+  const itemsRefs = useRef([]);
+  const [logos, setLogos] = useState(initialLogos);
+  const x = useMotionValue(0);
 
-  // If there's exactly one logo, render it centered and static
-  if (brandLogos.length === 1) {
-    return (
-      <section className="logo-slider-container">
-        <div className="logo-slider-static">
-          <div className="logo-img-wrapper">
-            <img
-              src={brandLogos[0].src}
-              alt={brandLogos[0].alt}
-              className="logo-img"
-            />
-          </div>
-        </div>
-      </section>
+  const [isVisible, setIsVisible] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { root: null, threshold: 0 }
     );
-  }
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
-  // Duplicate the array internally so we can loop seamlessly
-  const allLogos = [...brandLogos, ...brandLogos];
-
-  // 1) Measure widths before paint; set initial x = containerWidth (off-screen right)
-  useLayoutEffect(() => {
-    if (!containerRef.current || !trackRef.current) return;
-
-    // Width of the visible window
-    const W = containerRef.current.offsetWidth;
-    // scrollWidth of the DUPLICATED track = 2 * singleTrackWidth
-    const totalTrackW = trackRef.current.scrollWidth;
-    const S = totalTrackW / 2;
-
-    setContainerWidth(W);
-    setSingleTrackWidth(S);
-
-    // Start with the FIRST logo off-screen on the right
-    x.set(W);
-  }, [brandLogos, x]);
-
-  // 2) Re-measure on window resize
   useEffect(() => {
-    const handleResize = () => {
-      if (!containerRef.current || !trackRef.current) return;
-      const W = containerRef.current.offsetWidth;
-      const totalTrackW = trackRef.current.scrollWidth;
-      const S = totalTrackW / 2;
-
-      setContainerWidth(W);
-      setSingleTrackWidth(S);
-      x.set(W);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [brandLogos, x]);
-
-  // 3) Animation loop: move left; when one set has fully passed, reset to containerWidth
-  useEffect(() => {
-    if (containerWidth === 0 || singleTrackWidth === 0) return;
-
     let frameId;
     let lastTs = performance.now();
 
     const loop = (now) => {
+      const paused = !isVisible;
       const delta = now - lastTs;
       lastTs = now;
 
-      if (!isPaused) {
-        const speed = 50; // px per second
-        const distance = (speed * delta) / 1000;
-        const currentX = x.get();
-        let nextX = currentX - distance;
+      if (!paused) {
+        const speed = isHovering ? SLOW_SPEED : NORMAL_SPEED;
+        const deltaPx = (speed * delta) / 1000;
+        let nextX = x.get() - deltaPx;
 
-        // When we've scrolled exactly one singleTrackWidth to the left,
-        // the second copy's first logo is flush left. Snap back to W.
-        if (nextX <= -singleTrackWidth) {
-          nextX = containerWidth;
+        const firstEl = itemsRefs.current[0];
+        if (firstEl) {
+          const style = getComputedStyle(firstEl);
+          const marginLeft = parseFloat(style.marginLeft) || 0;
+          const marginRight = parseFloat(style.marginRight) || 0;
+          const totalWidth = firstEl.offsetWidth + marginLeft + marginRight;
+
+          if (nextX <= -totalWidth) {
+            nextX += totalWidth;
+            setLogos((prev) => {
+              if (prev.length <= 1) return prev;
+              const [first, ...rest] = prev;
+              return [...rest, first];
+            });
+            if (itemsRefs.current.length > 1) {
+              const shifted = itemsRefs.current.shift();
+              if (shifted !== undefined) {
+                itemsRefs.current.push(shifted);
+              }
+            }
+          }
         }
 
         x.set(nextX);
@@ -101,31 +72,27 @@ const LogoSlider = () => {
 
     frameId = requestAnimationFrame(loop);
     return () => cancelAnimationFrame(frameId);
-  }, [isPaused, x, containerWidth, singleTrackWidth]);
+  }, [isVisible, isHovering, x]);
 
   return (
-    <section className="logo-slider-container">
-      <div
-        className="logo-slider-section"
-        ref={containerRef}
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-      >
-        <motion.div
-          className="logo-slider-track"
-          style={{ x }}
-          ref={trackRef}
-        >
-          {allLogos.map((brand, idx) => (
-            <div className="logo-img-wrapper" key={idx}>
-              <a href={brand.url} target="_blank" rel="noopener noreferrer">
-                <img src={brand.src} alt={brand.alt} className="logo-img" />
-              </a>
-            </div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
+    <div
+      className="logo-slider"
+      ref={containerRef}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+    >
+      <motion.div className="logo-track" style={{ x }}>
+        {logos.map((logo, idx) => (
+          <div
+            className="logo-item"
+            key={logo.id}
+            ref={(el) => (itemsRefs.current[idx] = el)}
+          >
+            <img src={logo.src} alt={logo.alt} />
+          </div>
+        ))}
+      </motion.div>
+    </div>
   );
 };
 

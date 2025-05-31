@@ -1,41 +1,43 @@
-/* src/styles/logo-slider.css */
-
-.logo-slider-container {
-  background-color: #7349ac;
-  width: 100%;
-}
-
-.logo-slider-static {
-  display: flex;
-  justify-content: center;
-  padding: 1.2rem 0;
-}
-
-.logo-slider-section {
+/* 1) Outer container: hide overflow + purple background + vertical padding */
+.logo-slider {
   width: 100%;
   overflow: hidden;
-  padding: 1.2rem 0;
-  box-sizing: border-box;
+  position: relative;
+  background-color: #7349ac;
+  padding: 20px 0;   /* 20px top & bottom around logos */
 }
 
-.logo-slider-track {
+/* 2) The track is a flex container whose position is driven by Framer Motion’s x */
+.logo-track {
   display: flex;
   flex-wrap: nowrap;
-  gap: 5rem;
-  will-change: transform;
-}
-
-.logo-img-wrapper {
-  display: flex;
   align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: auto;
+  /* No CSS keyframe or hover transform override here */
 }
 
-.logo-img {
-  height: 42px;
-  width: auto;
-  padding: 0 10px;
-  object-fit: contain;
+/* 3) Each .logo-item is a flex child with uniform horizontal margin */
+.logo-item {
+  flex: 0 0 auto;          /* don’t shrink or grow */
+  margin: 0 2rem;          /* 2rem gap on left & right between logos */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 4) Constrain <img> so all logos share a max height */
+.logo-item img {
+  display: block;
+  max-height: 42px;        /* at most 50px tall (container’s 20px padding + 50px = 90px height) */
+  width: auto;             /* preserve aspect ratio */
+  padding: 0 8px;          /* extra horizontal breathing room */
+}
+
+/* 5) Responsive tweaks for small screens */
+@media (max-width: 600px) {
+  .logo-item {
+    margin: 0 1rem;        /* smaller gap on narrow screens */
+  }
+  .logo-item img {
+    max-height: 34px;      /* slightly smaller logos */
+  }
 }

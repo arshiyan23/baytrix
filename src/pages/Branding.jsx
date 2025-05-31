@@ -124,42 +124,42 @@ function Branding() {
 
   //features grid animation 
   const gridRef = useRef(null);
-const [rowIndexes, setRowIndexes] = useState([]);
+  const [rowIndexes, setRowIndexes] = useState([]);
 
-useEffect(() => {
-  const updateRowIndexes = () => {
-    const container = gridRef.current;
-    if (!container) return;
+  useEffect(() => {
+    const updateRowIndexes = () => {
+      const container = gridRef.current;
+      if (!container) return;
 
-    const cards = Array.from(container.children);
-    let currentTop = null;
-    let currentRow = 0;
-    const indexes = [];
+      const cards = Array.from(container.children);
+      let currentTop = null;
+      let currentRow = 0;
+      const indexes = [];
 
-    for (let i = 0; i < cards.length; i++) {
-      const top = cards[i].getBoundingClientRect().top;
+      for (let i = 0; i < cards.length; i++) {
+        const top = cards[i].getBoundingClientRect().top;
 
-      if (currentTop === null || Math.abs(top - currentTop) > 10) {
-        currentRow++;
-        currentTop = top;
+        if (currentTop === null || Math.abs(top - currentTop) > 10) {
+          currentRow++;
+          currentTop = top;
+        }
+
+        indexes.push(currentRow);
       }
 
-      indexes.push(currentRow);
-    }
+      setRowIndexes(indexes);
+    };
 
-    setRowIndexes(indexes);
-  };
+    const observer = new ResizeObserver(updateRowIndexes);
+    if (gridRef.current) observer.observe(gridRef.current);
+    window.addEventListener("resize", updateRowIndexes);
+    updateRowIndexes();
 
-  const observer = new ResizeObserver(updateRowIndexes);
-  if (gridRef.current) observer.observe(gridRef.current);
-  window.addEventListener("resize", updateRowIndexes);
-  updateRowIndexes();
-
-  return () => {
-    if (gridRef.current) observer.unobserve(gridRef.current);
-    window.removeEventListener("resize", updateRowIndexes);
-  };
-}, []);
+    return () => {
+      if (gridRef.current) observer.unobserve(gridRef.current);
+      window.removeEventListener("resize", updateRowIndexes);
+    };
+  }, []);
 
 
   // state tracking for timeline section
@@ -273,61 +273,64 @@ useEffect(() => {
 
       {/* importance of branding */}
 
-      <section className="brnd-importance-section">
+      <div className="brnd-importance-wrapper">
         <ProcessHeading
-          foregroundText="WHY BRANDING MATTERS"
-          backgroundText="IMPORTANCE"
-          description="Branding is crucial because it creates recognition and trust, 
+            foregroundText="WHY BRANDING MATTERS"
+            backgroundText="IMPORTANCE"
+            description="Branding is crucial because it creates recognition and trust, 
             turning your business into a memorable presence that customers feel 
             confident in and return to again and again."
-        //  backgroundTextFill="#f5f0ff"
-        />
-        <motion.div
-          className="brnd-importance-grid"
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, amount: 1 }} // Only when 100% of the grid is visible
-        >
-          {importanceItems.map((item, i) => {
-            let variants = {};
+          //  backgroundTextFill="#f5f0ff"
+          />
+        <div className="brnd-importance-section">
+          
+          <motion.div
+            className="brnd-importance-grid"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 1 }} // Only when 100% of the grid is visible
+          >
+            {importanceItems.map((item, i) => {
+              let variants = {};
 
-            if (i === 0) {
-              variants = {
-                initial: { x: -100, opacity: 0 },
-                animate: { x: 0, opacity: 1 },
-              };
-            } else if (i === 1) {
-              variants = {
-                initial: { y: 100, opacity: 0 },
-                animate: { y: 0, opacity: 1 },
-              };
-            } else if (i === 2) {
-              variants = {
-                initial: { x: 100, opacity: 0 },
-                animate: { x: 0, opacity: 1 },
-              };
-            }
+              if (i === 0) {
+                variants = {
+                  initial: { x: -100, opacity: 0 },
+                  animate: { x: 0, opacity: 1 },
+                };
+              } else if (i === 1) {
+                variants = {
+                  initial: { y: 100, opacity: 0 },
+                  animate: { y: 0, opacity: 1 },
+                };
+              } else if (i === 2) {
+                variants = {
+                  initial: { x: 100, opacity: 0 },
+                  animate: { x: 0, opacity: 1 },
+                };
+              }
 
-            return (
-              <motion.div
-                key={i}
-                className="brnd-importance-card"
-                variants={variants}
-                transition={{
-                  duration: 0.6,
-                  delay: i * 0.2,
-                  type: "spring",
-                  stiffness: 70,
-                }}
-              >
-                <img src={item.icon} alt={item.title} className="brnd-importance-icon" />
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
-              </motion.div>
-            );
-          })}
-        </motion.div>
-      </section>
+              return (
+                <motion.div
+                  key={i}
+                  className="brnd-importance-card"
+                  variants={variants}
+                  transition={{
+                    duration: 0.6,
+                    delay: i * 0.2,
+                    type: "spring",
+                    stiffness: 70,
+                  }}
+                >
+                  <img src={item.icon} alt={item.title} className="brnd-importance-icon" />
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </div>
+      </div>
 
       {/* FEATURES SECTION */}
       <section className="brnd-features-section">
