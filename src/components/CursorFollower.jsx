@@ -11,7 +11,9 @@ const CursorFollower = () => {
 
       // Detect pointer elements
       const el = document.elementFromPoint(e.clientX, e.clientY);
-      setIsPointer(window.getComputedStyle(el).cursor === "pointer");
+      if (el) {
+        setIsPointer(window.getComputedStyle(el).cursor === "pointer");
+      }
     };
 
     window.addEventListener("mousemove", move);

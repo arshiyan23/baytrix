@@ -16,8 +16,8 @@ const FloatingButton = () => {
   }, []);
 
   const handleWhatsApp = () => {
-    const phoneNumber = "919999999999";
-    const message = "Hi! I’d like to get floating.";
+    const phoneNumber = "919322669920";
+    const message = "Hey Baytix! I’m ready to grow my brand — let’s get started!";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   };

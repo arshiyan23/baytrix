@@ -44,7 +44,7 @@ const InfoPanel = () => {
 
             {/* Contact Cards */}
             <div className="contact-cards">
-                <div className="card phone-card" onClick={() => copyToClipboard('+919326191141', 'phone')}>
+                <div className="card phone-card" onClick={() => copyToClipboard('+919322669920', 'phone')}>
                     <i className="fas fa-phone card-icon" />
                     <span>+91 932 619 1141</span>
                     <button className="copy-btn" aria-label="Copy phone number">

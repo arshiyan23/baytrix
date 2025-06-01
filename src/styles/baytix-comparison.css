@@ -2,6 +2,7 @@
     text-align: center;
     box-sizing: border-box;
     border-bottom: 2px dashed #7249ac3c;
+    overflow: hidden;
 }
 
 .cmpr-container {

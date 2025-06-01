@@ -33,18 +33,18 @@ const testimonials = [
     },
     {
         thumbnailSrc: '/assets/emiway-bantai-records.webp',
-        videoSrc: 'https://www.w3schools.com/html/mov_bbb.mp4',
-        quote: 'Baytix truly transformed our online presence. Their service was excellent and truly exceeded expectations.',
+        videoSrc: 'null',
+        quote: 'Baytix built an app that perfectly matched our vision. Their attention to detail and smooth delivery made the whole experience seamless.',
         author: 'Emiway Bantai',
         title: '/ Founder at Bantai Records',
         website: 'bantai.in',
     },
     {
         thumbnailSrc: '/assets/tamer-compass.webp',
-        videoSrc: 'https://www.w3schools.com/html/mov_bbb.mp4',
+        videoSrc: 'null',
         quote: 'Very professional attitude towards work and a great support staff. Amazing experience from start to finish!',
         author: 'Tamer Huwaidi',
-        title: '/ Co-Founder & CEO at Bantai Records',
+        title: '/ Co-Founder & CEO at CVCA',
         website: 'compass.net',
     },
 ];

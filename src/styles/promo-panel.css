@@ -87,4 +87,11 @@
     font-weight: 600;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
+   .popup-image img {
+    max-width: 70%;
+  }
+   .popup-image {
+    flex: 1;
+    text-align: center;
+  }
 }

@@ -10,7 +10,7 @@ const Footer = () => {
       window.Tawk_API.maximize();
     }
   };
-  
+
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -54,9 +54,11 @@ const Footer = () => {
             <ul>
               {/* <li><a href="/">Knowledge Base</a></li> */}
               <li><Link to="/contact">Contact Us</Link></li>
-              <button className="footer-button" onClick={handleSupport}>
-                Report An Issue
-              </button>
+              <li>
+                <button className="footer-link-button" onClick={handleSupport}>
+                  Report An Issue
+                </button>
+              </li>
             </ul>
           </div>
         </div>
@@ -68,12 +70,15 @@ const Footer = () => {
           </a>
           <div className="footer-legal">
             <span>© 2025 BAYTIX. All rights reserved.</span>
-            <div className="footer-links">
+            <div className="footer-links-centered">
               <Link to="/privacy-policy">Privacy Policy</Link>
               <Link to="/refund-policy">Refund Policy</Link>
-              <Link to="/terms">Terms of Service</Link>
+              <Link to="/terms">
+                <span style={{ whiteSpace: 'nowrap' }}>Terms of Service</span>
+              </Link>
             </div>
           </div>
+
           <div className="footer-social">
             <a href="https://www.linkedin.com/company/baytixsocial/about/?viewAsMember=true" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-linkedin-in"></i>
